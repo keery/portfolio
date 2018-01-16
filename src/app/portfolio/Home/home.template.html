@@ -1,0 +1,22 @@
+<section id="home">
+	<div id="homeContainer" perspective>
+	<!-- 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 23">
+		  <path id="g-logo" data-name="Forme 1 copie" class="cls-1" d="M17,0H0V18H17V5H5v8h7V10H8V8h6v7H3V3H17V0Z"/>
+		  <rect id="barre-logo" data-name="Forme 2" y="20" height="3"/>
+		</svg> -->
+
+	<canvas-opacity></canvas-opacity>
+
+	<h1 [@appendLetter]="letters.length">
+
+		<span *ngFor="let letter of letters">{{letter}}</span>
+
+	</h1>
+
+
+	</div>
+		<div class="scroll-btn">			
+			<img src="./assets/scroll.svg" alt="">
+			<div class="scrollText">scroll</div>
+		</div>
+</section>

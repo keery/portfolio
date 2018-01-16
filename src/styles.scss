@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+@font-face
+{
+    font-family: 'halo';
+    src: url('assets/HaloHandletter.eot');
+    src: url('assets/HaloHandletter.eot?#iefix') format('embedded-opentype'),
+         url('assets/HaloHandletter.woff') format('woff'),
+         url('assets/HaloHandletter.ttf') format('truetype'),
+         url('assets/HaloHandletter.svg#HaloHandletter') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+html,body { margin:0;padding:0;width: 100%;height: 100%;font-family: Lato;}
+
+section
+{
+	height: 100%;
+	width: 100%;
+	background-image: -webkit-radial-gradient(circle,#294f83,#162c4a);
+    background-image: radial-gradient(circle,#294f83,#162c4a);
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#294F83', endColorstr='#162C4A', GradientType=0);
+}
+svg { 
+    width: 200px; 
+    #g-logo {
+    }
+    #barre-logo {fill:blue;width:12px;}
+}
+
+.burger {
+    cursor: pointer;
+    z-index: 1300;
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+    width: 38px;
+    height: 26px;
+    .line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        transition: .3s all ease-in-out;
+        top: 0;
+
+        &.l2 { top: 8px; }
+        &.l3 { top: 16px;width: 1.5vw; }
+    }
+
+    &:hover {
+        .line {
+            &.l1, &.l3 {
+                transform: translateX(8px);
+                width: 100%;
+            }
+            &.l2 { transform: translateX(-5px);width: 50%; }
+        }
+
+    }
+}
+
+.overlayContainer
+{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    .overlay {
+        width: 60%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        background-color: rgb(255, 255, 255);
+
+        &.oLeft {
+            left: -100%;
+            transform: skew(-7deg, 0deg);
+        }    
+
+        &.oRight {
+            right: -100%;
+            transform: skew(-7deg, 0deg);        
+        }
+    }
+}
+[perspective].leave
+{
+    animation : leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1);
+}
+@keyframes leave-animation
+{
+    100%
+    {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
