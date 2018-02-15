@@ -9,6 +9,7 @@ import { CanvasOpacityComponent } from './canvas-opacity/canvas-opacity.componen
 import { LoaderComponent } from './loader.component';
 import { LoaderService } from './loader.service';
 import { GESliderDirective } from './geslider.directive';
+import { GESliderNavigationDirective } from './geslider-navigation.directive';
 import { MouseWheelDirective } from './mousewheel.directive';
 
 
@@ -20,6 +21,7 @@ import { MouseWheelDirective } from './mousewheel.directive';
     PerspectiveMouseDirective,
     GESliderDirective,
     MouseWheelDirective,
+    GESliderNavigationDirective,
     CanvasOpacityComponent,
     LoaderComponent,
   ],

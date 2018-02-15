@@ -1,6 +1,8 @@
 import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit, } from '@angular/core';
 
-@Directive({ selector: '[GESlider]' })
+@Directive({ selector: '[GESlider]',
+host: {'(document:changeSlide)':'listenerNavigation($event)'}
+ })
 export class GESliderDirective implements AfterViewInit {
 
     private currentSlide = null;
@@ -10,12 +12,14 @@ export class GESliderDirective implements AfterViewInit {
 
     constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
-    @HostListener('wheelUp', ['$event']) listenerWheelUp(event: any) {
+    @HostListener('wheelUp') listenerWheelUp(event: any) {
       this.mouseWheelUpFunc();
     }
-
     @HostListener('wheelDown') listenerWheelDown() {
       this.mouseWheelDownFunc();
+    }  
+    @HostListener('document:changeSlide', ['$event']) listenerNavigation(event:any) {
+        if(event.detail.target) this.goToSlide(event.detail.target);
     }  
 
     private mouseWheelUpFunc(): void { this.prevSlide(); }
@@ -24,14 +28,16 @@ export class GESliderDirective implements AfterViewInit {
 
     nextSlide()
     {
-        this.goToSlide(this.currentSlide.nextElementSibling);
+        const nextEl = this.currentSlide.nextElementSibling;
+        if(nextEl != null) this.goToSlide(nextEl.getAttribute('data-slide-id'));
     }
     prevSlide()
     {
-        this.goToSlide(this.currentSlide.previousElementSibling);
+        const prevEl = this.currentSlide.previousElementSibling;
+        if(prevEl != null) this.goToSlide(prevEl.getAttribute('data-slide-id'));
     }
     ngAfterViewInit()
-    {
+    {  
         this.slides = this.elRef.nativeElement.querySelectorAll('.slides > li');
         this.indicators = this.elRef.nativeElement.querySelectorAll('.numProjects > li');
 
@@ -60,27 +66,22 @@ export class GESliderDirective implements AfterViewInit {
         }
     }
 
-    goToSlide(slide:any):void{
-        if(slide)
-        {
-            this.changeIndicator(slide.getAttribute('data-slide-id'));
+    goToSlide(idSlide:any):void{   
+        idSlide = idSlide -1;         
+        if (this.slides[idSlide]) {
             this.renderer.setStyle(this.currentSlide, 'opacity', "0");
             this.renderer.removeClass(this.currentSlide, 'active');
-
-            this.renderer.setStyle(slide, 'opacity', "1");     
-            this.renderer.addClass(slide, 'active');
-            this.currentSlide = slide;       
+            this.currentSlide = this.slides[idSlide];  
+            this.renderer.setStyle(this.currentSlide, 'opacity', "1");
+            this.renderer.addClass(this.currentSlide, 'active');
+            this.changeIndicator(idSlide);                
         }
+    }
 
-    }
-    cool()
-    {
-        console.log("cool");
-    }
-    changeIndicator(id:number):void{
+    changeIndicator(idSlide:number):void{
         this.renderer.removeClass(this.currentIndicator, 'active');
         this.renderer.addClass(this.currentIndicator, 'inactive');
-        this.currentIndicator = this.indicators[id-1];
+        this.currentIndicator = this.indicators[idSlide];
         this.renderer.removeClass(this.currentIndicator, 'inactive');
         this.renderer.addClass(this.currentIndicator, 'active');
     }

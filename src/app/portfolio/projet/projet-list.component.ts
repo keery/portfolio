@@ -6,5 +6,8 @@ import { Component, HostListener } from '@angular/core';
 })
 export class ProjetListComponent
 {
-
+	test()
+	{
+		console.log('test');
+	}
 }
