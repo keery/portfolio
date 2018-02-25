@@ -100,7 +100,7 @@ section
         }
     }
 }
-[perspective].leave
+[perspective] .leave
 {
     animation : leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1);
 }
