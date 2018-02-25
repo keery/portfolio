@@ -11,3 +11,15 @@ export class GESliderNavigationDirective  {
     }  
 
 }
+
+@Directive({ selector: '[attr.geslide-direction]' })
+export class GESliderDirectionDirective  {
+
+    constructor(private elRef: ElementRef) {}
+
+
+    @HostListener('click') onClickDirection() {
+        document.dispatchEvent(new CustomEvent( 'directionSlide', { detail: { 'direction': this.elRef.nativeElement.getAttribute('geslide-direction')}} )); 
+    }  
+
+}

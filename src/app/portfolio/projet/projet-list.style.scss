@@ -15,18 +15,20 @@ $halfCircle : 200px;
     border-radius: 200px;
 }
 
-.circle-bar {
+#circle-bar {
 	position: absolute;
     left: calc(10% - 30px);
     top: calc(50% - 230px);
     transform: rotate(-155deg);
+    z-index: 6;
 
     .c1 {
     	opacity: 0.2;
     	stroke-dasharray: 518 1960;
     }
     .c2 {
-    	stroke-dasharray: 280 1570;
+    	stroke-dasharray: 0 1570;
+    	transition: all ease-in-out 0.3s;
     }    
 }
 
@@ -47,7 +49,7 @@ $halfCircle : 200px;
     left: 24px;
     transform: translateY(-50%);
     color: white;
-    z-index: 5;
+    z-index: 10;
     overflow: hidden;
 
     > li { margin: 10px 0; cursor: pointer;transform: translateX(-25px);
@@ -105,7 +107,7 @@ $halfCircle : 200px;
 	width: 11px;
     background-image: url(../../../assets/arrow-bottom.png);
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center 100%;
     background-size: 7px 18px;
     position: fixed;
     bottom: 48px;
@@ -118,10 +120,17 @@ $halfCircle : 200px;
     letter-spacing: 0.19em;
     padding-bottom: 33px;
     white-space: nowrap;
+	animation: arrowNext forwards infinite 1.2s ease-in-out;
+	cursor: pointer;
 
     > p {
     	transform: rotate(-90deg);
     }
+}
+@keyframes arrowNext {
+	0% { background-position: center 100%; }
+	50% { background-position: center 70%; }
+	100% { background-position: center 100%; }	
 }
 .recent-projects {
 	position: fixed;
@@ -135,89 +144,148 @@ $halfCircle : 200px;
 		height: 100%;
 	}
 
-	.slides > li { 
-		background-size: cover;    
-		background-repeat: no-repeat;
-    	background-position: center;
+	.slides { position: relative;
+		> li { 
+			background-size: cover;    
+			background-repeat: no-repeat;
+	    	background-position: center;
+	    	transition: all .3s ease-in-out;
+	    	opacity: 0; transition: all ease-in-out 1s;position: absolute;top: 0;left: 0;
 
-    	[perspective] {width: 100%;height: 100%;}
+	    	&:nth-child(even) {	 
+	    		.img-circle {
+			    	transform: translate3d(-10%,10%,0);
+	    		}   		
+	    	}
+	    	&:nth-child(odd) {	 
+	    		.img-circle {
+			    	transform: translate3d(10%,10%,0);
+	    		}   		
+	    	}
+	    	&.leave:nth-child(even) {	 
+	    		.img-circle {
+			    	transform: translate3d(10%,-10%,0);
+	    		}   		
+	    	}
+	    	&.leave:nth-child(odd) {	 
+	    		.img-circle {
+			    	transform: translate3d(-10%,-10%,0);			    	
+	    		}   		
+	    	}	    	
+	    	&.active { opacity: 1;
+	    		&.first-plan {z-index: 4;}
 
-    	.overlay { position: absolute;left:0;right:0;bottom:0;top:0;background-color: rgba(20, 20, 20, 0.7);}
-    	.info-projet-container {
-    		position: absolute;
-		    right: 5%;
-		    width: 45%;
-		    top: 50%;
-		    transform: translateY(-50%);
-	    	font-family: Cormorant Garamond;
-			color: #c5cd94;		    
+	    		.img-circle {
+	    			transition-delay: 0.2s;
+					transform: translate3d(0,0,0);
+	    		}
+	    		h2 > span {
+			    	transform: translateY(0);
+	    		}
 
-		    h2 { 
-		    	color: #f2c84c;
-				text-transform: uppercase;
-			    font-family: Fjalla one;
-			    letter-spacing: 2px;
-			    font-size: 50px;
-			    font-weight: lighter;
-			    margin: 0;
-		    }
+	    	}
+	    	[perspective] {width: 100%;height: 100%;}
 
-		    .sub-info {
-		    	margin-top: 30px;
-		    	> div {
-		    		display: inline-block;
-		    		vertical-align: top;
+	    	.overlay { position: absolute;left:0;right:0;bottom:0;top:0;background-color: rgba(20, 20, 20, 0.75);}
+	    	.info-projet-container {
+	    		position: absolute;
+			    left: calc(15% + 415px);
+			    width: 45%;
+			    top: 50%;
+			    transform: translateY(-50%);
+		    	font-family: Cormorant Garamond;
+				color: #c5cd94;		    
 
-		    		+ div {
-		    			margin-left: 25px;
-		    		}
-		    		> i { font-size: 18px;font-weight: bold; }
-		    	}
-		    	.subtitle {
+			    h2 { 
 			    	color: #f2c84c;
 					text-transform: uppercase;
 				    font-family: Fjalla one;
-				    margin-bottom: 5px;
-		    	}
+				    letter-spacing: 2px;
+				    font-size: 50px;
+				    font-weight: lighter;
+				    margin: 0;
+				    overflow: hidden;
+				    > sup {
+				    	font-size: 18px;
+					    display: inline-block;
+					    margin-left: 5px;
+				    }
+				    > span {
+				    	transition:transform ease-in-out 0.3s;
+				    	transform: translateY(100%);
+				    	display: inline-block;
+				    	vertical-align: middle;
+				    }
+			    }
+
+			    .sub-info {
+			    	margin-top: 30px;
+			    	> div {
+			    		display: inline-block;
+			    		vertical-align: top;
+
+			    		+ div {
+			    			margin-left: 25px;
+			    		}
+			    		> i { font-size: 18px;font-weight: bold; }
+			    	}
+			    	.subtitle {
+				    	color: #f2c84c;
+						text-transform: uppercase;
+					    font-family: Fjalla one;
+					    margin-bottom: 5px;
+			    	}
+			    }
+	    	}
+
+	    	.pic-project {
+	    		width: 400px;
+			    height: 400px;
+			    top: calc(50% - 200px);
+			    left: 10%;
+			    position: absolute;
+			    text-align: center;
+
+			    > img {
+			    	max-height: 100%;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translateY(-50%) translateX(-50%);		    	
+			    }
 		    }
-    	}
-
-    	.pic-project {
-		    height: 399px;
-		    position: absolute;
-		    top: 165px;
-		    left: 185px;
 	    }
-    }
 
-    .img-circle-container {
-    	width: $sizeCircle;
-    	height: $sizeCircle;
-    	overflow: hidden;
-    	position: absolute;
-	    top: calc(50% - #{$halfCircle});
-	    left: 10%;
-	    border-radius: $halfCircle;
-		background: #f2c84c; /* Old browsers */
-		background: -moz-linear-gradient(top, #f2c84c 0%, #6190b8 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, #f2c84c 0%,#6190b8 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, #f2c84c 0%,#6190b8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2c84c', endColorstr='#6190b8',GradientType=0 ); /* IE6-9 */
-		padding:3px;
-
-	    .img-circle-container-border {
-	    	width: 100%;
-	    	height: 100%;	
+	    .img-circle-container {
+	    	width: $sizeCircle;
+	    	height: $sizeCircle;
 	    	overflow: hidden;
-	    	border-radius: 100%;
-	    	position: relative;
-	    }
+	    	position: absolute;
+		    top: calc(50% - #{$halfCircle});
+		    left: 10%;
+		    border-radius: $halfCircle;
+			background: #f2c84c; /* Old browsers */
+			background: -moz-linear-gradient(top, #f2c84c 0%, #6190b8 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, #f2c84c 0%,#6190b8 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, #f2c84c 0%,#6190b8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2c84c', endColorstr='#6190b8',GradientType=0 ); /* IE6-9 */
+			padding:3px;
 
-    	.img-circle { position: absolute;left:-10vw;right:0;bottom:0;top:calc(-50vh + #{$halfCircle});background-size: cover;background-repeat: no-repeat;background-position: center;
-			width: 100vw;
-			height: 100vh;
-    	}
-    }    
+		    .img-circle-container-border {
+		    	width: 100%;
+		    	height: 100%;	
+		    	overflow: hidden;
+		    	border-radius: 100%;
+		    	position: relative;
+		    }
+
+	    	.img-circle { position: absolute;left:calc(-10vw - 2px);right:0;bottom:0;top:calc(-50vh + #{$halfCircle});background-size: cover;background-repeat: no-repeat;background-position: center;
+				width: 100vw;
+				height: 100vh;
+			    transition : all 1900ms cubic-bezier(0.190, 1.000, 0.220, 1.000);				
+	    	}
+	    }    
+	}
 }
 
 .details-projects {

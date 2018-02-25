@@ -1,6 +1,6 @@
-<section id="projetList" >
+<section id="projetList">
 
-	<div class="recent-projects" GESlider mousewheel>
+	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider mousewheel>
 	<ul class="numProjects">
 		<li [attr.geslide-target]="1">
 			<b>01</b>
@@ -26,7 +26,7 @@
 				</div>
 			</span>
 		</li>
-		<li [attr.geslide-target]="4" class="active">
+		<li [attr.geslide-target]="4">
 			<b>04</b>
 			<span>
 				<div class="mask-text">
@@ -42,23 +42,140 @@
 				</div>
 			</span>
 		</li>
-	</ul>
-	<div class="arrow-next-project">
+	</ul> 
+	<div class="arrow-next-project" [attr.geslide-direction]="'next'">
       <p>NEXT PROJECT</p>
     </div>	
 		<ul class="slides">
-			<li [attr.data-slide-id]="1"></li>
-			<li [attr.data-slide-id]="2"></li>
-			<li style="background-image: url(../../../assets/fond3.jpg);" [attr.data-slide-id]="3">
+			<li [attr.data-slide-id]="1"  style="background-image: url(../../../assets/projets/materalia-fond.jpg);">
 				<div class="overlay"></div>
 				<div class="img-circle-container">
 					<div class="img-circle-container-border">
-						<div class="img-circle" style="background-image: url(../../../assets/fond3.jpg);"></div>						
+						<div class="img-circle" style="background-image: url(../../../assets/projets/materalia-fond.jpg);"></div>										
+					</div>
+				</div>	
+				<div perspective perspectiveX="6" perspectiveY="9">
+					<div class="pic-project">						
+						<img src="../../../assets/projets/materalia-visuel.png">
+					</div>
+
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Materalia</h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
+							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Professional</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
+						</div>
+					</div>
+				</div>
+				<div class="details-projects">
+			        <a href="#">
+			            <div class="details-label">
+			            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
+			            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
+			            </div>
+			            <div class="details-arrow"></div>
+			            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
+			              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
+			            </svg>
+			        </a>
+			    </div>	  									
+			</li>
+			<li [attr.data-slide-id]="2"  style="background-image: url(../../../assets/projets/creutzwald-fond.jpg);">
+				<div class="overlay"></div>
+				<div class="img-circle-container">
+					<div class="img-circle-container-border">
+						<div class="img-circle" style="background-image: url(../../../assets/projets/creutzwald-fond.jpg);"></div>						
 					</div>
 				</div>
 				<div perspective perspectiveX="6" perspectiveY="9">
-					<img src="../../../assets/ysheza-visuel.png" class="pic-project">
+					<div class="pic-project">				
+						<img src="../../../assets/projets/creutzwald-visuel.png">
+					</div>
 
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Creutzwald<sup>Ville</sup></h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
+							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Professional</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
+						</div>
+					</div>
+				</div>
+				<div class="details-projects">
+			        <a href="#">
+			            <div class="details-label">
+			            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
+			            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
+			            </div>
+			            <div class="details-arrow"></div>
+			            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
+			              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
+			            </svg>
+			        </a>
+			    </div>	  												
+			</li>
+			<li style="background-image: url(../../../assets/projets/ysheza-fond.jpg);" [attr.data-slide-id]="3">
+				<div class="overlay"></div>
+				<div class="img-circle-container">
+					<div class="img-circle-container-border">
+						<div class="img-circle" style="background-image: url(../../../assets/projets/ysheza-fond.jpg);"></div>						
+					</div>
+				</div>
+				<div perspective perspectiveX="6" perspectiveY="9">
+					<div class="pic-project">
+						<img src="../../../assets/projets/ysheza-visuel.png">
+					</div>
 					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
 					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
 					<div class="info-projet-container">
@@ -85,17 +202,39 @@
 						</div>
 					</div>
 				</div>
+				<div class="details-projects">
+			        <a href="#">
+			            <div class="details-label">
+			            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
+			            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
+			            </div>
+			            <div class="details-arrow"></div>
+			            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
+			              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
+			            </svg>
+			        </a>
+			    </div>	  				
 			</li>
-			<li style="background-image: url(../../../assets/fond2.jpg);" class="active" [attr.data-slide-id]="4">
+			<li style="background-image: url(../../../assets/projets/premium-decorations-fond.jpg);" [attr.data-slide-id]="4">
 				<div class="overlay"></div>
 				<div class="img-circle-container">
 					<div class="img-circle-container-border">
-						<div class="img-circle" style="background-image: url(../../../assets/fond2.jpg);"></div>						
+						<div class="img-circle" style="background-image: url(../../../assets/projets/premium-decorations-fond.jpg);"></div>						
 					</div>
 				</div>
 				<div perspective perspectiveX="6" perspectiveY="9">
-					<img src="../../../assets/premium-decorations-visuel.png" class="pic-project">
-
+					<div class="pic-project">
+						<img src="../../../assets/projets/premium-decorations-visuel.png">
+					</div>
 					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
 					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
 					<div class="info-projet-container">
@@ -122,33 +261,92 @@
 						</div>
 					</div>
 				</div>
+				<div class="details-projects">
+			        <a href="#">
+			            <div class="details-label">
+			            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
+			            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
+			            </div>
+			            <div class="details-arrow"></div>
+			            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
+			              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
+			            </svg>
+			        </a>
+			    </div>	  				
 			</li>
-			<li [attr.data-slide-id]="5"></li>
+			<li [attr.data-slide-id]="5"  style="background-image: url(../../../assets/projets/creative-drawer-fond.jpg);">
+				<div class="overlay"></div>
+				<div class="img-circle-container">
+					<div class="img-circle-container-border">
+						<div class="img-circle" style="background-image: url(../../../assets/projets/creative-drawer-fond.jpg);"></div>						
+					</div>
+				</div>
+				<div perspective perspectiveX="6" perspectiveY="9">
+					<div class="pic-project">
+						<img src="../../../assets/projets/creative-drawer-visuel.png">
+					</div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Créative Drawer</h2> 
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
+							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>w/ friends</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
+						</div>
+					</div>
+				</div>	
+				<div class="details-projects">
+			        <a href="#">
+			            <div class="details-label">
+			            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
+			            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
+			            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
+			            </div>
+			            <div class="details-arrow"></div>
+			            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
+			              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
+			            </svg>
+			        </a>
+			    </div>	  											
+			</li>
 		</ul>
+		<svg id="circle-bar" width="464" height="464" viewBox="0 0 464 464">
+	        <circle class="c1" cx="232" cy="232" r="230" stroke="#fff" stroke-width="2" fill="none"></circle>
+	        <circle class="c2" cx="232" cy="232" r="230" stroke="#fff" stroke-width="2" fill="none" #circleBar></circle>
+	    </svg>  		
 	</div>
-	<div class="details-projects">
-        <a href="#">
-            <div class="details-label">
-            	<div><span style="-webkit-transition-delay: 0s; transition-delay: 0s;">M</span></div>
-            	<div><span style="-webkit-transition-delay: 0.02s; transition-delay: 0.02s;">O</span></div>
-            	<div><span style="-webkit-transition-delay: 0.04s; transition-delay: 0.04s;">R</span></div>
-            	<div><span style="-webkit-transition-delay: 0.06s; transition-delay: 0.06s;">E</span></div><br>
-            	<div><span style="-webkit-transition-delay: 0.08s; transition-delay: 0.08s;">D</span></div>
-            	<div><span style="-webkit-transition-delay: 0.1s; transition-delay: 0.1s;">E</span></div>
-            	<div><span style="-webkit-transition-delay: 0.12s; transition-delay: 0.12s;">T</span></div>
-            	<div><span style="-webkit-transition-delay: 0.16s; transition-delay: 0.16s;">A</span></div>
-            	<div><span style="-webkit-transition-delay: 0.18s; transition-delay: 0.18s;">I</span></div>
-            	<div><span style="-webkit-transition-delay: 0.2s; transition-delay: 0.2s;">L</span></div>
-            	<div><span style="-webkit-transition-delay: 0.22s; transition-delay: 0.22s;">S</span></div>
-            </div>
-            <div class="details-arrow"></div>
-            <svg class="details-circle" width="98" height="98" viewBox="0 0 100 100">
-              <circle class="c1" cx="49" cy="49" r="47" stroke="#fff" stroke-width="1" fill="none"></circle>
-            </svg>
-        </a>
-    </div>	
-	<svg class="circle-bar" width="464" height="464" viewBox="0 0 464 464">
-        <circle class="c1" cx="232" cy="232" r="230" stroke="#fff" stroke-width="2" fill="none"></circle>
-        <circle class="c2" cx="232" cy="232" r="230" stroke="#fff" stroke-width="2" fill="none"></circle>
-    </svg>    
+	
 </section>

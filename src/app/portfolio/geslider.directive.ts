@@ -1,30 +1,41 @@
-import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit, } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit,EventEmitter, Output } from '@angular/core';
 
-@Directive({ selector: '[GESlider]',
-host: {'(document:changeSlide)':'listenerNavigation($event)'}
- })
+@Directive({ selector: '[GESlider]' })
 export class GESliderDirective implements AfterViewInit {
 
+    @Output() changeSlide = new EventEmitter();
+
     private currentSlide = null;
+    private prev = null;
     private currentIndicator = null;
     private slides;
     private indicators;
+    private eventOutput;
 
     constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
-    @HostListener('wheelUp') listenerWheelUp(event: any) {
-      this.mouseWheelUpFunc();
+    @HostListener('wheelUp', ['$event']) listenerWheelUp(event: any) {
+        this.eventOutput = event;
+        this.prevSlide();
     }
-    @HostListener('wheelDown') listenerWheelDown() {
-      this.mouseWheelDownFunc();
+    @HostListener('wheelDown', ['$event']) listenerWheelDown(event: any) {
+        this.eventOutput = event;
+        this.nextSlide();
     }  
     @HostListener('document:changeSlide', ['$event']) listenerNavigation(event:any) {
-        if(event.detail.target) this.goToSlide(event.detail.target);
-    }  
-
-    private mouseWheelUpFunc(): void { this.prevSlide(); }
-
-    private mouseWheelDownFunc():void { this.nextSlide(); }   
+        if(event.detail.target) {
+            this.eventOutput = event;
+            this.goToSlide(event.detail.target);
+        }
+    } 
+    @HostListener('document:directionSlide', ['$event']) listenerDirection(event:any) {
+        if(event.detail.direction == "next") {
+            this.nextSlide();
+        }
+        else if(event.detail.direction == "prev") {
+           this.prevSlide();      
+        }
+    }
 
     nextSlide()
     {
@@ -58,11 +69,14 @@ export class GESliderDirective implements AfterViewInit {
         }
 
 
+
         if(!this.currentSlide) {
-            this.currentSlide = this.elRef.nativeElement.querySelectorAll('.slides > li:first-child');
-            this.currentIndicator = this.elRef.nativeElement.querySelectorAll('.numProjects > li:first-child');
+            this.currentSlide = this.elRef.nativeElement.querySelector('.slides > li:first-child');
+            this.currentIndicator = this.elRef.nativeElement.querySelector('.numProjects > li:first-child');
             this.renderer.addClass(this.currentSlide, 'active');
+            this.renderer.addClass(this.currentSlide, 'first-plan');
             this.renderer.addClass(this.currentIndicator, 'active');
+            this.changeSlide.emit({event: this.eventOutput, currentSlide: 0, nbSlide:this.slides.length});                        
         }
     }
 
@@ -71,10 +85,19 @@ export class GESliderDirective implements AfterViewInit {
         if (this.slides[idSlide]) {
             this.renderer.setStyle(this.currentSlide, 'opacity', "0");
             this.renderer.removeClass(this.currentSlide, 'active');
+            this.renderer.removeClass(this.currentSlide, 'first-plan');
+            this.renderer.addClass(this.currentSlide, 'leave');         
+            this.prev = this.currentSlide;
+            setTimeout(()=>{
+                this.renderer.removeClass(this.prev, 'leave');
+                this.renderer.addClass(this.currentSlide, 'first-plan');
+            }, 1000);
             this.currentSlide = this.slides[idSlide];  
             this.renderer.setStyle(this.currentSlide, 'opacity', "1");
             this.renderer.addClass(this.currentSlide, 'active');
-            this.changeIndicator(idSlide);                
+            this.renderer.removeClass(this.currentSlide, 'leave');
+            this.changeIndicator(idSlide);    
+            this.changeSlide.emit({event: this.eventOutput, currentSlide: idSlide, nbSlide:this.slides.length});            
         }
     }
 
