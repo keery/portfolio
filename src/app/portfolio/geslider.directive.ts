@@ -63,6 +63,7 @@ export class GESliderDirective implements AfterViewInit {
                     {
                         this.currentSlide = this.slides[i];
                         this.currentIndicator = this.indicators[i];
+                        this.renderer.addClass(this.currentSlide, 'first-plan');
                     }
                 }
             }

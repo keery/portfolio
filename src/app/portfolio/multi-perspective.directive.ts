@@ -1,15 +1,16 @@
 import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit } from '@angular/core';
 
-@Directive({ selector: '[perspective]' })
-export class PerspectiveMouseDirective implements AfterViewInit  {
+@Directive({ selector: '[multi-perspective]' })
+export class MultiPerspectiveMouseDirective implements AfterViewInit  {
 
-    x:number = 0;
-    y:number = 0;
-    perspectiveX:number = 3;
-    perspectiveY:number = 5;
-    container:any = null;
+    protected x:number = 0;
+    protected y:number = 0;
+    protected perspectiveX:number = 3;
+    protected perspectiveY:number = 5;
+    protected containers:any = null;
+    private current = null;
 
-    constructor(private el: ElementRef, private renderer: Renderer2) {}
+    constructor(protected el: ElementRef, protected renderer: Renderer2) {}
 
     ngAfterViewInit(){
         const persX = this.el.nativeElement.getAttribute("perspectiveX");
@@ -18,23 +19,26 @@ export class PerspectiveMouseDirective implements AfterViewInit  {
         if(persX) this.perspectiveX = persX; 
         if(persY) this.perspectiveY = persY;
 
-        this.container = this.el.nativeElement.querySelector('.perspective-container');
-        if(!this.container) console.log('Pas de container pour (perspective-mouse)');
+        this.containers = this.el.nativeElement.querySelectorAll('.perspective-container');
 
-        this.renderer.setStyle(this.container.parentElement, 'perspective', "500px");
-        this.renderer.setStyle(this.container.parentElement, 'perspective', "500px");
-        this.renderer.setStyle(this.container.parentElement, 'overflow', "hidden");
-        this.renderer.setStyle(this.container.parentElement, 'transform-style', "preserve-3d");     
+        if(!this.containers) console.log('Pas de containers pour (multi-perspective-mouse)');
+
+        for (var i = 0; i < this.containers.length; i++) {
+            if(this.containers[i].parentElement.classList.contains("active")) this.current = this.containers[i];
+            this.renderer.addClass(this.containers[i].parentElement, 'perspective-area');
+        }
     }
 
     @HostListener('mouseenter') onMouseEnter() {
-        this.container.classList.remove('leave');
+        this.renderer.removeClass(this.current, 'leave');
     }
 
     @HostListener('mouseleave') onMouseLeave() {
-        this.renderer.addClass(this.container, 'leave');
-    
+        this.renderer.addClass(this.current, 'leave');
     }
+    @HostListener('changeSlide', ['$event']) onChangeSlide($event) {
+        if($event.currentSlide >= 0 && $event.currentSlide < this.containers.length) this.current = this.containers[$event.currentSlide];
+    }    
 
     @HostListener('mousemove', ['$event']) onMousemove(event: MouseEvent) {
 
@@ -61,6 +65,6 @@ export class PerspectiveMouseDirective implements AfterViewInit  {
     private setTransform(x:number, y:number)
     {
         let style = "rotateY("+(x)+"deg) rotateX("+(y)+"deg)";
-        this.renderer.setStyle(this.container, 'transform', style);
+        this.renderer.setStyle(this.current, 'transform', style);
     }
 }

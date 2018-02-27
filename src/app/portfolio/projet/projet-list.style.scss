@@ -76,19 +76,20 @@ $halfCircle : 200px;
 		    vertical-align: middle;
 		    overflow: hidden;  
 		    text-transform: uppercase;
-    		font-family: Cormorant Garamond;  		   
-    		> div {transform: translateY(100%);transition: transform ease-in-out 0.2s 0.2s;}
+    		font-family: Cormorant Garamond;  
+    		padding-right: 15px;
+    		> div {transform: translateX(-102%);transition: transform cubic-bezier(0.31, 1.43, 0.58, 1) 0.45s 0.3s; background-color: #f2c84c;border-radius: 4px;color: #323232;padding: 2px 9px;font-weight: bold;}
     	}
 
     	&.active { cursor: inherit;animation: openIndicator 0.5s forwards;
 			b { display: inline-block;vertical-align: middle; }
 			> span { font-size: 12px;color:white; }
-			.mask-text > div { transform: translateY(0); }		
+			.mask-text > div {  }		
     	}
     	&.inactive { animation: closeIndicator 0.5s forwards; }
     	&:hover:not(.active) {
 			> span { padding-left: 10px;}
-			.mask-text > div { transform: translateY(0); }
+			.mask-text > div { transform: translateX(0); }
     	}
     }
 }
@@ -351,4 +352,3 @@ $halfCircle : 200px;
 	    span { transition: all 1200ms cubic-bezier(0.190, 1.000, 0.220, 1.000);display: inline-block; }
 	}
 }
-.perspective-container { height: 100%;width: 100%;}

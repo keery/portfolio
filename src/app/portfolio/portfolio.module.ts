@@ -5,6 +5,7 @@ import { PortfolioRoutingModule }  from './portfolio-routing.module';
 import { HomeComponent }  from './Home/home.component';
 import { ProjetListComponent }	from './projet/projet-list.component';
 import { PerspectiveMouseDirective }    from './perspective-mouse.directive';
+import { MultiPerspectiveMouseDirective }    from './multi-perspective.directive';
 import { CanvasOpacityComponent } from './canvas-opacity/canvas-opacity.component';
 import { LoaderComponent } from './loader.component';
 import { LoaderService } from './loader.service';
@@ -19,6 +20,7 @@ import { MouseWheelDirective } from './mousewheel.directive';
     HomeComponent,
     ProjetListComponent,
     PerspectiveMouseDirective,
+    MultiPerspectiveMouseDirective,
     GESliderDirective,
     MouseWheelDirective,
     GESliderNavigationDirective,

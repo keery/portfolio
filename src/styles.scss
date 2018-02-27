@@ -100,9 +100,17 @@ section
         }
     }
 }
-[perspective] .leave
-{
-    animation : leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1);
+// [perspective] .leave
+// {
+    
+// }
+.perspective-container { height: 100%;width: 100%;
+  &.leave { animation : leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1); }
+}
+.perspective-area {
+  perspective: 500px;
+  overflow: hidden;
+  transform-style: preserve-3d;
 }
 @keyframes leave-animation
 {
@@ -111,6 +119,7 @@ section
         transform: rotateX(0deg) rotateY(0deg);
     }
 }
+
 .loader-container {
   position: fixed;
   top:0;

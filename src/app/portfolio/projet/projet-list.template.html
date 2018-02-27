@@ -1,8 +1,8 @@
 <section id="projetList">
 
-	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider mousewheel>
+	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider mousewheel multi-perspective perspectiveX="6" perspectiveY="9">
 	<ul class="numProjects">
-		<li [attr.geslide-target]="1">
+		<li [attr.geslide-target]="1" class="active">
 			<b>01</b>
 			<span>
 				<div class="mask-text">
@@ -47,42 +47,40 @@
       <p>NEXT PROJECT</p>
     </div>	
 		<ul class="slides">
-			<li [attr.data-slide-id]="1"  style="background-image: url(../../../assets/projets/materalia-fond.jpg);">
+			<li [attr.data-slide-id]="1"  style="background-image: url(../../../assets/projets/materalia-fond.jpg);" class="active">
 				<div class="overlay"></div>
 				<div class="img-circle-container">
 					<div class="img-circle-container-border">
 						<div class="img-circle" style="background-image: url(../../../assets/projets/materalia-fond.jpg);"></div>										
 					</div>
 				</div>	
-				<div perspective perspectiveX="6" perspectiveY="9">
-					<div class="perspective-container">
-						<div class="pic-project">						
-							<img src="../../../assets/projets/materalia-visuel.png">
-						</div>
+				<div class="perspective-container">
+					<div class="pic-project">						
+						<img src="../../../assets/projets/materalia-visuel.png">
+					</div>
 
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="info-projet-container">
-							<h2>Materalia</h2>
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
-							<div class="sub-info">
-								<div>
-									<div class="subtitle">Role</div>
-									<i>Fullstack</i>
-								</div>
-								<div>
-									<div class="subtitle">Context</div>
-									<i>Professional</i>
-								</div>		
-								<div>
-									<div class="subtitle">Environment</div>
-									<i>PHP/jQuery</i>
-								</div>	
-								<div>
-									<div class="subtitle">Year</div>
-									<i>2017</i>
-								</div>																	
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Materalia</h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
 							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Professional</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
 						</div>
 					</div>
 				</div>
@@ -115,35 +113,33 @@
 						<div class="img-circle" style="background-image: url(../../../assets/projets/creutzwald-fond.jpg);"></div>						
 					</div>
 				</div>
-				<div perspective perspectiveX="6" perspectiveY="9">
-					<div class="perspective-container">
-						<div class="pic-project">				
-							<img src="../../../assets/projets/creutzwald-visuel.png">
-						</div>
+				<div class="perspective-container">
+					<div class="pic-project">				
+						<img src="../../../assets/projets/creutzwald-visuel.png">
+					</div>
 
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="info-projet-container">
-							<h2>Creutzwald<sup>Ville</sup></h2>
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
-							<div class="sub-info">
-								<div>
-									<div class="subtitle">Role</div>
-									<i>Fullstack</i>
-								</div>
-								<div>
-									<div class="subtitle">Context</div>
-									<i>Professional</i>
-								</div>		
-								<div>
-									<div class="subtitle">Environment</div>
-									<i>PHP/jQuery</i>
-								</div>	
-								<div>
-									<div class="subtitle">Year</div>
-									<i>2017</i>
-								</div>																	
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Creutzwald<sup>Ville</sup></h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
 							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Professional</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
 						</div>
 					</div>
 				</div>
@@ -176,35 +172,33 @@
 						<div class="img-circle" style="background-image: url(../../../assets/projets/ysheza-fond.jpg);"></div>						
 					</div>
 				</div>
-				<div perspective perspectiveX="6" perspectiveY="9">
-					<div class="perspective-container">
-						<div class="pic-project">
-							<img src="../../../assets/projets/ysheza-visuel.png">
-						</div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="info-projet-container">
-							<h2>Yshéza</h2>
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
-							<div class="sub-info">
-								<div>
-									<div class="subtitle">Role</div>
-									<i>Fullstack</i>
-								</div>
-								<div>
-									<div class="subtitle">Context</div>
-									<i>Freelance</i>
-								</div>		
-								<div>
-									<div class="subtitle">Environment</div>
-									<i>Symfony</i>
-								</div>	
-								<div>
-									<div class="subtitle">Year</div>
-									<i>2017</i>
-								</div>																	
+				<div class="perspective-container">
+					<div class="pic-project">
+						<img src="../../../assets/projets/ysheza-visuel.png">
+					</div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Yshéza</h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
 							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Freelance</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>Symfony</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
 						</div>
 					</div>
 				</div>
@@ -237,35 +231,33 @@
 						<div class="img-circle" style="background-image: url(../../../assets/projets/premium-decorations-fond.jpg);"></div>						
 					</div>
 				</div>
-				<div perspective perspectiveX="6" perspectiveY="9">
-					<div class="perspective-container">
-						<div class="pic-project">
-							<img src="../../../assets/projets/premium-decorations-visuel.png">
-						</div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="info-projet-container">
-							<h2>Premium Décorations</h2>
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
-							<div class="sub-info">
-								<div>
-									<div class="subtitle">Role</div>
-									<i>Fullstack</i>
-								</div>
-								<div>
-									<div class="subtitle">Context</div>
-									<i>Professional</i>
-								</div>		
-								<div>
-								<div class="subtitle">Environment</div>
-									<i>PHP/jQuery</i>
-								</div>	
-								<div>
-									<div class="subtitle">Year</div>
-									<i>2016</i>
-								</div>	
+				<div class="perspective-container">
+					<div class="pic-project">
+						<img src="../../../assets/projets/premium-decorations-visuel.png">
+					</div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Premium Décorations</h2>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
 							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>Professional</i>
+							</div>		
+							<div>
+							<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2016</i>
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -298,35 +290,33 @@
 						<div class="img-circle" style="background-image: url(../../../assets/projets/creative-drawer-fond.jpg);"></div>						
 					</div>
 				</div>
-				<div perspective perspectiveX="6" perspectiveY="9">
-					<div class="perspective-container">
-						<div class="pic-project">
-							<img src="../../../assets/projets/creative-drawer-visuel.png">
-						</div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
-						<div class="info-projet-container">
-							<h2>Créative Drawer</h2> 
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
-							<div class="sub-info">
-								<div>
-									<div class="subtitle">Role</div>
-									<i>Fullstack</i>
-								</div>
-								<div>
-									<div class="subtitle">Context</div>
-									<i>w/ friends</i>
-								</div>		
-								<div>
-									<div class="subtitle">Environment</div>
-									<i>PHP/jQuery</i>
-								</div>	
-								<div>
-									<div class="subtitle">Year</div>
-									<i>2017</i>
-								</div>																	
+				<div class="perspective-container">
+					<div class="pic-project">
+						<img src="../../../assets/projets/creative-drawer-visuel.png">
+					</div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="circle" style="position: absolute;left: -5px;top: 495px;transform: translateZ(-140px);"></div>
+					<div class="info-projet-container">
+						<h2>Créative Drawer</h2> 
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum reprehenderit eveniet repellat omnis sapiente praesentium, quo. Est maiores eveniet, ea voluptas, in molestias optio magni, blanditiis, vitae cupiditate doloribus sint.</p>
+						<div class="sub-info">
+							<div>
+								<div class="subtitle">Role</div>
+								<i>Fullstack</i>
 							</div>
+							<div>
+								<div class="subtitle">Context</div>
+								<i>w/ friends</i>
+							</div>		
+							<div>
+								<div class="subtitle">Environment</div>
+								<i>PHP/jQuery</i>
+							</div>	
+							<div>
+								<div class="subtitle">Year</div>
+								<i>2017</i>
+							</div>																	
 						</div>
 					</div>
 				</div>	
