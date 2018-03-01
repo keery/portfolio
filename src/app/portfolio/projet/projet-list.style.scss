@@ -49,17 +49,23 @@ $halfCircle : 200px;
 @keyframes floating {
 	0% { transform: translateY(-15px) translateX(0); }
 	12% { transform: translateY(-10px) translateX(-12px); }
-	25% { transform: translateY(0) translateX(-15px); }
+	25% { transform: translateY(0) translateX(-18px); }
+	37% { transform: translateY(10px) translateX(-12px); }
 	50% { transform: translateY(15px) translateX(0); }
+	63% { transform: translateY(12px) translateX(12px); }
 	75% { transform: translateY(0) translateX(15px); }
+	87% { transform: translateY(-12px) translateX(12px); }
 	100% { transform: translateY(-15px) translateX(0); }
 }
 
 @keyframes floating2 {
 	0% { transform: translateY(-15px) translateX(0); }
+	12% { transform: translateY(-12px) translateX(12px); }
 	25% { transform: translateY(0) translateX(15px); }
+	37% { transform: translateY(12px) translateX(12px); }
 	50% { transform: translateY(15px) translateX(0); }
-	75% { transform: translateY(0) translateX(-15px); }
+	63% { transform: translateY(10px) translateX(-12px); }
+	75% { transform: translateY(0) translateX(-18px); }
 	87% { transform: translateY(-10px) translateX(-12px); }
 	100% { transform: translateY(-15px) translateX(0); }
 }
