@@ -41,6 +41,27 @@ $halfCircle : 200px;
     background: linear-gradient(45deg, #f2c84c 0%,#6190b8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2c84c', endColorstr='#6190b8',GradientType=1 );
     border-radius: 100%;
+
+    &.cir1 { animation: floating linear 15s infinite; }
+    &.cir2 { animation: floating2 linear 15s infinite; }
+}
+
+@keyframes floating {
+	0% { transform: translateY(-15px) translateX(0); }
+	12% { transform: translateY(-10px) translateX(-12px); }
+	25% { transform: translateY(0) translateX(-15px); }
+	50% { transform: translateY(15px) translateX(0); }
+	75% { transform: translateY(0) translateX(15px); }
+	100% { transform: translateY(-15px) translateX(0); }
+}
+
+@keyframes floating2 {
+	0% { transform: translateY(-15px) translateX(0); }
+	25% { transform: translateY(0) translateX(15px); }
+	50% { transform: translateY(15px) translateX(0); }
+	75% { transform: translateY(0) translateX(-15px); }
+	87% { transform: translateY(-10px) translateX(-12px); }
+	100% { transform: translateY(-15px) translateX(0); }
 }
 
 .numProjects {
