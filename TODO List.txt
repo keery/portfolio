@@ -1,0 +1,3 @@
+Animation du contenu sur le page projet pendant les transitions
+Portfolio en anglais et francais
+Class active sur les elements du menu
