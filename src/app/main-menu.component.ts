@@ -1,4 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'main-nav',
@@ -8,6 +9,8 @@ import { Component, HostBinding } from '@angular/core';
 export class MainMenuComponent {
 
 	@HostBinding('attr.class') hostClass = 'close'; 
+
+		constructor(private router: Router) {}
 
 
     toggleNav() {

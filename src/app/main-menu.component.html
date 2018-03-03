@@ -4,23 +4,31 @@
 		<span class="label-menu">MENU</span>
 		<ul>
 			<li>
-				<a href="/">
-					<span>Home</span>
+				<a [routerLink]="['/']"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<span>
+						<div class="text-link">Home</div>
+					</span>
 				</a>
 			</li>
 			<li>
-				<a href="projets">
-					<span>Projects</span>
+				<a [routerLink]="['/projets']"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<span>
+						<div class="text-link">Projects</div>
+					</span>
 				</a>
 			</li>
 			<li>
-				<a href="about">
-					<span>About</span>
+				<a [routerLink]="['/about']"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<span>
+						<div class="text-link">About</div>
+					</span>
 				</a>
 			</li>
 			<li>
-				<a href="contact">
-					<span>Contact</span>
+				<a [routerLink]="['/contact']"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<span>
+						<div class="text-link">Contact</div>
+					</span>
 				</a>
 			</li>
 		</ul>
