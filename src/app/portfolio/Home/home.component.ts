@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { appendLetterAnimation, overlayLeftAnimation, overlayRightAnimation } from './_animations/index';
-import { LoaderService } from '../loader.service';
+import { LoaderService } from '../loader/loader.service';
 
 
 @Component({

@@ -1,11 +1,44 @@
 #home {
     padding: 20px;
-    background-image: url(../../../assets/fond.jpg);
-    background-size: cover;
+
 
     > #homeContainer 
     {
         height: 100%;
+    }
+    .home-bg-video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        > .geparallax-container {
+            
+            width: 100%;
+            height: 100%;
+
+            > video {
+                height: 120%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+
+    .home-mask {
+        background-image: url(../../../assets/fond-accueil.png);
+        background-size: cover;
+        background-position: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
     }
 }
 

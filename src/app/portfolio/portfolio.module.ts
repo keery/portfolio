@@ -7,11 +7,12 @@ import { ProjetListComponent }	from './projet/projet-list.component';
 import { PerspectiveMouseDirective }    from './perspective-mouse.directive';
 import { MultiPerspectiveMouseDirective }    from './multi-perspective.directive';
 import { CanvasOpacityComponent } from './canvas-opacity/canvas-opacity.component';
-import { LoaderComponent } from './loader.component';
-import { LoaderService } from './loader.service';
-import { GESliderDirective } from './geslider.directive';
-import { GESliderNavigationDirective, GESliderDirectionDirective } from './geslider-navigation.directive';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderService } from './loader/loader.service';
+import { GESliderDirective } from './geslider/geslider.directive';
+import { GESliderNavigationDirective, GESliderDirectionDirective } from './geslider/geslider-navigation.directive';
 import { MouseWheelDirective } from './mousewheel.directive';
+import { GEParallaxDirective } from './geparallax/geparallax.directive';
 
 
 
@@ -27,6 +28,7 @@ import { MouseWheelDirective } from './mousewheel.directive';
     GESliderDirectionDirective,
     CanvasOpacityComponent,
     LoaderComponent,
+    GEParallaxDirective,
   ],
   imports: [
     CommonModule,
