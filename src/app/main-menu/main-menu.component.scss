@@ -120,8 +120,8 @@
 			}
 			> li { display: inline-block;vertical-align: middle;transition: all 0.8s cubic-bezier(0.12, 1.11, 0.58, 1);
 				> a { display:block;width: 25px;height: 25px;margin: 0px 5px; background-size: contain; background-repeat: no-repeat;
-					&.ico-github { background-image: url(../assets/picto-github.png); }
-					&.ico-linkedin { background-image: url(../assets/picto-linkedin.png); }
+					&.ico-github { background-image: url(../../assets/picto-github.png); }
+					&.ico-linkedin { background-image: url(../../assets/picto-linkedin.png); }
 				}
 			}
 		}

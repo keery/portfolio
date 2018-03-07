@@ -1,11 +1,6 @@
 #home {
     padding: 20px;
 
-
-    > #homeContainer 
-    {
-        height: 100%;
-    }
     .home-bg-video {
         position: absolute;
         left: 0;
@@ -32,7 +27,7 @@
 
     .home-mask {
         background-image: url(../../../assets/fond-accueil.png);
-        background-size: cover;
+        background-size: auto 100%;
         background-position: 50%;
         position: absolute;
         left: 0;
@@ -40,18 +35,34 @@
         right: 0;
         bottom: 0;
     }
+
+    #home-container 
+    {
+        height: 100%;
+
+        .home-name {  position: relative;z-index: 5;font-size: 0;
+            > span {
+                overflow: hidden;display: inline-block;vertical-align: middle;position: relative;
+                > b {
+                    font-family: Cormorant Garamond;text-transform:uppercase;font-size: 65px;display:inline-block;transform: translateX(-130%); animation: slideLetters ease-in-out 0.7s 0.2s forwards;
+                }
+                
+            }
+        }
+    }    
+}
+
+@keyframes slideLetters {
+    0% { transform: translateX(-130%); }
+    100% { transform: translateX(0); }
 }
 
 h1
 { 
     font-family: oswald; 
-    font-size: 65px;
+    
     text-align: center;
     margin: 0;
-    > span {
-        display: inline-block;
-        vertical-align: bottom;
-    }
 }
 
 .scroll-btn {

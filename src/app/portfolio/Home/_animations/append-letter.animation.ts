@@ -4,12 +4,12 @@ export const appendLetterAnimation =
 trigger('appendLetter', [
       transition('* => *', [
 
-        query(':enter', style({ opacity: 0 }), {optional: true}),
+        query(':enter', style({ transform: "translateX(-100%)" }), {optional: true}),
 
-        query(':enter', stagger('65ms', [
+        query(':enter', stagger('2s', [
           animate('.3s 1s ease-in-out', keyframes([
-            style({opacity: 0}),
-            style({opacity: 1}),
+            style({transform: "translateX(-100%)"}),
+            style({transform: "translateX(0)"}),
           ]))]), {optional: true})
       ])
     ])

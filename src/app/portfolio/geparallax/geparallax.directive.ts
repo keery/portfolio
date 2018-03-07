@@ -55,8 +55,6 @@ export class GEParallaxDirective implements AfterViewInit  {
             resultY = -(pourcentY * this.degreeY)+1;
 
         this.setTransform(resultX, resultY);
-        console.log("dddd");
-  
     }
 
     private setTransform(x:number, y:number)
