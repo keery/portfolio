@@ -32,6 +32,71 @@ $halfCircle : 200px;
     }    
 }
 
+.scroll-btn {
+    border: 1px solid white;
+    border-radius: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 8px;
+    padding: 5px 10px;
+    display: block;
+    width: 78px;
+    height: 78px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    position: absolute;
+    z-index: 12;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    background-color: rgba(247, 247, 247, 0.168);
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: -1px;
+        bottom: -1px;
+        border: 1px solid white;
+        border-radius: 100%;
+        animation: squareFade 0.7s infinite;
+    }
+
+    > img {
+        width: 22px;
+        margin-bottom: 8px;
+        animation: bound 1.4s infinite;        
+    }
+}
+$dist: -14px;
+@keyframes squareFade
+{
+    to {
+        left: $dist;
+        right: $dist;
+        top: $dist;
+        bottom: $dist;
+        opacity: 0;
+    }
+}
+
+@keyframes bound {
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(5px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+
 // .circle {
 // 	width: 120px;
 //     height: 120px;

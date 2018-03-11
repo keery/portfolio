@@ -3,7 +3,7 @@
     z-index: 1300;
     position: absolute;
     top: 5vw;
-    left: 5vw;
+    right: 5vw;
     width: 38px;
     height: 26px;
     .line {
@@ -16,16 +16,16 @@
         top: 0;
 
         &.l2 { top: 8px; }
-        &.l3 { top: 16px;width: 1.5vw; }
+        &.l3 { left: unset;right:0;top: 16px;width: 1.5vw; }
     }
 
     &:hover {
         .line {
             &.l1, &.l3 {
-                transform: translateX(8px);
+                transform: translateX(-8px);
                 width: 100%;
             }
-            &.l2 { transform: translateX(-5px);width: 50%; }
+            &.l2 { transform: translateX(25px);width: 50%; }
         }
 
     }

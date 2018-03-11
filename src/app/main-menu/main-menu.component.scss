@@ -92,18 +92,8 @@
 		.menu-contact { position: absolute; bottom: 15px; left: calc(5vw - 19px); z-index: 66; color: white; font-size: 13px;		    
 
 		    .menu-email { margin: 0 0 20px 0;transition:all cubic-bezier(0.12, 1.11, 0.58, 1) 0.3s; opacity: 0; transform: translateY(30px);
-		    	.menu-email-label {font-size: 23px; margin-bottom: 2px; font-weight: bold; }
-		    	> a { display: inline-block;
-		    		font-size: 16px;color:rgba(255, 255, 255, 0.58);text-decoration: none; overflow: hidden; position: relative;
-
-					.default-email { transform: translateY(0);transition: transform ease-in-out 0.2s; }
-		    		.hover-email { color: #f2c84c;position: absolute;top: 100%;left:0;transition: top ease-in-out 0.2s; }
-		    		
-		    		&:hover {
-		    			.default-email { transform: translateY(-100%); }
-		    			.hover-email { top: 0; }	
-		    		}
-		    	}
+		    	.menu-email-label {font-size: 23px; margin-bottom: 2px; font-weight: bold; }	
+		    	.slide-link {font-size: 16px;}	    	
 		    }
 		    > .menu-sub-infos { text-transform: uppercase;transition:all cubic-bezier(0.12, 1.11, 0.58, 1) 0.3s; opacity: 0; transform: translateY(30px);
 		    	> * {

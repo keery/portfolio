@@ -26,7 +26,7 @@
     }
 
     .home-mask {
-        background-image: url(../../../assets/fond-accueil.png);
+        background-image: url(../../../assets/fond-accueil2.png);
         background-size: auto 100%;
         background-position: 50%;
         position: absolute;
@@ -40,14 +40,41 @@
     {
         height: 100%;
 
-        .home-name {  position: relative;z-index: 5;font-size: 0;
-            > span {
-                overflow: hidden;display: inline-block;vertical-align: middle;position: relative;
-                > b {
-                    font-family: Cormorant Garamond;text-transform:uppercase;font-size: 65px;display:inline-block;transform: translateX(-130%); animation: slideLetters ease-in-out 0.7s 0.2s forwards;
-                }
-                
+        .home-pre {
+            position: absolute;
+            background-color: #12121c;
+            width: 319px;
+            padding: 20px;
+            overflow: hidden;
+            color: white;
+            left: 50%;
+            border: 1px solid white;
+            top: 50%;
+            &:before {
+                content: '';
+                background-image: url(../../../assets/shadow.png);
+                position: absolute;
+                width: 150%;
+                left: 50%;
+                top: 50%;
+                height: 150%;
+                transform: translateY(-50%) translateX(-50%);
+                background-size: cover;
+                background-position: 50%;
+                opacity: 0.3;
             }
+        }
+
+        .home-name {  position: relative;z-index: 5;font-size: 0;
+           svg { position: relative;
+                text {
+                    fill: url(#p-stripes);
+                    font-family: 'Lato';
+                    font-size: 50px;
+                    text-transform:uppercase;
+                    text-anchor: middle;
+                }
+           }
         }
     }    
 }
@@ -65,69 +92,6 @@ h1
     margin: 0;
 }
 
-.scroll-btn {
-    border: 1px solid white;
-    border-radius: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    font-size: 8px;
-    padding: 5px 10px;
-    display: block;
-    width: 78px;
-    height: 78px;
-    margin: 0 auto;
-    letter-spacing: 1px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15px;
-    background-color: rgba(247, 247, 247, 0.168);
-
-    &:before {
-        content: '';
-        position: absolute;
-        left: -1px;
-        right: -1px;
-        top: -1px;
-        bottom: -1px;
-        border: 1px solid white;
-        border-radius: 100%;
-        animation: squareFade 0.7s infinite;
-    }
-
-    > img {
-        width: 22px;
-        margin-bottom: 8px;
-        animation: bound 1.4s infinite;        
-    }
-}
-$dist: -14px;
-@keyframes squareFade
-{
-    to {
-        left: $dist;
-        right: $dist;
-        top: $dist;
-        bottom: $dist;
-        opacity: 0;
-    }
-}
-
-@keyframes bound {
-    0%
-    {
-        transform: translateY(0px);
-    }
-    50%
-    {
-        transform: translateY(5px);
-    }
-    100%
-    {
-        transform: translateY(0px);
-    }
-}
 .arrow {
     text-align: center;
     .group-round-top {
@@ -155,4 +119,41 @@ $dist: -14px;
         + .round { margin-left: 15px; }
     }
     
+}
+
+.home-presentation {
+    
+    position: fixed;
+    bottom: 48px;
+    left: 30px;
+    z-index: 300;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.19em;
+    padding-bottom: 33px;
+    white-space: nowrap;
+    animation: arrowNext forwards infinite 1.2s ease-in-out;
+    cursor: pointer;
+
+    > p {
+        transform: rotate(-90deg);
+        width: 11px;
+        font-size: 11px;
+        line-height: 11px;
+
+        &:before {
+            content: '';
+            margin-right: 13px;
+            display: inline-block;
+            border-radius: 100%; background-color: #f2c84c;
+            width: 8px;height: 8px;
+        }
+    }
+    > div {
+        padding-top: 10px;
+        font-size: 13px;
+        white-space: normal;
+        width: 255px;
+        letter-spacing: initial;
+    }
 }
