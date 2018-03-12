@@ -1,18 +1,23 @@
 #home {
-    padding: 20px;
+    padding: 20px;background-color: #12121c;height: 100%;
 
-    .home-bg-video {
+    .home-video {
         position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
+        top: 50%;
+        right: 5%;
+        height: 49vw;
+        max-height: 563px;
+        max-width: 412px;
+        width: 37%;
         overflow: hidden;
+        transform: translateY(-50%);
 
-        > .geparallax-container {
-            
-            width: 100%;
-            height: 100%;
+        > .home-video-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
 
             > video {
                 height: 120%;
@@ -22,19 +27,32 @@
                 transform: translate(-50%, -50%);
             }
         }
-
+        .home-video-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+            &:before {
+                background-color: #faba00;
+                opacity: 0.5;
+            }
+            &:after {
+                background-image: url(../../../assets/fond-accueil2.png);
+                background-size: auto 100%;
+                background-position: 50%;      
+            }
+        }
     }
 
-    .home-mask {
-        background-image: url(../../../assets/fond-accueil2.png);
-        background-size: auto 100%;
-        background-position: 50%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-    }
 
     #home-container 
     {
@@ -125,17 +143,15 @@ h1
     
     position: fixed;
     bottom: 48px;
-    left: 30px;
-    z-index: 300;
+    left: 5%;
     color: #fff;
     font-weight: 400;
     letter-spacing: 0.19em;
     padding-bottom: 33px;
     white-space: nowrap;
-    animation: arrowNext forwards infinite 1.2s ease-in-out;
-    cursor: pointer;
+    text-align: right;
 
-    > p {
+    .vertical-text {
         transform: rotate(-90deg);
         width: 11px;
         font-size: 11px;
@@ -149,11 +165,27 @@ h1
             width: 8px;height: 8px;
         }
     }
-    > div {
+    .home-name {  position: relative;z-index: 5;font-size: 0;padding-top:25px;
+        svg { position: relative;
+             text {
+                 fill: url(#p-stripes);
+                 font-family: 'Fjalla One';
+                 font-size: 100px;
+                 text-transform:uppercase;
+                 font-weight: bold;
+                 text-anchor:end;
+             }
+        }
+    }
+    .home-description {
         padding-top: 10px;
-        font-size: 13px;
+        font-size: 16px;
         white-space: normal;
-        width: 255px;
+        width: 450px;
         letter-spacing: initial;
+        display: inline-block;
+        .eiffel {
+            cursor: url(../../../assets/picto-eiffel-tower.png), auto;
+        }
     }
 }
