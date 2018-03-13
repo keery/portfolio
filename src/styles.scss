@@ -92,9 +92,22 @@ p {margin: 0;}
   background-color: #29293a;
   left: 5vw;
   > a { display: inline-block;width: 100%;height: 100%;padding: 12px 20px;border-bottom: 5px solid #f2c84c;
-    svg { width: 100%;height: 100%; }
+    svg { width: 100%;height: 100%;
+      .u-line, .g-line { fill:none;stroke:#e3bd4b;stroke-miterlimit:10;stroke-width:1.9px; }
+    }
+  }
+
+  &:hover { 
+    .g-line { animation: drawLine 1s linear; }
+    .u-line { animation: drawLine 1s linear; }
   }
 }
+
+@keyframes drawLine {
+  0% { stroke-dasharray: 54;stroke-dashoffset: 54; }
+  100% { stroke-dasharray: 54;stroke-dashoffset: 112; }
+}
+
 .loader-container {
   position: fixed;
   top:0;
