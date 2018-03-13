@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { appendLetterAnimation, overlayLeftAnimation, overlayRightAnimation } from './_animations/index';
 import { LoaderService } from '../loader/loader.service';
 
@@ -10,17 +10,18 @@ import { LoaderService } from '../loader/loader.service';
 })
 export class HomeComponent implements OnInit
 {
-
+	@ViewChild('videoSmoke') video: ElementRef;
 	objLoaderStatus:boolean =false;
 
-	letters : string[] = ['G','u','i','l','l','a','u','m','e'];
-
-	constructor(
-	        private loaderService: LoaderService) {
-	}
+	constructor(private loaderService: LoaderService, private elRef: ElementRef, private renderer: Renderer2) {}
 
 	ngOnInit():void{
 		this.loaderService.loaderStatus.subscribe((val: boolean) => {
+            if(this.objLoaderStatus == true && val == false) {
+            	this.renderer.addClass(this.elRef.nativeElement, "enter");
+            	// this.video.nativeplay();
+            	this.video.nativeElement.play();
+            }
             this.objLoaderStatus = val;
         });
 
@@ -35,8 +36,6 @@ export class HomeComponent implements OnInit
 			'font-size: 16px;text-decoration:underline;color: #266d83;font-family:arial;font-weight:bold;'	
 		);
 
-
-        // this.loaderService.displayLoader(false); 
         this.loaderService.hide(); 
 	}
 }

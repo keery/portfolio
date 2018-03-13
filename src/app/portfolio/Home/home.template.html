@@ -1,9 +1,9 @@
-<!-- <span *ngIf="objLoaderStatus">
+<span *ngIf="objLoaderStatus">
 	<loader></loader>
-</span> -->
+</span>
 <section id="home" geparallax degreeX="24" degreeY="15">
 	<div id="home-container">		
-		<div class="home-presentation">
+		<div class="home-presentation" style="display:none;">
 			<div class="home-name">
 				<div>Guillaume</div>
 				<div>Esnault</div>
@@ -15,11 +15,11 @@
 		</div>
 		<div class="home-video">
 			<div class="home-video-bg geparallax-container">
-				<video src="../assets/blackfluid2.mp4" autoplay muted loop></video>
+				<video src="../assets/blackfluid2.mp4" muted loop #videoSmoke></video>
 			</div>
 			<div class="home-video-mask"></div>
 		</div>		
-		<div class="vertical-text">
+		<div class="vertical-text" style="display:none;">
 			<div>
 				<a href="https://github.com/keery" target="_blank" class="slide-link"><div class="default">GITHUB</div><div>GITHUB</div></a>
 				<b></b>
