@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 // routes
 const appRoutes: Routes = [
 	{ path: '', redirectTo: '', pathMatch: 'full'},
-	{ path: '**', component: PageNotFoundComponent }
+	{ path: '**', component: PageNotFoundComponent, data: { title: 'Erreur 404' } }
 ];
 
 @NgModule({

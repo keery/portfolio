@@ -3,7 +3,7 @@
         #home {
             #home-container {
                 .home-video {
-                    transform: scale(1);
+                    transform: scale(1);margin-left: 10%;
                     > .home-video-bg {
                         > video {
                             display: block;
@@ -11,6 +11,10 @@
                     }
                 }
             }
+        }
+        .home-presentation { opacity: 1;
+            .home-name > div .box-letter > span { font-size: 100px;transform: translateY(0); }
+            .home-description { font-size: 17px; width: 450px;}
         }
     }
 }
@@ -25,8 +29,8 @@
         max-width: 412px;
         width: 36%;
         overflow: hidden;
-        margin-left: 10%;
-        transition: all 1.75s 0.2s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        margin-left: 0;
+        transition: transform 1.75s 0.2s cubic-bezier(0.190, 1.000, 0.220, 1.000), margin-left 1.75s 1.75s cubic-bezier(0.190, 1.000, 0.220, 1.000);
         transform: scale(0.3);
 
         > .home-video-bg {
@@ -84,14 +88,7 @@
 
         a { color:white;text-decoration: none; }
 
-        b {
-            content: '';
-            margin: 0 15px;
-            display: inline-block;
-            border-radius: 100%; background-color: #f2c84c;
-            width: 8px;height: 8px;
-        }
-
+        b { margin: 0 15px; display: inline-block; border-radius: 100%; background-color: #f2c84c; width: 8px;height: 8px; }
     }    
 
 
@@ -156,23 +153,38 @@ h1
     
     color: #fff;
     text-align: right;
+    opacity: 0;
+    transition: opacity ease-in-out 0.01s 3.4s;
+
+    .home-description {
+        transition: font-size 0.001s 3.5s ease-in-out;
+    }
 
     .home-name {  position: relative;z-index: 5;padding-top:25px;
-         font-family: 'Fjalla One';
-         font-size: 100px;
-         text-transform:uppercase;
-         font-weight: bold;
-         color: #f2c84c;
+        font-family: 'Fjalla One';
+        text-transform:uppercase;
+        font-weight: bold;
+        color: #f2c84c;
+
+        > div {
+            .box-letter {
+                display: inline-block;vertical-align: middle;overflow: hidden;font-size: 0;
+                > span { font-size: 0; transform: translateY(100%);display: inline-block; transition: font-size 0.001s 3.3s ease-in-out, transform linear 0.7s 3.32s; }
+            }
+        }
     }
     .home-description {
         padding-top: 10px;
-        font-size: 17px;
+        font-size: 0;
         white-space: normal;
-        width: 450px;
+        width: 0;
+        overflow: hidden;
         letter-spacing: initial;
         display: inline-block;
         font-family: Cormorant Garamond;
         color: #ffffff;
+        transition: width 1.5s 1.8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
         .eiffel {
             cursor: url(../../../assets/picto-eiffel-tower.png), auto;
         }
