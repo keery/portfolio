@@ -11,10 +11,14 @@
                     }
                 }
             }
+            .vertical-text {
+                a { opacity: 1; transform: translateY(0); }
+                b { opacity:1;transform:scale(1); }
+            }
         }
-        .home-presentation { opacity: 1;
-            .home-name > div .box-letter > span { font-size: 100px;transform: translateY(0); }
-            .home-description { font-size: 17px; width: 450px;}
+        .home-presentation { 
+            .home-name > div { font-size: 100px;transform: translateY(0);opacity: 1; }
+            .home-description { font-size: 17px; width: 450px;transform: translateY(0);opacity: 1; }
         }
     }
 }
@@ -85,10 +89,15 @@
         top: 50%;
         left: 5%;  
         transform: translateY(-50%) translateX(calc(-50% + 5px)) rotate(-90deg);
+        transition: transform ease 0.7s 2.701s, opacity ease 0.7s 2.701s;
 
-        a { color:white;text-decoration: none; }
+        a { color:white;text-decoration: none; transform: translateY(-20px);opacity: 0;
+            &:nth-of-type(3) { transition: transform ease 0.7s 3.001s, opacity ease 0.7s 3.001s; }
+            &:nth-of-type(2) { transition: transform ease 0.7s 3.101s, opacity ease 0.7s 3.101s; }
+            &:nth-of-type(1) { transition: transform ease 0.7s 3.201s, opacity ease 0.7s 3.201s; }
+        }
 
-        b { margin: 0 15px; display: inline-block; border-radius: 100%; background-color: #f2c84c; width: 8px;height: 8px; }
+        b { margin: 0 15px; display: inline-block; border-radius: 100%; background-color: #f2c84c; width: 8px;height: 8px;opacity:0;transform:scale(0);transition: transform cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s 3.501s, opacity cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s 3.501s; }
     }    
 
 
@@ -153,11 +162,12 @@ h1
     
     color: #fff;
     text-align: right;
-    opacity: 0;
-    transition: opacity ease-in-out 0.01s 3.4s;
+    opacity: 1;
+    transition: opacity ease-in-out 0.01s 2.7s;
 
     .home-description {
         transition: font-size 0.001s 3.5s ease-in-out;
+        opacity: 0;
     }
 
     .home-name {  position: relative;z-index: 5;padding-top:25px;
@@ -166,11 +176,9 @@ h1
         font-weight: bold;
         color: #f2c84c;
 
-        > div {
-            .box-letter {
-                display: inline-block;vertical-align: middle;overflow: hidden;font-size: 0;
-                > span { font-size: 0; transform: translateY(100%);display: inline-block; transition: font-size 0.001s 3.3s ease-in-out, transform linear 0.7s 3.32s; }
-            }
+        > div { font-size: 0; transform: translateY(20px);opacity: 0; 
+            &.firstname { transition: font-size 0.001s 2.7s ease-in-out, transform ease 0.7s 2.701s, opacity ease 0.7s 2.701s;  }
+            &.lastname { transition: font-size 0.001s 2.7s ease-in-out, transform ease 0.7s 2.801s, opacity ease 0.7s 2.801s;  }
         }
     }
     .home-description {
@@ -178,12 +186,14 @@ h1
         font-size: 0;
         white-space: normal;
         width: 0;
+        opacity: 0;
+        transform: translateY(20px);
         overflow: hidden;
         letter-spacing: initial;
         display: inline-block;
         font-family: Cormorant Garamond;
         color: #ffffff;
-        transition: width 1.5s 1.8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        transition: width 1.5s 1.8s cubic-bezier(0.190, 1.000, 0.220, 1.000), font-size 0.001s 2.7s ease-in-out, transform ease 0.7s 2.901s, opacity ease 0.7s 2.901s;
 
         .eiffel {
             cursor: url(../../../assets/picto-eiffel-tower.png), auto;
