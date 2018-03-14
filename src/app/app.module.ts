@@ -28,4 +28,4 @@ import { BurgerComponent } from './burger/burger.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

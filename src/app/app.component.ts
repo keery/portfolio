@@ -5,17 +5,21 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css'],
-	animations: [overlayLeftAnimation, overlayRightAnimation]
+	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-	constructor(private titleService: Title, private activatedRoute: ActivatedRoute, private router: Router) {}
+	constructor(
+		private titleService: Title, 
+		private activatedRoute: ActivatedRoute, 
+		private router: Router,
+		private meta: Meta) {}
 
 	ngOnInit() {
 		this.router.events
@@ -27,6 +31,10 @@ export class AppComponent {
 	    })
 	    .filter((route) => route.outlet === 'primary')
 	    .mergeMap((route) => route.data)
-	    .subscribe((event) => this.titleService.setTitle(event['title']));	  	
+	    .subscribe((event) => {
+	    	this.titleService.setTitle(event['title']);
+			this.meta.updateTag({ name: 'description', content: event['description'] }); 
+	    } );	
+		
 	}	
 }
