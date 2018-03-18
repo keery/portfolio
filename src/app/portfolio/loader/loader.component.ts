@@ -8,22 +8,12 @@ import { Subscription } from 'rxjs/Subscription';
 	template: `
 	<div class="loader-container">
 	    <div class="loading">
-	        <div class="loader">
-	            <div>
-	                <span class="loader-ball odd first"></span>
-	            </div>
-	            <div>
-	                <span class="loader-ball even"></span>
-	                <span class="loader-ball even"></span>
-	            </div>
-	            <div>
-	                <span class="loader-ball odd"></span>
-	                <span class="loader-ball odd"></span>
-	            </div>
-	            <div>
-	                <span class="loader-ball even last"></span>
-	            </div>
-	        </div>
+	     	<div class="logo-loader">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.02 14.88">
+					<line class="u-line" y1="13.93" x2="11.02" y2="13.93"/>
+					<polyline class="g-line" points="11 0.95 0.96 0.95 0.96 10.68 10.06 10.68 10.06 4.17 4.21 4.18 4.21 7.44 7.78 7.44"/>
+				</svg>			
+	     	</div>	    
 	        <div class="bar">
 	            <div class="percent" #percent>
 	            </div>
