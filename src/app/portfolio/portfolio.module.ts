@@ -3,6 +3,7 @@ import { NgModule } 				from '@angular/core';
 import { CommonModule }   			from '@angular/common';
 import { PortfolioRoutingModule }  from './portfolio-routing.module';
 import { HomeComponent }  from './Home/home.component';
+import { AboutComponent }  from './about/about.component';
 import { ProjetListComponent }	from './projet/projet-list.component';
 import { PerspectiveMouseDirective }    from './perspective-mouse.directive';
 import { MultiPerspectiveMouseDirective }    from './multi-perspective.directive';
@@ -20,6 +21,7 @@ import { GEParallaxDirective } from './geparallax/geparallax.directive';
   declarations: [
     HomeComponent,
     ProjetListComponent,
+    AboutComponent,
     PerspectiveMouseDirective,
     MultiPerspectiveMouseDirective,
     GESliderDirective,
