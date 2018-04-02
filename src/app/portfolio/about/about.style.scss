@@ -43,4 +43,199 @@ svg .st2[data-v-79a08562] {
   background-color: #12121c;
   height: 100%;
   overflow: hidden;
+  
+  #about-container { max-width: 1800px; margin: 0 auto; height: 100%;position: relative;width: 90%;
+    > ul { font-size: 0;height: 100%;
+      > li { height: 100%; }
+    }
+
+    .vertical-text {
+        font-size: 11px;
+        line-height: 11px;
+        font-weight: 400;
+        letter-spacing: 0.19em;
+        white-space: nowrap;      
+        position: absolute;
+        bottom: 125px;
+        left: 0;  
+        transform: translateX(-88px) rotate(-90deg);
+        // transition: transform ease 0.7s 2.701s, opacity ease 0.7s 2.701s;
+
+        a { color:white;text-decoration: none; display: inline-block;vertical-align: middle; }
+
+        svg { margin-right: 10px;width: 28px; transform: rotate(90deg); background-color: #29293a; border-radius: 100%; padding: 5px 5px; display: inline-block; vertical-align: middle; }
+    }   
+  }
+
+  .about-description { font-size: 15px; display: inline-block;vertical-align: top;width: 50%; padding-top: 25vh;
+    > h2 {
+      font-family: 'Fjalla One';
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #f2c84c;
+      font-size: 50px;
+      margin: 0;
+    }
+
+    .sub-info {
+      margin: 30px 0;
+      font-family: Cormorant Garamond;
+      color: #c5cd94;
+
+      > div {
+        display: inline-block;
+        vertical-align: top;
+
+        + div {
+          margin-left: 25px;
+        }
+        > i { font-size: 18px;font-weight: bold; }
+      }
+
+      .subtitle {
+        color: #f2c84c;
+        text-transform: uppercase;
+        font-family: Fjalla one;
+        margin-bottom: 5px;
+      }
+    }
+
+    .about-text {
+      font-family: Cormorant Garamond;
+      color: #ffffff;
+    }
+  }
+  // .about-schema { width: 540px; height: 100%;display: inline-block;vertical-align: top; position: relative;
+  .about-schema { width: 50%; height: 100%;display: inline-block;vertical-align: top; position: relative;
+
+    hr { width: 2px; height: 100%; background-color: #f2c84c; border: none; position: absolute; left: 112px; }
+    .about-schema-container { /*height: 735px; */
+      > svg { position: absolute;left: 0; right: 0; top:50%; transform: translateY(-50%);height: 100%;width: 100%;
+        &.about-step { background-color: #12121c; }
+        &.about-img { z-index: 555; }
+      }
+    }
+  }
+}
+
+.cursor-container {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top:50%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  z-index: 55;
+
+  text-align: center;
+
+  .cursor-test {
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    position: relative;
+    > img { height: 100%; }
+  }
+}
+.cursor {
+    border: 1px solid white;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 12;
+    background-color: #fff;
+
+    // left: 14.8%; top: -5%; height: 4.2%; width: 6.3%;
+
+    // height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;
+
+    left:67%; top: 58.3%;height: 22.4%; width: 33.7%;
+
+    // animation: step-1-point-0-1 3s 3.9s forwards, stretchCursor 1.5s 5.4s forwards;
+    // animation: step-1-point-1-2 4s 3.9s forwards, reduceCursor 0.8s 3.9s forwards, stretchCursor 0.8s 7.1s forwards;
+    animation: step-1-point-2-0 4s 3.9s forwards, reduceCursor 1s 3.9s forwards;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: -1px;
+        bottom: -1px;
+        border: 1px solid white;
+        border-radius: 100%;
+        animation: cursorFade 1s infinite;
+    }
+}
+@keyframes reduceCursor {
+  0% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
+  100% { height: 4.2%; width: 6.3%; background-color: #fff; }
+}
+@keyframes stretchCursor {
+  0% { height: 4.2%; width: 6.3%; background-color: #fff; }
+  100% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
+}
+
+
+@keyframes step-1-point-0-1 {
+  0% { top: -5%;left:14.8%; }
+  50% { top: 21%;left:14.8%;  }
+  100% { left: 0.8%; top: 12.1%; }  
+}
+@keyframes step-1-point-1-2 {
+  0% { left: 0.8%; top: 12.1%; } 
+  20% { top: 21%;left:14.8%;  }
+  40% { left:14.8%; top: 45.6%;  }
+  60% { left:81.2%; top: 45.6%;  }
+  80% { left:81.2%; top: 67.3%;  }
+  100% { left:67%; top: 58.3%;  }
+}
+
+@keyframes step-1-point-2-1 {
+  0% { left:67%; top: 58.3%;  }
+  20% { left:81.2%; top: 67.3%;  }
+  40% { left:81.2%; top: 45.6%;  }
+  60% { left:14.8%; top: 45.6%;  }
+  80% { top: 21%;left:14.8%;  }
+  100% { left: 0.8%; top: 12.1%; } 
+}
+
+@keyframes step-1-point-2-0 {
+  0% { left:67%; top: 58.3%; } 
+  25% { left:81.2%; top: 67.3%; }
+  50% { left:80.9%; top: 87.4%; }
+  75% { left:14.9%; top: 87.4%; }
+  100% { left:14.9%; top: 110%; }
+}
+
+$dist: -14px;
+@keyframes cursorFade
+{
+    to {
+        left: $dist;
+        right: $dist;
+        top: $dist;
+        bottom: $dist;
+        opacity: 0;
+    }
+}
+
+#about-step-one-line {
+  #line_x5F_1, #arc_x5F_1, #circle, #line_x5F_2, #line_x5F_4_2_, #arc_x5F_2, #circle_7_, #line_x5F_4_3_, #line_x5F_6 { animation: drawLine 0.5s forwards linear; }
+  
+  #line_x5F_1 { stroke-dashoffset: -80; stroke-dasharray: 140; animation-duration: 0.2s; }
+  #arc_x5F_1 { stroke-dasharray: 180.985; stroke-dashoffset: 181;animation-delay: 0.3s; }
+  #circle { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 0.8s; }
+  #line_x5F_2 { stroke-dasharray: 560; stroke-dashoffset: 560;animation-delay: 1.2s; animation-duration: 0.9s; }
+  #line_x5F_4_2_ { stroke-dasharray: 80; stroke-dashoffset: 80;animation-delay: 2s;animation-duration: 0.2s; }
+  #arc_x5F_2 { stroke-dasharray: 181; stroke-dashoffset: 181;animation-delay: 2.2s;animation-duration: 0.3s; }
+  #circle_7_ { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 2.6s; }
+  #line_x5F_4_3_ { stroke-dasharray: 480; stroke-dashoffset: 480;animation-delay: 3.1s; }
+  #line_x5F_6 { stroke-dasharray: 124.5; stroke-dashoffset: 124.5;animation-delay: 3.6s;animation-duration: 0.2s; }
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
 }
