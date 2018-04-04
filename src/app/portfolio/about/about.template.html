@@ -1,8 +1,8 @@
 <!-- <div style="padding: 20px;">
 	<p class="line-1 anim-typewriter">Animation typewriter style using css steps()</p>
 </div> -->
-<div id="about">
-	<div id="about-container">
+<div id="about" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}">
+	<div id="about-container"  mousewheel="4000" (wheelUp)="prevStep()" (wheelDown)="nextStep()">
 		<div class="vertical-text">
 			<div>
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="18" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -11,25 +11,29 @@
 					<path d="M245.918,387.325c5.563,5.559,14.6,5.559,20.157,0l117.039-117.038c3.41-3.41,4.423-8.532,2.579-13   c-1.844-4.45-6.18-7.351-11.012-7.351h-54.954V34.024c0-14.402-11.661-26.063-26.06-26.063h-75.323   c-14.398,0-26.06,11.66-26.06,26.063v215.912h-54.973c-4.827,0-9.163,2.9-11.007,7.351c-1.844,4.468-0.83,9.59,2.575,13   L245.918,387.325z" fill="#FFFFFF"/>
 				</g>
 				</svg>
-				<a href="pdf/cv-guillaume-esnault.pdf" target="_blank" class="slide-link"><div class="default">TÉLÉCHARGER LE CV</div><div>TÉLÉCHARGER LE CV</div>
+				<a href="pdf/cv-guillaume-esnault.pdf" target="_blank" class="slide-link" download><div class="default">TÉLÉCHARGER LE CV</div><div>TÉLÉCHARGER LE CV</div>
 				</a>
 			</div>
 		</div>
 		<div class="cursor-container">
 			<div class="cursor-mask">
 				<img src="../../assets/mask.png" alt="">
-				<div class="cursor"></div>
+				<div id="cursor" class="step-0-1"></div>
 			</div>
 		</div>
-		<ul>
-			<li>
+		<ul class="slides" style="">			 
+			<li [attr.data-slide-id]="1">
 				<div class="about-description">
 					<h2>A propos de moi</h2>
 					<div class="sub-info">
 						<div>
 							<div class="subtitle">Période</div>
 							<i>2014 à aujourd'hui</i>
-						</div>																
+						</div>	
+						<div>
+							<div class="subtitle">Entreprise</div>
+							<i><a href="gencontact.fr">gencontact.fr</a></i>
+						</div>	
 					</div>
 					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
 				</div>
@@ -40,23 +44,7 @@
 							<g data-v-79a08562="" id="part-1" transform="translate(0 0)">
 								<polyline class="st2" data-v-79a08562="" id="line_x5F_6" points="165,806.5 138,806.5 138,899.5 "></polyline> 
 								<polyline class="st2" data-v-79a08562="" id="line_x5F_4_3_" points="532.8,727.5 532.8,806.5 138,806.5 "></polyline> 
-								<g data-v-79a08562="" id="tram_x5F_info" style="opacity: 1;"> <g data-v-79a08562="" id="text_5_" style="opacity: 1;"><path class="st1" d="M499.4,657.1h-3.9v4.6c0,1.4,0.8,2.1,1.9,2.1c0.7,0,1.4-0.3,1.9-0.6l0.5,0.8
-							c-0.6,0.5-1.4,0.8-2.5,0.8c-1.8,0-2.8-1-2.8-3v-4.6h-1.9v-0.9h1.9v-2.8h1v2.8h3.9V657.1z" data-v-79a08562="" id="t"></path> <path class="st1" d="M507,656.4l-0.3,1c-0.4-0.2-1-0.3-1.5-0.3c-1.4,0-2.4,1.1-2.4,2.9v4.8h-1v-8.5h1v1.4
-							c0.5-1,1.5-1.6,2.6-1.6C506,656.1,506.5,656.1,507,656.4z" data-v-79a08562="" id="r"></path> <path class="st1" d="M516.7,664.7h-1V663c-0.7,1.1-1.8,1.8-3.4,1.8c-2.4,0-4.2-1.8-4.2-4.4c0-2.5,1.9-4.4,4.2-4.4
-							c1.5,0,2.7,0.7,3.4,1.8v-1.6h1V664.7z M509.1,660.4c0,1.9,1.4,3.4,3.3,3.4c1.9,0,3.3-1.5,3.3-3.4c0-1.9-1.4-3.4-3.3-3.4
-							C510.5,657,509.1,658.5,509.1,660.4z" data-v-79a08562="" id="a_1_"></path> <path class="st1" d="M534.1,659.5v5.2h-1v-4.9c0-1.7-1-2.8-2.7-2.8c-1.6,0-2.8,1.1-2.8,2.8v4.8h-1v-4.9
-							c0-1.7-1-2.8-2.7-2.8c-1.6,0-2.8,1.1-2.8,2.8v4.8h-1v-8.5h1v1.5c0.7-1.1,1.9-1.6,3-1.6c1.6,0,2.8,0.7,3.3,2c0.6-1.4,2-2,3.3-2
-							C532.7,656.1,534.1,657.4,534.1,659.5z" data-v-79a08562="" id="m"></path> <path class="st1" d="M543.1,664.7h-1v-13h1V664.7z" data-v-79a08562="" id="l_1_"></path> <path class="st1" d="M547.6,653.2c0,0.4-0.3,0.7-0.7,0.7s-0.7-0.3-0.7-0.7c0-0.4,0.3-0.7,0.7-0.7
-							S547.6,652.7,547.6,653.2z M547.4,664.7h-1v-8.5h1V664.7z" data-v-79a08562="" id="i_1_"></path> <path class="st1" d="M558.3,659.5v5.2h-1v-4.9c0-1.7-1-2.8-2.7-2.8c-1.6,0-2.8,1.1-2.8,2.8v4.8h-1v-8.5h1v1.5
-							c0.7-1.1,1.9-1.6,3-1.6C556.8,656.1,558.3,657.4,558.3,659.5z" data-v-79a08562="" id="n_6_"></path> <path class="st1" d="M568.9,660.4c0,0.2,0,0.3,0,0.4h-7.1c0.2,2,1.5,3.1,3.3,3.1c1.2,0,2.1-0.5,2.9-1.2l0.5,0.7
-							c-1.1,1.1-2.2,1.4-3.5,1.4c-2.5,0-4.3-1.8-4.3-4.4c0-2.6,1.8-4.4,4.2-4.4C567.2,656.1,568.9,657.9,568.9,660.4z M561.8,659.9h6.1
-							c-0.2-1.8-1.3-3-2.9-3C563.2,657,562,658.2,561.8,659.9z" data-v-79a08562="" id="e_10_"></path> <path class="st1" d="M577.2,657.8c-0.6-0.4-1.7-0.8-2.9-0.8c-1.3,0-2.2,0.6-2.2,1.5c0,0.8,0.6,1.2,1.9,1.4l1.1,0.1
-							c1.8,0.2,2.8,0.9,2.8,2.3c0,1.6-1.5,2.5-3.6,2.5c-1.2,0-2.5-0.3-3.5-1.1l0.5-0.8c0.7,0.5,1.6,1,3,1c1.5,0,2.6-0.5,2.6-1.6
-							c0-0.8-0.6-1.3-2-1.4l-1.1-0.1c-1.9-0.2-2.7-1.1-2.7-2.3c0-1.6,1.3-2.5,3.3-2.5c1.3,0,2.6,0.4,3.3,1L577.2,657.8z" data-v-79a08562="" id="s_4_"></path></g> <g data-v-79a08562="" id="tram_x5F_number" style="opacity: 1;"><path class="st1" d="M520.3,621h-9.7v-37.5l-12.1,4.9v-9.8l21.8-8.8V621z" data-v-79a08562="" id="_x31__1_"></path> <path class="st1" d="M563.1,584.2c0,5.3-2.8,9.3-7.5,11.4c5.3,2.1,8.6,6.1,8.6,11.6c0,9.9-9,14.7-18.6,14.7
-						c-7.6,0-13.8-2.7-17.6-7.3l5.8-6.4c2.9,3.1,7.1,4.8,11.4,4.8c4.9,0,8.8-2.1,8.8-6.6c0-4.3-4.4-6.6-9.9-6.6h-5.9v-8.6h5.9
-						c4.9,0,8.8-2.2,8.8-6.4c0-4.1-3.7-6.3-8.4-6.3c-4.7,0-8.1,2.4-10.2,5.1l-6.1-6.2c3.3-4.5,8.8-7.8,16.8-7.8
-						C555.9,569.7,563.1,575.5,563.1,584.2z" data-v-79a08562="" id="_x33_"></path></g> 
-						<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle></g> 
+								<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle>
 						<path class="st2" d="M451.3,526.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_2"></path>
 						<g data-v-79a08562="" id="bus_x5F_info" style="opacity: 1;">
 							<g data-v-79a08562="" id="bus_x5F_number" style="opacity: 1;">
@@ -70,12 +58,52 @@
 						</svg>
 						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
 							<image xlink:href="../../assets/freelancer-fail.png" width="170" x="60" y="150"></image>
+							<image xlink:href="../../assets/logo-gen-contact.png" width="160" x="452" y="595"></image>							
 						</svg>	
 				<!-- 						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
 							<circle class="st2 " cx="136.5" cy="209.5" data-v-79a08562="" r="101"></circle>
 						</svg>	 -->			
 					</div>
 				</div>
+			</li>
+			<li [attr.data-slide-id]="2">
+				<div class="about-description">
+					<h2>A propos de moi</h2>
+					<div class="sub-info">
+						<div>
+							<div class="subtitle">Période</div>
+							<i>2014 à aujourd'hui</i>
+						</div>	
+						<div>
+							<div class="subtitle">Entreprise</div>
+							<i><a href="gencontact.fr">gencontact.fr</a></i>
+						</div>	
+					</div>
+					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
+				</div>					
+				<div class="about-schema">
+					<div class="about-schema-container">
+						<svg id="about-step-one-line" class="about-step" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 660 900">
+							<g id="part-1" style='transform: translateX(137px);'>
+								<g id="bus_info">
+									<circle id="circle" class="st2" cx="321.07" cy="230.5" r="101"/>
+								</g>
+								<path id="arc_1" class="st2" d="M381.3,130.5A130,130,0,0,1,548,129" transform="translate(-142.43 1)"/>
+								<polyline id="line_1" class="st2" points="323.4 101.33 323.4 48.25 1 48.25 1 0"/>
+								<path id="line_1-2" data-name="line_1" class="st2" d="M465.83,47.25" transform="translate(-142.43 1)"/>
+								<path id="line_1-3" data-name="line_1" class="st2" d="M466.25,99.5" transform="translate(-142.43 1)"/>
+								<path class="st2" d="M463.5,330.5" transform="translate(-142.43 1)"/>
+								<circle class="st2" cx="162.2" cy="555.81" r="20.81"/>
+								<polyline class="st2" points="321.07 331.5 321.07 441 162.2 441 162.2 535"/>
+							</g>
+						</svg>
+						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
+							<g style='transform: translateX(137px);'>
+								<image width="130" height="93" transform="translate(257.22 187.67)" xlink:href="../../assets/logo-neftis.png"/>
+							</g>
+						</svg>		
+					</div>
+				</div>				
 			</li>
 		</ul>
 	</div>

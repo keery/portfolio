@@ -31,7 +31,7 @@
   to{border-right-color: transparent;}
 }
 
-svg .st2[data-v-79a08562] {
+.about-step .st2{
     fill: none;
     stroke: #f2c84c;
     stroke-miterlimit: 10;
@@ -43,6 +43,10 @@ svg .st2[data-v-79a08562] {
   background-color: #12121c;
   height: 100%;
   overflow: hidden;
+
+  .slides { transition: transform 1.2s 2s;
+    > li {  }
+  }
   
   #about-container { max-width: 1800px; margin: 0 auto; height: 100%;position: relative;width: 90%;
     > ul { font-size: 0;height: 100%;
@@ -138,7 +142,7 @@ svg .st2[data-v-79a08562] {
     > img { height: 100%; }
   }
 }
-.cursor {
+#cursor {
     border: 1px solid white;
     border-radius: 100%;
     display: block;
@@ -146,16 +150,24 @@ svg .st2[data-v-79a08562] {
     position: absolute;
     z-index: 12;
     background-color: #fff;
+    // left: 14.8%; top: -5%;
+    height: 4.2%; width: 6.3%;
 
-    // left: 14.8%; top: -5%; height: 4.2%; width: 6.3%;
 
-    // height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;
 
-    left:67%; top: 58.3%;height: 22.4%; width: 33.7%;
-
-    // animation: step-1-point-0-1 3s 3.9s forwards, stretchCursor 1.5s 5.4s forwards;
-    // animation: step-1-point-1-2 4s 3.9s forwards, reduceCursor 0.8s 3.9s forwards, stretchCursor 0.8s 7.1s forwards;
-    animation: step-1-point-2-0 4s 3.9s forwards, reduceCursor 1s 3.9s forwards;
+    &.step-0-1 { animation: step-0-1 2s 2.9s forwards, stretchCursor 1s 3.9s forwards; 
+      &.block-top { animation: step-0-1 2s 2.9s forwards, stretchCursor 1s 3.9s forwards, blockTop 1s cubic-bezier(0.1, 0.33, 0.34, 2.54); }
+    }
+    &.step-1-2 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-1-2 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards running; }
+    &.step-2-1 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-2-1 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards; 
+      &.block-top { animation: step-2-1 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards, blockTop 1s cubic-bezier(0.1, 0.33, 0.34, 2.54); }
+    }
+    &.step-2-3 { left:67%; top: 58.3%;height: 22.4%; width: 33.7%;animation: step-2-3 2s forwards, reduceCursor 0.5s forwards; }
+    &.step-3-2 { left:14.9%; top: 110%;height: 4.2%; width: 6.3%;animation: step-3-2 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
+    &.step-3-4 { animation: step-3-4 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
+    &.step-4-3 { animation: step-4-3 2s forwards, reduceCursor 0.5s forwards; }
+    &.start-delay { animation-delay: 0.2s; }
+    // &.block-top { animation:  }
 
     &:before {
         content: '';
@@ -177,14 +189,22 @@ svg .st2[data-v-79a08562] {
   0% { height: 4.2%; width: 6.3%; background-color: #fff; }
   100% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
 }
+@keyframes stretchCursor2 {
+  0% { height: 4.2%; width: 6.3%; background-color: #fff; }
+  100% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
+}
 
-
-@keyframes step-1-point-0-1 {
+@keyframes blockTop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+@keyframes step-0-1 {
   0% { top: -5%;left:14.8%; }
   50% { top: 21%;left:14.8%;  }
   100% { left: 0.8%; top: 12.1%; }  
 }
-@keyframes step-1-point-1-2 {
+@keyframes step-1-2 {
   0% { left: 0.8%; top: 12.1%; } 
   20% { top: 21%;left:14.8%;  }
   40% { left:14.8%; top: 45.6%;  }
@@ -193,7 +213,7 @@ svg .st2[data-v-79a08562] {
   100% { left:67%; top: 58.3%;  }
 }
 
-@keyframes step-1-point-2-1 {
+@keyframes step-2-1 {
   0% { left:67%; top: 58.3%;  }
   20% { left:81.2%; top: 67.3%;  }
   40% { left:81.2%; top: 45.6%;  }
@@ -202,14 +222,34 @@ svg .st2[data-v-79a08562] {
   100% { left: 0.8%; top: 12.1%; } 
 }
 
-@keyframes step-1-point-2-0 {
+@keyframes step-2-3 {
   0% { left:67%; top: 58.3%; } 
   25% { left:81.2%; top: 67.3%; }
   50% { left:80.9%; top: 87.4%; }
   75% { left:14.9%; top: 87.4%; }
   100% { left:14.9%; top: 110%; }
 }
-
+@keyframes step-3-2 {
+  0% { left:14.9%; top: 110%; }
+  25% { left:14.9%; top: 87.4%; }
+  50% { left:80.9%; top: 87.4%; }
+  75% { left:81.2%; top: 67.3%; }
+  100% { left:67%; top: 58.3%; } 
+}
+@keyframes step-3-4 {
+  0% { left: 14.8%;top: -5%; }
+  15% { left: 14.8%;top:3.2%; }
+  45% { top: 3.2%;left:68.6%; }
+  75% { top:23.2%;left:68.6%; }
+  100% { left: 54.6%;top: 14.4%; }
+}
+@keyframes step-4-3 {
+  0% { left: 54.6%;top: 14.4%; }
+  25% { top:23.2%;left:68.6%; }
+  55% { top: 3.2%;left:68.6%; }
+  85% { left: 14.8%;top:3.2%; }
+  100% { left: 14.8%;top: -5%; }
+}
 $dist: -14px;
 @keyframes cursorFade
 {
