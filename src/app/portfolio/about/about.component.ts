@@ -11,6 +11,7 @@ export class AboutComponent implements AfterViewInit
 {
 	private currentStep: number = 0;
 	private currentSlide: number = 1
+	private maxStep: number = 5;
 	private cursor;
 	slideChangeObservable = Observable.fromEvent(document, 'changeSlide');
 
@@ -34,8 +35,8 @@ export class AboutComponent implements AfterViewInit
 
     changeStepTo(idStep : number) {
 
-    	if(idStep > 0) {
-	    	//Supprime les classes lorsqu'on est plus au premier passage
+    	if(idStep > 0 && idStep <= this.maxStep) {
+	    	//Supprime les classes lorsqu'on n'est plus au premier passage
 	    	if(this.currentStep != 0) {
 			    this.cursor.classList = "";
 				//Permet de trigger un changement sur mon élement pour que la prochaine animation soit prise en compte

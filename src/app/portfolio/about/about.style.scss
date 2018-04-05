@@ -150,8 +150,11 @@
     position: absolute;
     z-index: 12;
     background-color: #fff;
-    // left: 14.8%; top: -5%;
+    left: 14.8%; top: -5%;
     height: 4.2%; width: 6.3%;
+
+    // left: 54.6%;top: 14.4%;
+    // top:23.2%;left:68.6%;
 
 
 
@@ -166,6 +169,8 @@
     &.step-3-2 { left:14.9%; top: 110%;height: 4.2%; width: 6.3%;animation: step-3-2 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
     &.step-3-4 { animation: step-3-4 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
     &.step-4-3 { animation: step-4-3 2s forwards, reduceCursor 0.5s forwards; }
+    &.step-4-5 { animation: step-4-5 2s forwards, reduceCursor 0.5s forwards; }
+    &.step-5-4 { animation: step-5-4 2s forwards, stretchCursor 0.5s 1.5s forwards; }
     &.start-delay { animation-delay: 0.2s; }
     // &.block-top { animation:  }
 
@@ -250,6 +255,20 @@
   85% { left: 14.8%;top:3.2%; }
   100% { left: 14.8%;top: -5%; }
 }
+@keyframes step-4-5 {
+  0% { left: 54.6%;top: 14.4%; }
+  25% { top:23.2%;left:68.6%; }
+  55% { top: 46.7%;left:68.6%; }
+  80% { top: 46.7%;left:41.7%; }
+  100% { top: 59.6%;left: 41.7%; }
+}
+@keyframes step-5-4 {
+  0% { top: 59.6%;left: 41.7%; }
+  20% { top: 46.7%;left:41.7%; }
+  45% { top: 46.7%;left:68.6%; }
+  75% { top:23.2%;left:68.6%; }
+  100% { left: 54.6%;top: 14.4%; }
+}
 $dist: -14px;
 @keyframes cursorFade
 {
@@ -274,8 +293,25 @@ $dist: -14px;
   #circle_7_ { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 2.6s; }
   #line_x5F_4_3_ { stroke-dasharray: 480; stroke-dashoffset: 480;animation-delay: 3.1s; }
   #line_x5F_6 { stroke-dasharray: 124.5; stroke-dashoffset: 124.5;animation-delay: 3.6s;animation-duration: 0.2s; }
-}
 
+  #about-img2 {}
+}
+.about-img {
+  image {
+    opacity: 0; transform: translateY(30px);
+    animation: appendImg 1s forwards;
+    &#about-img1 { animation-delay: 1s; }
+    &#about-img2 { animation-delay: 2.8s; }
+  }
+}
+@keyframes appendImg {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+// @keyframes appendImg {
+//   0% { opacity: 0; }
+//   100% { opacity: 1; }
+// }
 @keyframes drawLine {
   to { stroke-dashoffset: 0; }
 }
