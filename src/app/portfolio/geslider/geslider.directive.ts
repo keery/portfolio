@@ -115,19 +115,18 @@ export class GESliderDirective implements AfterViewInit {
                     }
                     else direction = (this.params.axe == "vertical") ? 'bottom' : 'right';
                     const translation = indexSlide*100;
-                    console.log(translation);
                     switch (direction) {
                         case "left":
-                                this.renderer.setStyle(this.ul, 'transform', "translateX("+translation+"%)");
+                                this.renderer.setStyle(this.ul, 'left', translation+'%');
                             break;
                          case "right":
-                                this.renderer.setStyle(this.ul, 'transform', "translateX(-"+translation+"%)");
+                                this.renderer.setStyle(this.ul, 'left', "-"+translation+'%');
                             break;                           
                          case "top":
-                                this.renderer.setStyle(this.ul, 'transform', "translateY("+translation+"%)");
+                                this.renderer.setStyle(this.ul, 'top', translation+'%');
                             break;
                         case "bottom":
-                                this.renderer.setStyle(this.ul, 'transform', "translateY(-"+translation+"%)");
+                                this.renderer.setStyle(this.ul, 'top', "-"+translation+'%');
                             break;                                                   
                     }
                 break;

@@ -44,7 +44,7 @@
   height: 100%;
   overflow: hidden;
 
-  .slides { transition: transform 1.2s 2s;
+  .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0;
     > li {  }
   }
   
@@ -109,10 +109,9 @@
       color: #ffffff;
     }
   }
-  // .about-schema { width: 540px; height: 100%;display: inline-block;vertical-align: top; position: relative;
   .about-schema { width: 50%; height: 100%;display: inline-block;vertical-align: top; position: relative;
 
-    hr { width: 2px; height: 100%; background-color: #f2c84c; border: none; position: absolute; left: 112px; }
+    // hr { width: 2px; height: 100%; background-color: #f2c84c; border: none; position: absolute; left: 112px; }
     .about-schema-container { /*height: 735px; */
       > svg { position: absolute;left: 0; right: 0; top:50%; transform: translateY(-50%);height: 100%;width: 100%;
         &.about-step { background-color: #12121c; }
