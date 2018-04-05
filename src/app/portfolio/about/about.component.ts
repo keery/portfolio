@@ -1,5 +1,6 @@
-import { Component, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { GESliderDirective } from '../geslider/geslider.directive';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 
@@ -13,11 +14,15 @@ export class AboutComponent implements AfterViewInit
 	private currentSlide: number = 1
 	private maxStep: number = 5;
 	private cursor;
+
+	@ViewChild(GESliderDirective) element:GESliderDirective;
+
 	slideChangeObservable = Observable.fromEvent(document, 'changeSlide');
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
 	ngAfterViewInit() {
+		console.log(this.element);
 		this.cursor = document.querySelector("#cursor");
        	this.slideChangeObservable.debounceTime(2000)
         .subscribe((event) => {
@@ -26,15 +31,16 @@ export class AboutComponent implements AfterViewInit
 	}
 
     prevStep(): void {    	
+    	this.element.prevSlide();
 		this.changeStepTo(this.currentStep - 1);
     }
 
     nextStep(): void {
+    	this.element.nextSlide();
 		this.changeStepTo(this.currentStep + 1);
     }
 
     changeStepTo(idStep : number) {
-
     	if(idStep > 0 && idStep <= this.maxStep) {
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
 	    	if(this.currentStep != 0) {

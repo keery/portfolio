@@ -16,6 +16,7 @@ export class GESliderDirective implements AfterViewInit {
     private params = {animation: 'fade', axe: 'horizontal'}
 
     constructor(private elRef: ElementRef, private renderer: Renderer2) {}
+ 
 
     @HostListener('wheelUp', ['$event']) listenerWheelUp(event: any) {
         this.eventOutput = event;

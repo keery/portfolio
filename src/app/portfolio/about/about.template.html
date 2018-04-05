@@ -21,9 +21,9 @@
 				<div id="cursor" class="step-0-1"></div>
 			</div>
 		</div>
-		<div id="about-description">
-			<ul>
-				<li class="active">
+		<div id="about-description" GESlider>
+			<ul class="slides">
+				<li class="active"  [attr.data-slide-id]="1">
 					<h2>A propos de moi</h2>
 					<div class="sub-info">
 						<div>
@@ -37,8 +37,8 @@
 					</div>
 					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
 				</li>
-				<li>
-					<h2>A propos de moi</h2>
+				<li  [attr.data-slide-id]="2">
+					<h2>A propos 2</h2>
 					<div class="sub-info">
 						<div>
 							<div class="subtitle">Période</div>
@@ -50,7 +50,21 @@
 						</div>	
 					</div>
 					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
-				</li>				
+				</li>		
+				<li [attr.data-slide-id]="3">
+					<h2>A propos 3</h2>
+					<div class="sub-info">
+						<div>
+							<div class="subtitle">Période</div>
+							<i>2014 à aujourd'hui</i>
+						</div>	
+						<div>
+							<div class="subtitle">Entreprise</div>
+							<i><a href="gencontact.fr">gencontact.fr</a></i>
+						</div>	
+					</div>
+					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
+				</li>								
 			</ul>
 		</div>
 		<div id="slider-schema" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}">
