@@ -57,10 +57,15 @@ export class AboutComponent implements AfterViewInit
 	        }
 			this.currentStep = idStep;    
     	}
-    	else {
+    	else if (idStep <= 0) {
 	    	this.renderer.removeClass(this.cursor, 'block-top');
 			this.cursor.offsetWidth;
 	    	this.renderer.addClass(this.cursor, 'block-top');
+    	}
+    	else if (idStep > this.maxStep) {
+    		this.renderer.removeClass(this.cursor, 'block-bottom');
+			this.cursor.offsetWidth;
+	    	this.renderer.addClass(this.cursor, 'block-bottom');
     	}
 
     }

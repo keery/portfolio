@@ -1,7 +1,7 @@
 <!-- <div style="padding: 20px;">
 	<p class="line-1 anim-typewriter">Animation typewriter style using css steps()</p>
 </div> -->
-<div id="about" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}">
+<div id="about">
 	<div id="about-container"  mousewheel="4000" (wheelUp)="prevStep()" (wheelDown)="nextStep()">
 		<div class="vertical-text">
 			<div>
@@ -21,9 +21,9 @@
 				<div id="cursor" class="step-0-1"></div>
 			</div>
 		</div>
-		<ul class="slides">			 
-			<li [attr.data-slide-id]="1">
-				<div class="about-description">
+		<div id="about-description">
+			<ul>
+				<li class="active">
 					<h2>A propos de moi</h2>
 					<div class="sub-info">
 						<div>
@@ -36,74 +36,77 @@
 						</div>	
 					</div>
 					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
-				</div>
-				<div class="about-schema">
-					<div class="about-schema-container">
-						<svg data-v-79a08562="" version="1.1" id="about-step-one-line" class="about-step active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
-							<g data-v-79a08562="" id="part-1" transform="translate(0 0)">
-								<polyline class="st2" data-v-79a08562="" id="line_x5F_6" points="165,806.5 138,806.5 138,899.5 "></polyline> 
-								<polyline class="st2" data-v-79a08562="" id="line_x5F_4_3_" points="532.8,727.5 532.8,806.5 138,806.5 "></polyline> 
-								<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle>
-						<path class="st2" d="M451.3,526.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_2"></path>
-						<g data-v-79a08562="" id="bus_x5F_info" style="opacity: 1;">
-							<g data-v-79a08562="" id="bus_x5F_number" style="opacity: 1;">
+				</li>
+				<li>
+					<h2>A propos de moi</h2>
+					<div class="sub-info">
+						<div>
+							<div class="subtitle">Période</div>
+							<i>2014 à aujourd'hui</i>
+						</div>	
+						<div>
+							<div class="subtitle">Entreprise</div>
+							<i><a href="gencontact.fr">gencontact.fr</a></i>
+						</div>	
+					</div>
+					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
+				</li>				
+			</ul>
+		</div>
+		<div id="slider-schema" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}">
+			<ul class="slides">			 
+				<li [attr.data-slide-id]="1">
+					<div class="about-schema">
+						<div class="about-schema-container">
+							<svg data-v-79a08562="" version="1.1" id="about-step-one-line" class="about-step active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
+								<g data-v-79a08562="" id="part-1" transform="translate(0 0)">
+									<polyline class="st2" data-v-79a08562="" id="line_x5F_6" points="165,806.5 138,806.5 138,899.5 "></polyline> 
+									<polyline class="st2" data-v-79a08562="" id="line_x5F_4_3_" points="532.8,727.5 532.8,806.5 138,806.5 "></polyline> 
+									<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle>
+							<path class="st2" d="M451.3,526.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_2"></path>
+							<g data-v-79a08562="" id="bus_x5F_info" style="opacity: 1;">
+								<g data-v-79a08562="" id="bus_x5F_number" style="opacity: 1;">
+								</g> 
+								<circle class="st2" cx="136.5" cy="209.5" data-v-79a08562="" id="circle" r="101"></circle>
 							</g> 
-							<circle class="st2" cx="136.5" cy="209.5" data-v-79a08562="" id="circle" r="101"></circle>
-						</g> 
-						<polyline class="st2" data-v-79a08562="" id="line_x5F_4_2_" points="524,430 535.5,430 535.5,495.5 "></polyline> 
-						<polyline class="st2" data-v-79a08562="" id="line_x5F_2" points="136.6,311 136.6,430 246,430 525.7,430 "></polyline> 
-						<path class="st2" d="M54.3,110.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_1"></path> 
-						<line class="st2" data-v-79a08562="" id="line_x5F_1" x1="138" x2="138" y1="79" y2="0"></line>  </g>
-						</svg>
-						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
-							<image xlink:href="../../assets/freelancer-fail.png" width="170" x="60" y="150" id="about-img1" preserveAspectRatio="xMinYMin slice"></image>
-							<image xlink:href="../../assets/logo-gen-contact.png" width="160" x="452" y="595" id="about-img2" preserveAspectRatio="xMinYMin slice"></image>							
-						</svg>	
-				<!-- 						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
-							<circle class="st2 " cx="136.5" cy="209.5" data-v-79a08562="" r="101"></circle>
-						</svg>	 -->			
+							<polyline class="st2" data-v-79a08562="" id="line_x5F_4_2_" points="524,430 535.5,430 535.5,495.5 "></polyline> 
+							<polyline class="st2" data-v-79a08562="" id="line_x5F_2" points="136.6,311 136.6,430 246,430 525.7,430 "></polyline> 
+							<path class="st2" d="M54.3,110.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_1"></path> 
+							<line class="st2" data-v-79a08562="" id="line_x5F_1" x1="138" x2="138" y1="79" y2="0"></line>  </g>
+							</svg>
+							<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
+								<image xlink:href="../../assets/freelancer-fail.png" width="170" x="60" y="150" id="about-img1" preserveAspectRatio="xMinYMin slice"></image>
+								<image xlink:href="../../assets/logo-gen-contact.png" width="160" x="452" y="595" id="about-img2" preserveAspectRatio="xMinYMin slice"></image>							
+							</svg>	
+						</div>
 					</div>
-				</div>
-			</li>
-			<li [attr.data-slide-id]="2">
-				<div class="about-description">
-					<h2>A propos de moi</h2>
-					<div class="sub-info">
-						<div>
-							<div class="subtitle">Période</div>
-							<i>2014 à aujourd'hui</i>
-						</div>	
-						<div>
-							<div class="subtitle">Entreprise</div>
-							<i><a href="gencontact.fr">gencontact.fr</a></i>
-						</div>	
-					</div>
-					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
-				</div>					
-				<div class="about-schema">
-					<div class="about-schema-container">
-						<svg id="about-step-one-line" class="about-step" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 660 900">
-							<g id="part-1" style='transform: translateX(137px);'>
-								<g id="bus_info">
-									<circle id="circle" class="st2" cx="321.07" cy="230.5" r="101"/>
+				</li>
+				<li [attr.data-slide-id]="2">				
+					<div class="about-schema">
+						<div class="about-schema-container">
+							<svg id="about-step-one-line" class="about-step" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 660 900">
+								<g id="part-1" style='transform: translateX(137px);'>
+									<g id="bus_info">
+										<circle id="circle" class="st2" cx="321.07" cy="230.5" r="101"/>
+									</g>
+									<path id="arc_1" class="st2" d="M381.3,130.5A130,130,0,0,1,548,129" transform="translate(-142.43 1)"/>
+									<polyline id="line_1" class="st2" points="323.4 101.33 323.4 48.25 1 48.25 1 0"/>
+									<path id="line_1-2" data-name="line_1" class="st2" d="M465.83,47.25" transform="translate(-142.43 1)"/>
+									<path id="line_1-3" data-name="line_1" class="st2" d="M466.25,99.5" transform="translate(-142.43 1)"/>
+									<path class="st2" d="M463.5,330.5" transform="translate(-142.43 1)"/>
+									<circle class="st2" cx="162.2" cy="555.81" r="19"/>
+									<polyline class="st2" points="321.07 331.5 321.07 441 162.2 441 162.2 535"/>
 								</g>
-								<path id="arc_1" class="st2" d="M381.3,130.5A130,130,0,0,1,548,129" transform="translate(-142.43 1)"/>
-								<polyline id="line_1" class="st2" points="323.4 101.33 323.4 48.25 1 48.25 1 0"/>
-								<path id="line_1-2" data-name="line_1" class="st2" d="M465.83,47.25" transform="translate(-142.43 1)"/>
-								<path id="line_1-3" data-name="line_1" class="st2" d="M466.25,99.5" transform="translate(-142.43 1)"/>
-								<path class="st2" d="M463.5,330.5" transform="translate(-142.43 1)"/>
-								<circle class="st2" cx="162.2" cy="555.81" r="19"/>
-								<polyline class="st2" points="321.07 331.5 321.07 441 162.2 441 162.2 535"/>
-							</g>
-						</svg>
-						<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
-							<g style='transform: translateX(137px);'>
-								<image width="130" height="93" x="257.22" y="187.67" xlink:href="../../assets/logo-neftis.png"/>
-							</g>
-						</svg>		
-					</div>
-				</div>				
-			</li>
-		</ul>
+							</svg>
+							<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
+								<g style='transform: translateX(137px);'>
+									<image width="130" height="93" x="257.22" y="187.67" xlink:href="../../assets/logo-neftis.png"/>
+								</g>
+							</svg>		
+						</div>
+					</div>				
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>

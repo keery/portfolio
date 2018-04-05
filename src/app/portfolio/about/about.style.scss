@@ -44,11 +44,11 @@
   height: 100%;
   overflow: hidden;
 
-  .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0;
+  .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0; bottom: 0; right: 0;
     > li {  }
   }
   
-  #about-container { max-width: 1800px; margin: 0 auto; height: 100%;position: relative;width: 90%;
+  #about-container { max-width: 1800px; margin: 0 auto; height: 100%;position: relative;width: 90%;font-size:0;
     > ul { font-size: 0;height: 100%;
       > li { height: 100%; }
     }
@@ -71,8 +71,14 @@
     }   
   }
 
-  .about-description { font-size: 15px; display: inline-block;vertical-align: top;width: 50%; padding-top: 25vh;
-    > h2 {
+  #about-description { font-size: 15px; display: inline-block;vertical-align: top;width: 50%; padding-top: 25vh;    display: inline-block; vertical-align: top;  width: 50%;
+    ul {
+      > li { display: none;
+        &.active { display: block; }
+      }
+    }
+
+    h2 {
       font-family: 'Fjalla One';
       text-transform: uppercase;
       font-weight: bold;
@@ -109,7 +115,8 @@
       color: #ffffff;
     }
   }
-  .about-schema { width: 50%; height: 100%;display: inline-block;vertical-align: top; position: relative;
+  #slider-schema { font-size: 0; width: 50%; display: inline-block; height: 100%; position: relative; }
+  .about-schema { height: 100vh;position: relative;
 
     // hr { width: 2px; height: 100%; background-color: #f2c84c; border: none; position: absolute; left: 112px; }
     .about-schema-container { /*height: 735px; */
@@ -168,7 +175,9 @@
     &.step-3-2 { left:14.9%; top: 110%;height: 4.2%; width: 6.3%;animation: step-3-2 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
     &.step-3-4 { animation: step-3-4 2s 1s forwards, stretchCursor 0.5s 2.5s forwards; }
     &.step-4-3 { animation: step-4-3 2s forwards, reduceCursor 0.5s forwards; }
-    &.step-4-5 { animation: step-4-5 2s forwards, reduceCursor 0.5s forwards; }
+    &.step-4-5 { animation: step-4-5 2s forwards, reduceCursor 0.5s forwards; 
+      &.block-bottom { animation: step-4-5 2s forwards, reduceCursor 0.5s forwards, blockBottom 1s cubic-bezier(0.1, 0.33, 0.34, 2.54); }
+    }
     &.step-5-4 { animation: step-5-4 2s forwards, stretchCursor 0.5s 1.5s forwards; }
     &.start-delay { animation-delay: 0.2s; }
     // &.block-top { animation:  }
@@ -201,6 +210,11 @@
 @keyframes blockTop {
   0% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+@keyframes blockBottom {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
   100% { transform: translateY(0); }
 }
 @keyframes step-0-1 {
