@@ -2,7 +2,7 @@
 	<p class="line-1 anim-typewriter">Animation typewriter style using css steps()</p>
 </div> -->
 <div id="about">
-	<div id="about-container"  mousewheel="4000" (wheelUp)="prevStep()" (wheelDown)="nextStep()">
+	<div id="about-container" mousewheel="{{ delayWheel }}" (wheelUp)="prevStep()" (wheelDown)="nextStep()">
 		<div class="vertical-text">
 			<div>
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="18" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -18,56 +18,24 @@
 		<div class="cursor-container">
 			<div class="cursor-mask">
 				<img src="../../assets/mask.png" alt="">
-				<div id="cursor" class="step-0-1"></div>
+				<div id="cursor"></div>
 			</div>
 		</div>
-		<div id="about-description" GESlider>
+		<div id="about-description" GESlider #sliderText>
 			<ul class="slides">
-				<li class="active"  [attr.data-slide-id]="1">
-					<h2>A propos de moi</h2>
+				<li *ngFor="let key of steps | ObjLoop" [attr.data-slide-id]="steps[key].idSlide">
+					<h2>{{ steps[key].titre }}</h2>
 					<div class="sub-info">
-						<div>
-							<div class="subtitle">Période</div>
-							<i>2014 à aujourd'hui</i>
-						</div>	
-						<div>
-							<div class="subtitle">Entreprise</div>
-							<i><a href="gencontact.fr">gencontact.fr</a></i>
+						<div *ngFor="let keySub of steps[key].subInfo | ObjLoop">
+							<div class="subtitle">{{ keySub }}</div>
+							<i>{{ steps[key].subInfo[keySub] }}</i>
 						</div>	
 					</div>
-					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
-				</li>
-				<li  [attr.data-slide-id]="2">
-					<h2>A propos 2</h2>
-					<div class="sub-info">
-						<div>
-							<div class="subtitle">Période</div>
-							<i>2014 à aujourd'hui</i>
-						</div>	
-						<div>
-							<div class="subtitle">Entreprise</div>
-							<i><a href="gencontact.fr">gencontact.fr</a></i>
-						</div>	
-					</div>
-					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
-				</li>		
-				<li [attr.data-slide-id]="3">
-					<h2>A propos 3</h2>
-					<div class="sub-info">
-						<div>
-							<div class="subtitle">Période</div>
-							<i>2014 à aujourd'hui</i>
-						</div>	
-						<div>
-							<div class="subtitle">Entreprise</div>
-							<i><a href="gencontact.fr">gencontact.fr</a></i>
-						</div>	
-					</div>
-					<p class="about-text">Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>			
+					<p class="about-text">{{ steps[key].description }}</p>			
 				</li>								
 			</ul>
 		</div>
-		<div id="slider-schema" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}">
+		<div id="slider-schema" GESlider [GESliderParams]="{animation: 'slide', axe: 'vertical'}" #sliderSchema>
 			<ul class="slides">			 
 				<li [attr.data-slide-id]="1">
 					<div class="about-schema">
@@ -76,13 +44,9 @@
 								<g data-v-79a08562="" id="part-1" transform="translate(0 0)">
 									<polyline class="st2" data-v-79a08562="" id="line_x5F_6" points="165,806.5 138,806.5 138,899.5 "></polyline> 
 									<polyline class="st2" data-v-79a08562="" id="line_x5F_4_3_" points="532.8,727.5 532.8,806.5 138,806.5 "></polyline> 
-									<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle>
 							<path class="st2" d="M451.3,526.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_2"></path>
-							<g data-v-79a08562="" id="bus_x5F_info" style="opacity: 1;">
-								<g data-v-79a08562="" id="bus_x5F_number" style="opacity: 1;">
-								</g> 
-								<circle class="st2" cx="136.5" cy="209.5" data-v-79a08562="" id="circle" r="101"></circle>
-							</g> 
+							<circle class="st2" cx="136.5" cy="209.5" data-v-79a08562="" id="circle" r="101"></circle>
+							<circle class="st2" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101"></circle>
 							<polyline class="st2" data-v-79a08562="" id="line_x5F_4_2_" points="524,430 535.5,430 535.5,495.5 "></polyline> 
 							<polyline class="st2" data-v-79a08562="" id="line_x5F_2" points="136.6,311 136.6,430 246,430 525.7,430 "></polyline> 
 							<path class="st2" d="M54.3,110.5c22.7-19.3,52.1-31,84.2-31c31.3,0,60,11.1,82.5,29.5" data-v-79a08562="" id="arc_x5F_1"></path> 
@@ -91,14 +55,16 @@
 							<svg data-v-79a08562="" version="1.1" id="about-step-one-img" class="about-img active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 660 900" xml:space="preserve">
 								<image xlink:href="../../assets/freelancer-fail.png" width="170" x="60" y="150" id="about-img1" preserveAspectRatio="xMinYMin slice"></image>
 								<image xlink:href="../../assets/logo-gen-contact.png" width="160" x="452" y="595" id="about-img2" preserveAspectRatio="xMinYMin slice"></image>							
+								<circle class="invisble-shape" cx="136.5" cy="209.5" data-v-79a08562="" id="circle" r="101" (click)="selectStep(1)"></circle>
+								<circle class="invisble-shape" cx="532.5" cy="625.5" data-v-79a08562="" id="circle_7_" r="101" (click)="selectStep(2)"></circle>
 							</svg>	
 						</div>
 					</div>
 				</li>
-				<li [attr.data-slide-id]="2">				
+				<li [attr.data-slide-id]="2" (click)="selectStep(2)">				
 					<div class="about-schema">
 						<div class="about-schema-container">
-							<svg id="about-step-one-line" class="about-step" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 660 900">
+							<svg id="about-step-two-line" class="about-step" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 660 900">
 								<g id="part-1" style='transform: translateX(137px);'>
 									<g id="bus_info">
 										<circle id="circle" class="st2" cx="321.07" cy="230.5" r="101"/>

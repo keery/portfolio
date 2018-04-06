@@ -16,6 +16,8 @@ export class MouseWheelDirective implements AfterViewInit  {
     }
     ngAfterViewInit() {
         if(this.delay == '') this.delay = '1200';
+
+        
        // // this.test.debounceTime(1000)
        //  .subscribe((event) => {
        //      this.mouseWheel(event);
@@ -28,14 +30,14 @@ export class MouseWheelDirective implements AfterViewInit  {
         if(this.emiter){
             this.emiter = false;        
 
-                const thisEvent = window.event || event;
-                const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+            const thisEvent = window.event || event;
+            const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
 
-                if(delta > 0) {
-                    this.wheelUp.emit(thisEvent);
-                } else if(delta < 0) {
-                    this.wheelDown.emit(thisEvent);
-                }
+            if(delta > 0) {
+                this.wheelUp.emit(thisEvent);
+            } else if(delta < 0) {
+                this.wheelDown.emit(thisEvent);
+            }
             setTimeout(()=> {                
                 this.emiter = true;
             }, this.delay);

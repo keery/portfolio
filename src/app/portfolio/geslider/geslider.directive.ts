@@ -89,6 +89,7 @@ export class GESliderDirective implements AfterViewInit {
     }
 
     goToSlide(idSlide:any):void{   
+        // console.log(idSlide);
         const indexSlide = idSlide -1;         
         if (this.slides[indexSlide]) {
             switch(this.params.animation) {

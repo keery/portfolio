@@ -14,8 +14,7 @@ import { GESliderDirective } from './geslider/geslider.directive';
 import { GESliderNavigationDirective, GESliderDirectionDirective } from './geslider/geslider-navigation.directive';
 import { MouseWheelDirective } from './mousewheel.directive';
 import { GEParallaxDirective } from './geparallax/geparallax.directive';
-
-
+import { ObjLoop } from './../loop/object-loop.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +30,7 @@ import { GEParallaxDirective } from './geparallax/geparallax.directive';
     CanvasOpacityComponent,
     LoaderComponent,
     GEParallaxDirective,
+    ObjLoop
   ],
   imports: [
     CommonModule,

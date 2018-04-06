@@ -50,7 +50,7 @@
 	}	
 
 	#menu {	
-		overflow: hidden; z-index: 9;display: block; position: fixed;
+		overflow: hidden; z-index: 820;display: block; position: fixed;
 
 		&:before, &:after {content: '';z-index:9;transform: translateX(-50%) translateY(-50%) scale(0);position: absolute;left:0;border-radius: 100%;transition: all 0.5s ease-in-out;}
 		&:before { width: 100%;background-color: rgba(0,0,0,0.85); padding-bottom:100%;top:0; }

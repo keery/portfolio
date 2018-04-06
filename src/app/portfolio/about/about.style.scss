@@ -44,9 +44,9 @@
   height: 100%;
   overflow: hidden;
 
-  .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0; bottom: 0; right: 0;
-    > li {  }
-  }
+  // .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0; bottom: 0; right: 0;
+  //   > li {  }
+  // }
   
   #about-container { max-width: 1800px; margin: 0 auto; height: 100%;position: relative;width: 90%;font-size:0;
     > ul { font-size: 0;height: 100%;
@@ -71,11 +71,33 @@
     }   
   }
 
-  #about-description { font-size: 15px; display: inline-block;vertical-align: top;width: 50%; padding-top: 25vh;    display: inline-block; vertical-align: top;  width: 50%;
-    ul {
-      > li { display: none;
-        &.active { display: block; }
+  #about-description { font-size: 15px; display: inline-block;vertical-align: top;width: 50%; padding-top: 25vh; height: 100%; display: inline-block; vertical-align: top;  width: 50%;
+    ul { position: relative;
+      > li { position: absolute;left: 0;top:0;right: 0;opacity: 0;
+        &.first-plan { z-index: 5; }
+        &.active { opacity: 1;
+          h2, .sub-info, .about-text { transform: translateY(0);opacity: 1; }
+        }
+
+        &.leave { animation: hideText 1s ease-in-out; }
       }
+    }
+
+    @keyframes hideText {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-30px);
+        opacity: 0;
+      }      
+    }
+
+    h2, .sub-info, .about-text  {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform ease-in-out 0.7s, opacity ease-in-out 0.7s;
     }
 
     h2 {
@@ -85,12 +107,14 @@
       color: #f2c84c;
       font-size: 50px;
       margin: 0;
+      transition-delay: 1s;
     }
 
     .sub-info {
       margin: 30px 0;
       font-family: Cormorant Garamond;
       color: #c5cd94;
+      transition-delay: 1.2s;
 
       > div {
         display: inline-block;
@@ -113,9 +137,12 @@
     .about-text {
       font-family: Cormorant Garamond;
       color: #ffffff;
+      transition-delay: 1.4s;
     }
   }
-  #slider-schema { font-size: 0; width: 50%; display: inline-block; height: 100%; position: relative; }
+  #slider-schema { font-size: 0; width: 50%; display: inline-block; height: 100%; position: relative; 
+    .slides { transition: top 1.2s 2s, left 1.2s 2s;position: absolute;top:0;left:0; bottom: 0; right: 0; }
+  }
   .about-schema { height: 100vh;position: relative;
 
     // hr { width: 2px; height: 100%; background-color: #f2c84c; border: none; position: absolute; left: 112px; }
@@ -316,6 +343,9 @@ $dist: -14px;
     &#about-img1 { animation-delay: 1s; }
     &#about-img2 { animation-delay: 2.8s; }
   }
+}
+.invisble-shape { fill: transparent; cursor: pointer; stroke-width: 2px; stroke:transparent; transition: stroke 0.2s ease-in-out;
+  &:hover { stroke: white;}
 }
 @keyframes appendImg {
   0% { opacity: 0; transform: translateY(30px); }
