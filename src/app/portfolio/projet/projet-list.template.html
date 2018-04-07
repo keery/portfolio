@@ -1,6 +1,6 @@
 <section id="projetList">
 
-	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider mousewheel multi-perspective perspectiveX="3" perspectiveY="12">
+	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider [mousewheel]="1200" multi-perspective perspectiveX="3" perspectiveY="12">
 	<ul class="numProjects">
 		<li [attr.geslide-target]="1" class="active">
 			<b>01</b>

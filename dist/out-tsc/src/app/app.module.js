@@ -15,7 +15,6 @@ var app_routing_module_1 = require("./app-routing.module");
 var animations_1 = require("@angular/platform-browser/animations");
 var main_menu_component_1 = require("./main-menu/main-menu.component");
 var burger_component_1 = require("./burger/burger.component");
-PokemonTypeColorPipe;
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

@@ -82,6 +82,7 @@ var GESliderDirective = /** @class */ (function () {
     };
     GESliderDirective.prototype.goToSlide = function (idSlide) {
         var _this = this;
+        // console.log(idSlide);
         var indexSlide = idSlide - 1;
         if (this.slides[indexSlide]) {
             switch (this.params.animation) {

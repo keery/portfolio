@@ -20,7 +20,9 @@ export class AboutComponent implements AfterViewInit
 	private prev: number;
 	public steps: { [key: number]: Step }; 
 	private stateChange: boolean = true;
-	private delayWheel = 0;
+	private delayWheel = 4900;
+
+	private tou = false;
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {
 		this.setSteps();
@@ -42,10 +44,16 @@ export class AboutComponent implements AfterViewInit
     stepChanging(id:number) {
     	if(this.stateChange) {		
     		this.stateChange = false;
-				this.changeStepTo(id);
+			this.changeStepTo(id);
+
 	    	setTimeout(()=>{
 				this.stateChange = true;
 			}, this.delayWheel);
+    	}
+
+    	if(this.tou)  {
+			this.tou = false;
+    		this.changeStepTo(id);
     	}
     }
 
@@ -68,48 +76,23 @@ export class AboutComponent implements AfterViewInit
 
     prevStep(): void {    	
     	this.stepChanging(this.currentStep-1)
-		// this.changeStepTo(this.currentStep - 1);
     }
 
     nextStep(): void {
     	this.stepChanging(this.currentStep+1)
-		// this.changeStepTo(this.currentStep + 1);
     }
 
-    selectStep(tou : number) {
-    	console.log(this.delayWheel);
-    	if(tou != this.currentStep) this.stepChanging(tou);
+    selectStep(id : number) {
+    	console.log(id);
+    	if(id != this.currentStep) this.stepChanging(id);
     }
 
     changeStepTo(idStep : number) {
-    	// this.delayWheel = 10000;
-
-   		if(this.currentStep > 0) {
-   			console.log(this.currentStep);
-   			console.log(idStep);
-
-   			if(idStep in this.steps) {
-
-	   			if(this.currentStep in this.steps) {
-					this.delayWheel = this.steps[this.currentStep].delay;
-	   			}
-				
-				// console.log(this.currentStep);
-				// console.log(this.steps[this.currentStep]);
-				// console.log(this.currentStep in this.steps);
-				// console.log(this.delayWheel);
-	    		if(idStep >  this.currentStep) {
-					this.delayWheel = this.steps[this.currentStep].delay;
-				}
-				else {
-					this.delayWheel = this.steps[idStep].delay;
-				}
-				// console.log(this.delayWheel);
-   			}
-   			else {
-   				this.delayWheel = 1000;
-   			}
-
+		if(idStep >  this.currentStep && this.currentStep in this.steps) {
+			this.delayWheel = this.steps[this.currentStep].delay;
+		}
+		else if (idStep <  this.currentStep && idStep in this.steps) {
+			this.delayWheel = this.steps[idStep].delay;
 		}
 
     	if(idStep > 0 && idStep <= this.maxStep) {
@@ -122,15 +105,14 @@ export class AboutComponent implements AfterViewInit
 				this.cursor.offsetWidth;
 	    	}
 
-	    	console.log(this.cursor);
-
 	    	this.renderer.addClass(this.cursor, 'step-'+this.currentStep+'-'+idStep);
 	    	
 	    	if(idStep in this.steps) {
 	     		this.sliderText.goToSlide(this.steps[idStep].idSlide);
 	    	}
 
-	        if(idStep%3 == 0) {       
+	        if(idStep%3 == 0) {
+	        	this.delayWheel = 5000;  
 	        	let stepFunction = '';
 	        	if(idStep >  this.currentStep) {
 	        		++this.currentSlide 
@@ -142,6 +124,7 @@ export class AboutComponent implements AfterViewInit
 	        	this.sliderSchema.goToSlide(this.currentSlide);		
 
 	        	setTimeout(()=>{
+	        		this.tou = true;
 					stepFunction == "next" ? this.nextStep() : this.prevStep();
 	        	}, 2000);
 
@@ -150,15 +133,18 @@ export class AboutComponent implements AfterViewInit
 	        this.prev = this.currentStep;
 			this.currentStep = idStep;    
     	}
-    	else if (idStep <= 0) {
-	    	this.renderer.removeClass(this.cursor, 'block-top');
-			this.cursor.offsetWidth;
-	    	this.renderer.addClass(this.cursor, 'block-top');
-    	}
-    	else if (idStep > this.maxStep) {
-    		this.renderer.removeClass(this.cursor, 'block-bottom');
-			this.cursor.offsetWidth;
-	    	this.renderer.addClass(this.cursor, 'block-bottom');
+    	else {
+    		this.delayWheel = 1000;
+	    	if (idStep <= 0) {
+		    	this.renderer.removeClass(this.cursor, 'block-top');
+				this.cursor.offsetWidth;
+		    	this.renderer.addClass(this.cursor, 'block-top');
+	    	}
+	    	else if (idStep > this.maxStep) {
+	    		this.renderer.removeClass(this.cursor, 'block-bottom');
+				this.cursor.offsetWidth;
+		    	this.renderer.addClass(this.cursor, 'block-bottom');
+	    	}
     	}
 
     }

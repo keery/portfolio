@@ -21,6 +21,7 @@ var geslider_directive_1 = require("./geslider/geslider.directive");
 var geslider_navigation_directive_1 = require("./geslider/geslider-navigation.directive");
 var mousewheel_directive_1 = require("./mousewheel.directive");
 var geparallax_directive_1 = require("./geparallax/geparallax.directive");
+var object_loop_pipe_1 = require("./../loop/object-loop.pipe");
 var PortfolioModule = /** @class */ (function () {
     function PortfolioModule() {
     }
@@ -39,6 +40,7 @@ var PortfolioModule = /** @class */ (function () {
                 canvas_opacity_component_1.CanvasOpacityComponent,
                 loader_component_1.LoaderComponent,
                 geparallax_directive_1.GEParallaxDirective,
+                object_loop_pipe_1.ObjLoop
             ],
             imports: [
                 common_1.CommonModule,

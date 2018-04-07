@@ -10,11 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var Observable_1 = require("rxjs/Observable");
 var geslider_directive_1 = require("../geslider/geslider.directive");
-require("rxjs/add/observable/fromEvent");
-require("rxjs/add/operator/debounceTime");
 var mock_steps_1 = require("./mock-steps");
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/add/observable/fromEvent");
 var AboutComponent = /** @class */ (function () {
     function AboutComponent(elRef, renderer) {
         this.elRef = elRef;
@@ -22,28 +21,78 @@ var AboutComponent = /** @class */ (function () {
         this.currentStep = 0;
         this.currentSlide = 1;
         this.maxStep = 5;
-        this.slideChangeObservable = Observable_1.Observable.fromEvent(document, 'changeSlide');
+        this.stateChange = true;
+        this.delayWheel = 4900;
+        this.changeStep = new core_1.EventEmitter();
+        this.test = Observable_1.Observable.fromEvent(document, 'changeStep');
         this.setSteps();
     }
-    AboutComponent.prototype.ngAfterViewInit = function () {
+    // @HostListener('changeStep', ['$event']) listenerWheelUp(event: any) {
+    //    	console.log(event);
+    //  //       	setTimeout(()=>{
+    // 	// }, 4900);
+    //    }
+    AboutComponent.prototype.stepChanging = function (id) {
         var _this = this;
+        if (this.stateChange) {
+            this.stateChange = false;
+            this.changeStepTo(id);
+            setTimeout(function () {
+                _this.stateChange = true;
+            }, this.delayWheel);
+        }
+    };
+    AboutComponent.prototype.ngAfterViewInit = function () {
+        // this.test
+        // // .debounceTime(1000)
+        // .subscribe((event) => {
+        //     console.log('subscribe');
+        // });
         this.cursor = document.querySelector("#cursor");
-        this.slideChangeObservable.debounceTime(2000)
-            .subscribe(function (event) {
-            event.detail.stepFunction == "next" ? _this.nextStep() : _this.prevStep();
-        });
+        this.stepChanging(1);
+        // document.dispatchEvent(new CustomEvent( 'mousewheel' )); 		
     };
     AboutComponent.prototype.setSteps = function () {
         this.steps = mock_steps_1.STEPS;
-        console.log(this.steps[1]);
     };
     AboutComponent.prototype.prevStep = function () {
-        this.changeStepTo(this.currentStep - 1);
+        this.stepChanging(this.currentStep - 1);
+        // this.changeStepTo(this.currentStep - 1);
     };
     AboutComponent.prototype.nextStep = function () {
-        this.changeStepTo(this.currentStep + 1);
+        this.stepChanging(this.currentStep + 1);
+        // this.changeStepTo(this.currentStep + 1);
+    };
+    AboutComponent.prototype.selectStep = function (tou) {
+        console.log(this.delayWheel);
+        if (tou != this.currentStep)
+            this.stepChanging(tou);
     };
     AboutComponent.prototype.changeStepTo = function (idStep) {
+        // this.delayWheel = 10000;
+        var _this = this;
+        if (this.currentStep > 0) {
+            console.log(this.currentStep);
+            console.log(idStep);
+            if (idStep in this.steps) {
+                if (this.currentStep in this.steps) {
+                    // this.delayWheel = this.steps[this.currentStep].delay;
+                    // }
+                    // console.log(this.currentStep);
+                    // console.log(this.steps[this.currentStep]);
+                    // console.log(this.currentStep in this.steps);
+                    // console.log(this.delayWheel);
+                    if (idStep > this.currentStep) {
+                        this.delayWheel = this.steps[this.currentStep].delay;
+                    }
+                    else {
+                        this.delayWheel = this.steps[idStep].delay;
+                    }
+                }
+                console.log(this.delayWheel);
+                // console.log(this.delayWheel);
+            }
+        }
         if (idStep > 0 && idStep <= this.maxStep) {
             //Supprime les classes lorsqu'on n'est plus au premier passage
             if (this.currentStep != 0) {
@@ -52,36 +101,55 @@ var AboutComponent = /** @class */ (function () {
                 this.cursor.offsetWidth;
             }
             this.renderer.addClass(this.cursor, 'step-' + this.currentStep + '-' + idStep);
-            this.element.goToSlide(idStep);
+            if (idStep in this.steps) {
+                this.sliderText.goToSlide(this.steps[idStep].idSlide);
+            }
             if (idStep % 3 == 0) {
-                var stepFunction = '';
+                var stepFunction_1 = '';
                 if (idStep > this.currentStep) {
                     ++this.currentSlide;
-                    stepFunction = 'next';
+                    stepFunction_1 = 'next';
                 }
                 else {
                     --this.currentSlide;
-                    stepFunction = 'prev';
+                    stepFunction_1 = 'prev';
                 }
-                document.dispatchEvent(new CustomEvent('changeSlide', { detail: { 'target': this.currentSlide, 'stepFunction': stepFunction } }));
+                this.sliderSchema.goToSlide(this.currentSlide);
+                setTimeout(function () {
+                    console.log();
+                    stepFunction_1 == "next" ? _this.nextStep() : _this.prevStep();
+                }, 2000);
+                // document.dispatchEvent(new CustomEvent( 'changeStep', { detail: { 'target': this.currentSlide, 'stepFunction' : stepFunction }} )); 		
             }
+            this.prev = this.currentStep;
             this.currentStep = idStep;
         }
-        else if (idStep <= 0) {
-            this.renderer.removeClass(this.cursor, 'block-top');
-            this.cursor.offsetWidth;
-            this.renderer.addClass(this.cursor, 'block-top');
-        }
-        else if (idStep > this.maxStep) {
-            this.renderer.removeClass(this.cursor, 'block-bottom');
-            this.cursor.offsetWidth;
-            this.renderer.addClass(this.cursor, 'block-bottom');
+        else {
+            this.delayWheel = 1000;
+            if (idStep <= 0) {
+                this.renderer.removeClass(this.cursor, 'block-top');
+                this.cursor.offsetWidth;
+                this.renderer.addClass(this.cursor, 'block-top');
+            }
+            else if (idStep > this.maxStep) {
+                this.renderer.removeClass(this.cursor, 'block-bottom');
+                this.cursor.offsetWidth;
+                this.renderer.addClass(this.cursor, 'block-bottom');
+            }
         }
     };
     __decorate([
-        core_1.ViewChild(geslider_directive_1.GESliderDirective),
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], AboutComponent.prototype, "changeStep", void 0);
+    __decorate([
+        core_1.ViewChild('sliderText', { read: geslider_directive_1.GESliderDirective }),
         __metadata("design:type", geslider_directive_1.GESliderDirective)
-    ], AboutComponent.prototype, "element", void 0);
+    ], AboutComponent.prototype, "sliderText", void 0);
+    __decorate([
+        core_1.ViewChild('sliderSchema', { read: geslider_directive_1.GESliderDirective }),
+        __metadata("design:type", geslider_directive_1.GESliderDirective)
+    ], AboutComponent.prototype, "sliderSchema", void 0);
     AboutComponent = __decorate([
         core_1.Component({
             templateUrl: './about.template.html',

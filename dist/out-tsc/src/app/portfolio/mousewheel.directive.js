@@ -14,8 +14,6 @@ var MouseWheelDirective = /** @class */ (function () {
     function MouseWheelDirective(el) {
         this.el = el;
         this.emiter = true;
-        // test = Observable.fromEvent(this.el.nativeElement, 'mousewheel');
-        this.delay = '1200';
         this.wheelUp = new core_1.EventEmitter();
         this.wheelDown = new core_1.EventEmitter();
     }
@@ -24,7 +22,7 @@ var MouseWheelDirective = /** @class */ (function () {
     };
     MouseWheelDirective.prototype.ngAfterViewInit = function () {
         if (this.delay == '')
-            this.delay = '1200';
+            this.delay = 0;
         // // this.test.debounceTime(1000)
         //  .subscribe((event) => {
         //      this.mouseWheel(event);
