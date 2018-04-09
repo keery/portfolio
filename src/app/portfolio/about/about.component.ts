@@ -22,8 +22,6 @@ export class AboutComponent implements AfterViewInit
 	private stateChange: boolean = true;
 	private delayWheel = 4900;
 
-	private tou = false;
-
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {
 		this.setSteps();
 	}
@@ -31,16 +29,8 @@ export class AboutComponent implements AfterViewInit
     @Output() changeStep = new EventEmitter();
 	@ViewChild('sliderText', {read: GESliderDirective}) sliderText:GESliderDirective;
 	@ViewChild('sliderSchema', {read: GESliderDirective}) sliderSchema:GESliderDirective;
-    test = Observable.fromEvent(document, 'changeStep');
+    // test = Observable.fromEvent(document, 'changeStep');
 
-
-
-	// @HostListener('changeStep', ['$event']) listenerWheelUp(event: any) {
- //    	console.log(event);
- //  //       	setTimeout(()=>{
-			
-	// 	// }, 4900);
- //    }
     stepChanging(id:number) {
     	if(this.stateChange) {		
     		this.stateChange = false;
@@ -49,11 +39,6 @@ export class AboutComponent implements AfterViewInit
 	    	setTimeout(()=>{
 				this.stateChange = true;
 			}, this.delayWheel);
-    	}
-
-    	if(this.tou)  {
-			this.tou = false;
-    		this.changeStepTo(id);
     	}
     }
 
@@ -124,7 +109,7 @@ export class AboutComponent implements AfterViewInit
 	        	this.sliderSchema.goToSlide(this.currentSlide);		
 
 	        	setTimeout(()=>{
-	        		this.tou = true;
+	        		this.stateChange = true;
 					stepFunction == "next" ? this.nextStep() : this.prevStep();
 	        	}, 2000);
 

@@ -5,30 +5,31 @@ export const STEPS: { [key: number]: Step } = {
 		idSlide : 1,
 		delay: 3000,
 		titre: "A propos de moi",
-		subInfo: {
-			Période : "2017-2018",
-			Entreprise : "gencontact.fr"
+		subInfo: {			
+			Email : '<a href="mailto:contact@guillaumeesnault.fr" class="slide-link"><div class="default">contact@guillaumeesnault.fr</div><div>contact@guillaumeesnault.fr</div></a>',
 		},
-		description: "Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae."
+		description: "Hello, je m'appelle Guillaume ESNAULT, j'ai 23 ans, je vis en région parisienne et suis actuellement en étude à l'école ESGI (BAC +3). J'ai commencé en autodidacte le développement web en 2013 jusqu'à aujourd'hui où j'ai pu apprendre des technos comme Symfony ou Angular, je cherche dorénavant à me spécialiser dans le développement front pour lequel j'ai un penchant significatif."
 	},
 	2 : {
 		idSlide : 2,
 		delay: 5000,
-		titre: "Il était une fois la vie",
+		titre: "GEN Contact",
 		subInfo: {
-			Période : "2014 à aujourd'hui",
-			Entreprise : "gencontact.fr"
+			Période : "2015 - 2017",
+			Site : "<a href='http://www.gencontact.fr' target='_blank' class='slide-link'><div class='default'>gencontact.fr</div><div>gencontact.fr</div></a>",
+			Poste : "Full stack"
 		},
-		description: "Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam"
+		description: "GEN Contact est une agence web vendant de la création de sites et des prestations en print. Premier emploi dans le développement j'ai pu me faire la main sur tous les aspects du métier, front, back, graphisme et ainsi enrichir et renforcer mes compétences. Mes tâches principales étaient de l'intégration et le développement de modules."
 	},
 	4 : {
 		idSlide : 3,
 		delay: 2000,
-		titre: "INB 4",
+		titre: "Neftis",
 		subInfo: {
-			Période : "2014 à aujourd'hui",
-			Entreprise : "gencontact.fr"
+			Période : "2017 - 2018",
+			Entreprise : "<a href='http://www.neftis.fr' target='_blank' class='slide-link'><div class='default'>neftis.fr</div><div>neftis.fr</div></a>",
+			Poste : "Full stack"
 		},
-		description: "Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam"
+		description: "Neftis est une agence web ayant développé son CMS nommé Flexit, mon activité première a été de développer des fonctionnalités pour ce CMS. Mon poste majoritairement orienté back, j'y ai pu néanmoins réaliser quelques sites internets et interfaces graphiques."
 	}
 };

@@ -76,11 +76,11 @@ p {margin: 0;}
 .slide-link { vertical-align: bottom;display: inline-block; color:rgba(255, 255, 255, 0.58);text-decoration: none; overflow: hidden; position: relative;
 
   .default { transform: translateY(0);transition: transform ease-in-out 0.2s; 
-    + div { color: #f2c84c;position: absolute;top: 100%;left:0;transition: top ease-in-out 0.2s; }
+    + div { color: #f2c84c;position: absolute;top: 110%;left:0;transition: top ease-in-out 0.2s; }
   }
 
   &:hover {
-    .default { transform: translateY(-100%); 
+    .default { transform: translateY(-110%); 
       + div { top: 0; }  
     }
   }
