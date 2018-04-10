@@ -25,7 +25,15 @@ export class GESliderDirective implements AfterViewInit {
     @HostListener('wheelDown', ['$event']) listenerWheelDown(event: any) {
         this.eventOutput = event;
         this.nextSlide();
-    }  
+    } 
+    @HostListener('arrowPrev', ['$event']) listenerArrowPrev(event: any) {
+        this.eventOutput = event;
+        this.prevSlide();
+    }
+    @HostListener('arrowNext', ['$event']) listenerArrowNext(event: any) {
+        this.eventOutput = event;
+        this.nextSlide();
+    }     
     @HostListener('document:changeSlide', ['$event']) listenerNavigation(event:any) {
         if(event.detail.target) {
             this.eventOutput = event;
@@ -33,12 +41,8 @@ export class GESliderDirective implements AfterViewInit {
         }
     } 
     @HostListener('document:directionSlide', ['$event']) listenerDirection(event:any) {
-        if(event.detail.direction == "next") {
-            this.nextSlide();
-        }
-        else if(event.detail.direction == "prev") {
-           this.prevSlide();      
-        }
+        if(event.detail.direction == "next") this.nextSlide();
+        else if(event.detail.direction == "prev") this.prevSlide();      
     }
 
     nextSlide()
@@ -89,7 +93,6 @@ export class GESliderDirective implements AfterViewInit {
     }
 
     goToSlide(idSlide:any):void{   
-        // console.log(idSlide);
         const indexSlide = idSlide -1;         
         if (this.slides[indexSlide]) {
             switch(this.params.animation) {

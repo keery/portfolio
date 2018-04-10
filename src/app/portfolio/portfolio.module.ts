@@ -13,6 +13,7 @@ import { LoaderService } from './loader/loader.service';
 import { GESliderDirective } from './geslider/geslider.directive';
 import { GESliderNavigationDirective, GESliderDirectionDirective } from './geslider/geslider-navigation.directive';
 import { MouseWheelDirective } from './mousewheel.directive';
+import { ArrowDirectionDirective } from './arrow-direction.directive';
 import { GEParallaxDirective } from './geparallax/geparallax.directive';
 import { ObjLoop } from './../loop/object-loop.pipe';
 
@@ -30,6 +31,7 @@ import { ObjLoop } from './../loop/object-loop.pipe';
     CanvasOpacityComponent,
     LoaderComponent,
     GEParallaxDirective,
+    ArrowDirectionDirective,
     ObjLoop
   ],
   imports: [
