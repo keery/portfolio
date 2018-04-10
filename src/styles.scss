@@ -240,3 +240,29 @@ p {margin: 0;}
     height: 8px;
   }
 }
+
+@media screen and (max-width: 767px)
+{
+
+  .loading {
+    width: 90%;
+    > .bar {
+      width: 90%;
+
+      .percent:before {
+        left: 0;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+      }
+
+      .number {
+        right: 0;
+        left: 0;
+        bottom: -45px;
+        width: calc(100% + 20px);
+        text-align: center;
+      }
+    }
+  }
+}

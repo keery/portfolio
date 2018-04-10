@@ -35,6 +35,6 @@ export class HomeComponent implements OnInit
 			'font-size: 16px;text-decoration:underline;color: #266d83;font-family:arial;font-weight:bold;'	
 		);
 
-        this.loaderService.hide(); 
+        // this.loaderService.hide(); 
 	}
 }
