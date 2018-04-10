@@ -18,7 +18,7 @@
 		<img src="./assets/scroll.svg" alt="">
 		<div class="scrollText">scroll</div>
 	</div>		
-	<div id="about-container" mousewheel (wheelUp)="prevStep()" (wheelDown)="nextStep()">
+	<div id="about-container" mousewheel arrowdirection (arrowPrev)="prevStep()" (arrowNext)="nextStep()" (wheelUp)="prevStep()" (wheelDown)="nextStep()">
 		<div class="cursor-container">
 			<div class="cursor-mask">
 				<img src="../../assets/mask.png" alt="">
