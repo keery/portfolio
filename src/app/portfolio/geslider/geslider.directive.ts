@@ -140,7 +140,7 @@ export class GESliderDirective implements AfterViewInit {
                 break;
             }
 
-            // this.changeIndicator(indexSlide);    
+            if(this.currentIndicator) this.changeIndicator(indexSlide);    
             this.changeSlide.emit({event: this.eventOutput, currentSlide: indexSlide, nbSlide:this.slides.length});            
         }
         else console.log("Attribut data-slide-id manquant");
