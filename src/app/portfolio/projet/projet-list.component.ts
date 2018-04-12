@@ -1,11 +1,9 @@
 import { Component, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
-import { boxEnterAnimation, boxLeaveAnimation } from '../../_animations/index';
 
 
 @Component({
 	templateUrl: './projet-list.template.html',
-	styleUrls: ['./projet-list.style.scss'],
-	animations: [boxEnterAnimation, boxLeaveAnimation]
+	styleUrls: ['./projet-list.style.scss']
 })
 export class ProjetListComponent implements AfterViewInit
 {
