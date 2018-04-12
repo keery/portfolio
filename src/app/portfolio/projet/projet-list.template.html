@@ -1,4 +1,4 @@
-<section id="projetList">
+<section id="projetList" @boxEnter @boxLeave>
 
 	<div class="recent-projects" (changeSlide)="changePercent($event)" GESlider [mousewheel]="1200"  multi-perspective perspectiveX="3" perspectiveY="12" [arrowdirection]="1200">
 		<ul class="numProjects">

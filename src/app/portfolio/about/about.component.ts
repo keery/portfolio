@@ -5,11 +5,13 @@ import { STEPS } from './mock-steps';
 import { ObjLoop } from '../../loop/object-loop.pipe';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/fromEvent';
+import { boxEnterAnimation, boxLeaveAnimation } from '../../_animations/index';
 
 
 @Component({
 	templateUrl: './about.template.html',
 	styleUrls: ['./about.style.scss'],
+	animations: [boxEnterAnimation, boxLeaveAnimation]
 })
 export class AboutComponent implements AfterViewInit
 {

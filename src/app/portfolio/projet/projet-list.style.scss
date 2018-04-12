@@ -7,14 +7,14 @@
 #projetList {
 	height: 100%;
 	width: 100%;
-	transform: rotateY(30deg) translateX(100%);
-	animation: appendPage 1s forwards;
+	// transform: rotateY(30deg) translateX(100%);
+	// animation: appendPage 1s forwards;
 }
 
-@keyframes appendPage {
-	0% { transform: rotateY(30deg) translateX(100%); }
-	100% { transform: rotateY(0deg) translateX(0); }
-}
+// @keyframes appendPage {
+// 	0% { transform: rotateY(30deg) translateX(100%); }
+// 	100% { transform: rotateY(0deg) translateX(0); }
+// }
 $sizeCircle: 400px;
 $halfCircle : 200px;
 

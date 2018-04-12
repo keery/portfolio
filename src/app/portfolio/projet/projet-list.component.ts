@@ -1,11 +1,15 @@
 import { Component, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
+import { boxEnterAnimation, boxLeaveAnimation } from '../../_animations/index';
+
 
 @Component({
 	templateUrl: './projet-list.template.html',
-	styleUrls: ['./projet-list.style.scss']
+	styleUrls: ['./projet-list.style.scss'],
+	animations: [boxEnterAnimation, boxLeaveAnimation]
 })
 export class ProjetListComponent implements AfterViewInit
 {
+	test = true;
 	private $event;
 	@ViewChild('circleBar') percentBar; 
 
