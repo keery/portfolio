@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import { Meta } from '@angular/platform-browser';
 import { trigger, animate, transition, style, query, animateChild, group } from '@angular/animations';
-import { LoaderService } from './portfolio/loader/loader.service';
+import { LoaderService } from './loader/loader.service';
 
 
 @Component({
@@ -61,6 +61,8 @@ import { LoaderService } from './portfolio/loader/loader.service';
 })
 export class AppComponent {
 
+	objLoaderStatus:boolean =false;
+
 	constructor(
 		private titleService: Title, 
 		private activatedRoute: ActivatedRoute, 
@@ -81,6 +83,11 @@ export class AppComponent {
 		}
 
 	ngOnInit() {
+
+		this.loaderService.loaderStatus.subscribe((val: boolean) => {
+            this.objLoaderStatus = val;
+        }); 
+
 		this.router.events
 	    .filter((event) => event instanceof NavigationEnd)
 	    .map(() => this.activatedRoute)

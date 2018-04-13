@@ -8,8 +8,6 @@ import { ProjetListComponent }	from './projet/projet-list.component';
 import { PerspectiveMouseDirective }    from './perspective-mouse.directive';
 import { MultiPerspectiveMouseDirective }    from './multi-perspective.directive';
 import { CanvasOpacityComponent } from './canvas-opacity/canvas-opacity.component';
-import { LoaderComponent } from './loader/loader.component';
-import { LoaderService } from './loader/loader.service';
 import { GESliderDirective } from './geslider/geslider.directive';
 import { GESliderNavigationDirective, GESliderDirectionDirective } from './geslider/geslider-navigation.directive';
 import { MouseWheelDirective } from './mousewheel.directive';
@@ -28,8 +26,7 @@ import { ObjLoop } from './../loop/object-loop.pipe';
     MouseWheelDirective,
     GESliderNavigationDirective,
     GESliderDirectionDirective,
-    CanvasOpacityComponent,
-    LoaderComponent,
+    CanvasOpacityComponent,    
     GEParallaxDirective,
     ArrowDirectionDirective,
     ObjLoop
@@ -38,9 +35,7 @@ import { ObjLoop } from './../loop/object-loop.pipe';
     CommonModule,
     PortfolioRoutingModule
   ],
-  entryComponents: [LoaderComponent],
   providers: [
-  	LoaderService
   ],
   exports: []
 })

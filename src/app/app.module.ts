@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { BurgerComponent } from './burger/burger.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderService } from './loader/loader.service';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { BurgerComponent } from './burger/burger.component';
     AppComponent,
     PageNotFoundComponent,
     MainMenuComponent,
-    BurgerComponent
+    BurgerComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +26,10 @@ import { BurgerComponent } from './burger/burger.component';
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
+  entryComponents: [LoaderComponent],
   providers: [
-    Title
+    Title,
+    LoaderService
   ],
   bootstrap: [AppComponent]
 })
