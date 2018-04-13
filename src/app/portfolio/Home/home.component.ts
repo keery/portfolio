@@ -17,24 +17,12 @@ export class HomeComponent implements OnInit
 
 	ngOnInit():void{
 		this.loaderService.loaderStatus.subscribe((val: boolean) => {
-            if(this.objLoaderStatus == true && val == false) {
+			//Si le loader etait affiché et qu'on lui dit de le cacher ou si il etait cache et qu'on ne veut pas l'afficher
+            if((this.objLoaderStatus && !val) || (!this.objLoaderStatus && !val)) {
             	this.renderer.addClass(this.elRef.nativeElement, "enter");
             	this.video.nativeElement.play();
             }
             this.objLoaderStatus = val;
-        });
-        
-        this.loaderService.show(); 
-
-		console.log(
-			"%cYou think i'm suitable for your projects ?\n"+
-			"%cContact me at "+
-			"%ccontact@guillaumeesnault.fr", 
-			'font-size: 23px;color: #deec1c;font-family:arial;font-weight:900;',
-			'font-size: 16px;color: #deec1c;font-family:arial;font-weight:bold;',
-			'font-size: 16px;text-decoration:underline;color: #266d83;font-family:arial;font-weight:bold;'	
-		);
-
-        this.loaderService.hide(); 
+        }); 
 	}
 }

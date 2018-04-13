@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import { Meta } from '@angular/platform-browser';
 import { trigger, animate, transition, style, query, animateChild, group } from '@angular/animations';
+import { LoaderService } from './portfolio/loader/loader.service';
 
 
 @Component({
@@ -27,9 +28,10 @@ import { trigger, animate, transition, style, query, animateChild, group } from 
 	              right: '0',
 	              bottom: '0',
 	              transform: 'rotateY(20deg) translateX(100%)',
+	              transformOrigin:'left',
 	              opacity: 1
 	            }),
-              animate('10s linear', style({transform: 'rotateY(0deg) translateX(0%)'})), animateChild()
+              animate('2s linear', style({transform: 'rotateY(0deg) translateX(0%)'})), animateChild()
             ],
             { optional: true }
           ),
@@ -46,9 +48,9 @@ import { trigger, animate, transition, style, query, animateChild, group } from 
 	              transformOrigin:'right',
 	              opacity: 1
 	            }),
-            	// animate('10s', style({ opacity: 0 })), animateChild()
+            	// animate('2s', style({ opacity: 0 })), animateChild()
             	// style({transform: 'rotateY(0deg) translateX(0)'}),
-     			animate('10s linear', style({transform: 'rotateY(-20deg) translateX(-100%)'})), animateChild()
+     			animate('2s linear', style({transform: 'rotateY(-20deg) translateX(-100%)'})), animateChild()
             ],
             { optional: true }
           )
@@ -63,7 +65,20 @@ export class AppComponent {
 		private titleService: Title, 
 		private activatedRoute: ActivatedRoute, 
 		private router: Router,
-		private meta: Meta) {}
+		private loaderService: LoaderService,
+		private meta: Meta) {
+		    this.loaderService.show(); 
+        	this.loaderService.hide(); 
+
+			console.log(
+				"%cYou think i'm suitable for your projects ?\n"+
+				"%c Contact me at "+
+				"%ccontact@guillaumeesnault.fr", 
+				'font-size: 23px;color: #deec1c;font-family:arial;font-weight:900;',
+				'font-size: 16px;color: #deec1c;font-family:arial;font-weight:bold;',
+				'font-size: 16px;text-decoration:underline;color: #266d83;font-family:arial;font-weight:bold;'	
+			);
+		}
 
 	ngOnInit() {
 		this.router.events
