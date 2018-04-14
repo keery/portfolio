@@ -27,11 +27,11 @@ import { LoaderService } from './loader/loader.service';
 	              left: '0',
 	              right: '0',
 	              bottom: '0',
-	              transform: 'rotateY(20deg) translateX(100%)',
+	              transform: 'translateX(100%)',
 	              transformOrigin:'left',
 	              opacity: 1
 	            }),
-              animate('2s linear', style({transform: 'rotateY(0deg) translateX(0%)'})), animateChild()
+              animate('1s ease-in-out', style({transform: 'translateX(0%)'})), animateChild()
             ],
             { optional: true }
           ),
@@ -44,13 +44,13 @@ import { LoaderService } from './loader/loader.service';
 	              // left: '0',
 	              // right: '0',
 	              // bottom: '0',
-	              transform: 'rotateY(0deg) translateX(0)',
+	              transform: 'translateX(0)',
 	              transformOrigin:'right',
 	              opacity: 1
 	            }),
             	// animate('2s', style({ opacity: 0 })), animateChild()
             	// style({transform: 'rotateY(0deg) translateX(0)'}),
-     			animate('2s linear', style({transform: 'rotateY(-20deg) translateX(-100%)'})), animateChild()
+     			animate('1s ease-in-out', style({transform: ' translateX(-100%)'})), animateChild()
             ],
             { optional: true }
           )
