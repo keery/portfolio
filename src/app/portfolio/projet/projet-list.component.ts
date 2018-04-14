@@ -8,7 +8,7 @@ import { Component, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
 export class ProjetListComponent implements AfterViewInit
 {
 	test = true;
-	private $event;
+	private $event = {currentSlide : 0, nbSlide: 0};
 	@ViewChild('circleBar') percentBar; 
 
 	constructor(private renderer: Renderer2) {}
@@ -23,6 +23,7 @@ export class ProjetListComponent implements AfterViewInit
 	}
 
 	ngAfterViewInit() {
-		// this.changePercent(this.$event);
+		this.$event.nbSlide = document.querySelectorAll('.slides > li').length;
+		this.changePercent(this.$event);
 	}
 }
