@@ -418,3 +418,22 @@ $dist: -14px;
 @keyframes drawLine {
   to { stroke-dashoffset: 0; }
 }
+
+@media screen and (max-width: 1000px) {
+	#about {
+
+		.cursor-container, #about-container, #slider-schema { width: 100%; }
+		#about-description { display:none;position: absolute;left: 0;right:0; bottom:0;top:0;width: 100%;}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#about {
+		.dl-cv { position: static;padding: 15vh 0 15px 25px; }
+		.cursor-container, #about-container, #slider-schema { width: 100%; }
+		.cursor-container, #slider-schema { display: none; }
+		#about-description { display:block; padding: 0 25px 10px 25px; 
+			h2 { font-size: 40px; }
+		}
+	}
+}
