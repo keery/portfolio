@@ -19,6 +19,11 @@ export class MouseWheelDirective implements AfterViewInit  {
     @HostListener('mousewheel', ['$event']) listenerWheelUp(event: any) {
         this.mouseWheel(event);
     }
+    @HostListener('DOMMouseScroll', ['$event']) listenerWheelUpFirefox(event: any) {
+        console.log("didid");
+        this.mouseWheel(event);
+    }
+
     ngAfterViewInit() {
         if(this.delay == '') this.delay = 0;
 
