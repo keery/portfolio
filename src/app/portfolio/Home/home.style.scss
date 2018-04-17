@@ -279,13 +279,27 @@ h1
         .home-name {
             > div {
                 font-size: 60px!important;
+                &.firstname { transition: font-size 0.001s 2.7s ease-in-out, transform ease 0.7s .2s, opacity ease 0.7s .2s;  }
+                &.lastname { transition: font-size 0.001s 2.7s ease-in-out, transform ease 0.7s .3s, opacity ease 0.7s .3s;  }
             }
         }
+
+        .home-description {
+            transition: transform ease 0.7s .4s, opacity ease 0.7s .4s;
+        }        
     }
 
     #home .vertical-text { 
         font-size: 10px;
         line-height: 10px;
+
+        a { 
+            &:nth-of-type(3) { transition: transform ease 0.7s .4s, opacity ease 0.7s .4s; }
+            &:nth-of-type(2) { transition: transform ease 0.7s .5s, opacity ease 0.7s .5s; }
+            &:nth-of-type(1) { transition: transform ease 0.7s .6s, opacity ease 0.7s .6s; }
+        }
+        b { transition: transform cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s .7s, opacity cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s .7s; }
+
     }
 
     #home .home-video {
@@ -293,5 +307,4 @@ h1
         height: 120vw;
         width: 88%;
     }
-
 }
