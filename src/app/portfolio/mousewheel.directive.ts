@@ -51,9 +51,9 @@ export class MouseWheelDirective implements AfterViewInit  {
 
             const thisEvent = window.event || event;
             const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-            if(delta > 0 || this.touchY < event.changedTouches[0].clientY) {
+            if(delta > 0 || (event instanceof TouchEvent && this.touchY < event.changedTouches[0].clientY)) {
                 this.wheelUp.emit(thisEvent);
-            } else if(delta < 0 || this.touchY > event.changedTouches[0].clientY) {
+            } else if(delta < 0 || (event instanceof TouchEvent && this.touchY > event.changedTouches[0].clientY)) {
                 this.wheelDown.emit(thisEvent);
             }
             setTimeout(()=> {                
