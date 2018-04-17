@@ -568,13 +568,15 @@ $dist: -14px;
 	.recent-projects {
 		.slides {
 			> li {
-				.info-projet-container { width: 270px;
+				.info-projet-container { width: 270px; z-index: 5555;
 					.sub-info { display: none; }   					
    					> h2 { max-width: 260px; margin: 0 auto;font-size: 30px; }
 				}
 				.pic-project { display: none; }
 			}
-			.img-circle-container { top: calc(50% - 150px);width: 300px;height: 300px; }
+			.img-circle-container { top: calc(50% - 150px);width: 300px;height: 300px; 
+				.img-circle { left: calc(-50vw + 148px); top:calc(-50vh + 148px); }
+			}
 		}
 	}		
 }

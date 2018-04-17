@@ -21,6 +21,7 @@ export class AboutComponent implements AfterViewInit
 	public steps: { [key: number]: Step }; 
 	private stateChange: boolean = true;
 	private delayWheel = 4900;
+	private isMobile = false;
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {
 		this.setSteps();
@@ -48,7 +49,11 @@ export class AboutComponent implements AfterViewInit
         // .subscribe((event) => {
         //     console.log('subscribe');
         // });
-
+        if(window.innerWidth <= 700) {
+        	this.isMobile = true;
+        	this.delayWheel = 0;
+        	this.maxStep--;
+        }
 
 		this.cursor = document.querySelector("#cursor");
         this.stepChanging(1);
@@ -68,18 +73,21 @@ export class AboutComponent implements AfterViewInit
     }
 
     selectStep(id : number) {
-    	console.log(id);
     	if(id != this.currentStep) this.stepChanging(id);
     }
 
     changeStepTo(idStep : number) {
-		if(idStep >  this.currentStep && this.currentStep in this.steps) {
-			this.delayWheel = this.steps[this.currentStep].delay;
-		}
-		else if (idStep <  this.currentStep && idStep in this.steps) {
-			this.delayWheel = this.steps[idStep].delay;
-		}
-
+    	if(!this.isMobile) {
+			if(idStep >  this.currentStep && this.currentStep in this.steps) {
+				this.delayWheel = this.steps[this.currentStep].delay;
+			}
+			else if (idStep <  this.currentStep && idStep in this.steps) {
+				this.delayWheel = this.steps[idStep].delay;
+			}
+    	}
+    	else {
+    		this.delayWheel = 1200;
+    	}
     	if(idStep > 0 && idStep <= this.maxStep) {
 
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
@@ -97,7 +105,7 @@ export class AboutComponent implements AfterViewInit
 	    	}
 
 	        if(idStep%3 == 0) {
-	        	this.delayWheel = 5000;  
+	        	if(!this.isMobile) this.delayWheel = 5000;  
 	        	let stepFunction = '';
 	        	if(idStep >  this.currentStep) {
 	        		++this.currentSlide 
@@ -120,6 +128,7 @@ export class AboutComponent implements AfterViewInit
     	}
     	else {
     		this.delayWheel = 1000;
+
 	    	if (idStep <= 0) {
 		    	this.renderer.removeClass(this.cursor, 'block-top');
 				this.cursor.offsetWidth;
