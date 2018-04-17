@@ -121,6 +121,20 @@
           opacity: 0;
       }
   }
+  @keyframes bound {
+      0%
+      {
+          transform: translateY(0px);
+      }
+      50%
+      {
+          transform: translateY(5px);
+      }
+      100%
+      {
+          transform: translateY(0px);
+      }
+  }  
 
   #about-container { max-width: 1140px; margin: 0 auto; height: 100%;position: relative;width: 90%;font-size:0;
     > ul { font-size: 0;height: 100%;
@@ -448,7 +462,10 @@ $dist: -14px;
 }
 
 @media screen and (max-width: 700px) {
-	#about {
+  #about {
+    .scroll-btn { border:none; background-color: transparent;
+      &:before { display: none; }
+    }  
 		.dl-cv { position: static;padding: 15vh 0 15px 25px; }
 		.cursor-container, #about-container, #slider-schema { width: 100%; }
 		.cursor-container, #slider-schema { display: none; }
