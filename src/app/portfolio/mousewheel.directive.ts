@@ -9,6 +9,7 @@ import { Directive, HostListener, EventEmitter, Output, ElementRef, AfterViewIni
 export class MouseWheelDirective implements AfterViewInit  {
 
     private emiter:boolean = true;
+    private touchY = 0;
     constructor(private el: ElementRef) {}
 
     // test = Observable.fromEvent(this.el.nativeElement, 'mousewheel');
@@ -20,9 +21,17 @@ export class MouseWheelDirective implements AfterViewInit  {
         this.mouseWheel(event);
     }
     @HostListener('DOMMouseScroll', ['$event']) listenerWheelUpFirefox(event: any) {
-        console.log("didid");
         this.mouseWheel(event);
     }
+    @HostListener('touchstart', ['$event']) listenerTouchstart(event: any) {        
+        this.touchY = event.touches[0].clientY;
+    }   
+    @HostListener('touchend', ['$event']) listenerTouchend(event: any) {  
+        this.mouseWheel(event);
+    }            
+    // @HostListener('touchmove', ['$event']) listenerTouchmove(event: any) {        
+    //     this.mouseWheel(event);
+    // }    
 
     ngAfterViewInit() {
         if(this.delay == '') this.delay = 0;
@@ -42,9 +51,9 @@ export class MouseWheelDirective implements AfterViewInit  {
 
             const thisEvent = window.event || event;
             const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-            if(delta > 0) {
+            if(delta > 0 || this.touchY < event.changedTouches[0].clientY) {
                 this.wheelUp.emit(thisEvent);
-            } else if(delta < 0) {
+            } else if(delta < 0 || this.touchY > event.changedTouches[0].clientY) {
                 this.wheelDown.emit(thisEvent);
             }
             setTimeout(()=> {                
