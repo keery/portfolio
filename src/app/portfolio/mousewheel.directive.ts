@@ -10,6 +10,7 @@ export class MouseWheelDirective implements AfterViewInit  {
 
     private emiter:boolean = true;
     private touchY = 0;
+    private typeEvent;
     constructor(private el: ElementRef) {}
 
     // test = Observable.fromEvent(this.el.nativeElement, 'mousewheel');
@@ -18,15 +19,18 @@ export class MouseWheelDirective implements AfterViewInit  {
     @Output() wheelUp = new EventEmitter();
     @Output() wheelDown = new EventEmitter();
     @HostListener('mousewheel', ['$event']) listenerWheelUp(event: any) {
+        this.typeEvent = "scroll";
         this.mouseWheel(event);
     }
     @HostListener('DOMMouseScroll', ['$event']) listenerWheelUpFirefox(event: any) {
+        this.typeEvent = "scroll";
         this.mouseWheel(event);
     }
     @HostListener('touchstart', ['$event']) listenerTouchstart(event: any) {        
         this.touchY = event.touches[0].clientY;
     }   
     @HostListener('touchend', ['$event']) listenerTouchend(event: any) {  
+        this.typeEvent = "touch";
         this.mouseWheel(event);
     }            
     // @HostListener('touchmove', ['$event']) listenerTouchmove(event: any) {        
@@ -51,7 +55,7 @@ export class MouseWheelDirective implements AfterViewInit  {
 
             const thisEvent = window.event || event;
             const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-            if(delta > 0 || (event instanceof TouchEvent && this.touchY < event.changedTouches[0].clientY)) {
+            if(delta > 0 || (event == "touch" && this.touchY < event.changedTouches[0].clientY)) {
                 this.wheelUp.emit(thisEvent);
             } else if(delta < 0 || (event instanceof TouchEvent && this.touchY > event.changedTouches[0].clientY)) {
                 this.wheelDown.emit(thisEvent);
