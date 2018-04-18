@@ -9,7 +9,7 @@ import 'rxjs/add/observable/fromEvent';
 
 @Component({
 	templateUrl: './about.template.html',
-	styleUrls: ['./about.style.scss']
+	styleUrls: ['./about.style.scss'],
 })
 export class AboutComponent implements AfterViewInit
 {
@@ -22,6 +22,7 @@ export class AboutComponent implements AfterViewInit
 	private stateChange: boolean = true;
 	private delayWheel = 4900;
 	private isMobile = false;
+	private tou = false;
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {
 		this.setSteps();
@@ -32,6 +33,7 @@ export class AboutComponent implements AfterViewInit
 	@ViewChild('sliderSchema', {read: GESliderDirective}) sliderSchema:GESliderDirective;
     // test = Observable.fromEvent(document, 'changeStep');
 
+
     stepChanging(id:number) {
     	if(this.stateChange) {		
     		this.stateChange = false;
@@ -40,6 +42,11 @@ export class AboutComponent implements AfterViewInit
 	    	setTimeout(()=>{
 				this.stateChange = true;
 			}, this.delayWheel);
+    	}
+
+    	if(this.tou)  {
+			this.tou = false;
+    		this.changeStepTo(id);
     	}
     }
 
@@ -73,6 +80,7 @@ export class AboutComponent implements AfterViewInit
     }
 
     selectStep(id : number) {
+    	console.log(id);
     	if(id != this.currentStep) this.stepChanging(id);
     }
 
@@ -88,6 +96,7 @@ export class AboutComponent implements AfterViewInit
     	else {
     		this.delayWheel = 1200;
     	}
+
     	if(idStep > 0 && idStep <= this.maxStep) {
 
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
@@ -105,7 +114,7 @@ export class AboutComponent implements AfterViewInit
 	    	}
 
 	        if(idStep%3 == 0) {
-	        	if(!this.isMobile) this.delayWheel = 5000;  
+	        	if(!this.isMobile) this.delayWheel = 5000; 
 	        	let stepFunction = '';
 	        	if(idStep >  this.currentStep) {
 	        		++this.currentSlide 
@@ -117,7 +126,7 @@ export class AboutComponent implements AfterViewInit
 	        	this.sliderSchema.goToSlide(this.currentSlide);		
 
 	        	setTimeout(()=>{
-	        		this.stateChange = true;
+	        		this.tou = true;
 					stepFunction == "next" ? this.nextStep() : this.prevStep();
 	        	}, 2000);
 
@@ -128,7 +137,6 @@ export class AboutComponent implements AfterViewInit
     	}
     	else {
     		this.delayWheel = 1000;
-
 	    	if (idStep <= 0) {
 		    	this.renderer.removeClass(this.cursor, 'block-top');
 				this.cursor.offsetWidth;
