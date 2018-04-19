@@ -396,17 +396,27 @@ $dist: -14px;
 }
 
 #about-step-one-line {
-  #line_x5F_1, #arc_x5F_1, #circle, #line_x5F_2, #line_x5F_4_2_, #arc_x5F_2, #circle_7_, #line_x5F_4_3_, #line_x5F_6 { animation: drawLine 0.5s forwards linear; }
+  #line_x5F_1, #arc_x5F_1, #circle, #line_x5F_2, #line_x5F_4_2_, #arc_x5F_2, #circle_7_, #line_x5F_4_3_, #line_x5F_6 { animation: 0.5s forwards linear; }
   
-  #line_x5F_1 { stroke-dashoffset: -80; stroke-dasharray: 140; animation-duration: 0.2s; }
-  #arc_x5F_1 { stroke-dasharray: 180.985; stroke-dashoffset: 181;animation-delay: 0.3s; }
-  #circle { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 0.8s; }
-  #line_x5F_2 { stroke-dasharray: 560; stroke-dashoffset: 560;animation-delay: 1.2s; animation-duration: 0.9s; }
-  #line_x5F_4_2_ { stroke-dasharray: 80; stroke-dashoffset: 80;animation-delay: 2s;animation-duration: 0.2s; }
-  #arc_x5F_2 { stroke-dasharray: 181; stroke-dashoffset: 181;animation-delay: 2.2s;animation-duration: 0.3s; }
-  #circle_7_ { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 2.6s; }
-  #line_x5F_4_3_ { stroke-dasharray: 480; stroke-dashoffset: 480;animation-delay: 3.1s; }
-  #line_x5F_6 { stroke-dasharray: 124.5; stroke-dashoffset: 124.5;animation-delay: 3.6s;animation-duration: 0.2s; }
+  // #line_x5F_1 { stroke-dashoffset: -80; stroke-dasharray: 140; animation-duration: 0.2s; }
+  // #arc_x5F_1 { stroke-dasharray: 180.985; stroke-dashoffset: 181;animation-delay: 0.3s; }
+  // #circle { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 0.8s; }
+  // #line_x5F_2 { stroke-dasharray: 560; stroke-dashoffset: 560;animation-delay: 1.2s; animation-duration: 0.9s; }
+  // #line_x5F_4_2_ { stroke-dasharray: 80; stroke-dashoffset: 80;animation-delay: 2s;animation-duration: 0.2s; }
+  // #arc_x5F_2 { stroke-dasharray: 181; stroke-dashoffset: 181;animation-delay: 2.2s;animation-duration: 0.3s; }
+  // #circle_7_ { stroke-dasharray: 640; stroke-dashoffset: 640;animation-delay: 2.6s; }
+  // #line_x5F_4_3_ { stroke-dasharray: 480; stroke-dashoffset: 480;animation-delay: 3.1s; }
+  // #line_x5F_6 { stroke-dasharray: 124.5; stroke-dashoffset: 124.5;animation-delay: 3.6s;animation-duration: 0.2s; }
+
+  #line_x5F_1 { stroke-dasharray: 0,140; animation-duration: 0.2s;animation-name: drawLine1; }
+  #arc_x5F_1 { stroke-dasharray: 0,180.985; animation-delay: 0.3s;animation-name: drawLine2; }
+  #circle { stroke-dasharray: 0,640; animation-delay: 0.8s;animation-name: drawCircle; }
+  #line_x5F_2 { stroke-dasharray: 0,560; animation-delay: 1.2s; animation-duration: 0.9s;animation-name: drawLine3; }
+  #line_x5F_4_2_ { stroke-dasharray: 0,80; animation-delay: 2s;animation-duration: 0.2s;animation-name: drawLine4; }
+  #arc_x5F_2 { stroke-dasharray: 0,181; animation-delay: 2.2s;animation-duration: 0.3s; animation-name: drawLine6;}
+  #circle_7_ { stroke-dasharray: 0,640; animation-delay: 2.6s;animation-name: drawCircle; }
+  #line_x5F_4_3_ { stroke-dasharray: 0,480; animation-delay: 3.1s;animation-name: drawLine6; }
+  #line_x5F_6 { stroke-dasharray: 0,124.5; animation-delay: 3.6s;animation-duration: 0.2s;animation-name: drawLine7; }
 
   #about-img2 {}
 }
@@ -429,9 +439,14 @@ $dist: -14px;
 //   0% { opacity: 0; }
 //   100% { opacity: 1; }
 // }
-@keyframes drawLine {
-  to { stroke-dashoffset: 0; }
-}
+@keyframes drawLine1 { to { stroke-dasharray: 140,140; } }
+@keyframes drawLine2 { to { stroke-dasharray: 180.985,180.985; } }
+@keyframes drawCircle { to { stroke-dasharray: 640,640; } }
+@keyframes drawLine3 { to { stroke-dasharray: 560,560; } }
+@keyframes drawLine4 { to { stroke-dasharray: 80,80; } }
+@keyframes drawLine5 { to { stroke-dasharray: 181,181; } }
+@keyframes drawLine6 { to { stroke-dasharray: 480,480; } }
+@keyframes drawLine7 { to { stroke-dasharray: 124.5,124.5; } }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 1000px) {
 	#about {
