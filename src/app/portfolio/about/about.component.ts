@@ -13,16 +13,16 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class AboutComponent implements AfterViewInit
 {
-	private currentStep: number = 0;
-	private currentSlide: number = 1
-	private maxStep: number = 5;
-	private cursor;
-	private prev: number;
-	public steps: { [key: number]: Step }; 
-	private stateChange: boolean = true;
-	private delayWheel = 4900;
-	private isMobile = false;
-	private tou = false;
+	currentStep: number = 0;
+	currentSlide: number = 1
+	maxStep: number = 5;
+	cursor;
+	prev: number;
+	steps: { [key: number]: Step }; 
+	stateChange: boolean = true;
+	delayWheel = 4900;
+	isMobile = false;
+	tou = false;
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {
 		this.setSteps();
@@ -95,13 +95,12 @@ export class AboutComponent implements AfterViewInit
     	else {
     		this.delayWheel = 1200;
     	}
-
     	if(idStep > 0 && idStep <= this.maxStep) {
 
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
 	    	if(this.currentStep != 0) {
-
-			    this.cursor.classList = "";
+	    		this.renderer.setAttribute(this.cursor, 'class', null)
+			    // this.cursor.classList = "";
 				//Permet de trigger un changement sur mon élement pour que la prochaine animation soit prise en compte
 				this.cursor.offsetWidth;
 	    	}
