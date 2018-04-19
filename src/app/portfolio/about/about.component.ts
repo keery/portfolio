@@ -80,7 +80,6 @@ export class AboutComponent implements AfterViewInit
     }
 
     selectStep(id : number) {
-    	console.log(id);
     	if(id != this.currentStep) this.stepChanging(id);
     }
 
