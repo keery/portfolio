@@ -99,7 +99,7 @@ export class AboutComponent implements AfterViewInit
 
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
 	    	if(this.currentStep != 0) {
-	    		this.renderer.setAttribute(this.cursor, 'class', null)
+	    		this.renderer.setAttribute(this.cursor, 'class', '')
 			    // this.cursor.classList = "";
 				//Permet de trigger un changement sur mon élement pour que la prochaine animation soit prise en compte
 				this.cursor.offsetWidth;

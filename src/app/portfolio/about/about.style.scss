@@ -268,8 +268,8 @@
     &.step-0-1 { animation: step-0-1 2s 2.9s forwards, stretchCursor 1s 3.9s forwards; 
       &.block-top { animation: step-0-1 2s 2.9s forwards, stretchCursor 1s 3.9s forwards, blockTop 1s cubic-bezier(0.1, 0.33, 0.34, 2.54); }
     }
-    &.step-1-2 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-1-2 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards running; }
-    &.step-2-1 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-2-1 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards; 
+    &.step-1-2 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-1-2 3s forwards, reduceCursor 0.6s forwards, stretchCursor2 0.6s 2.4s forwards; }
+    &.step-2-1 { height: 22.4%; width: 33.7%;left: 0.8%; top: 12.1%;animation: step-2-1 3s forwards, reduceCursor2 0.6s forwards, stretchCursor 0.6s 2.4s forwards; 
       &.block-top { animation: step-2-1 3s forwards, reduceCursor 0.6s forwards, stretchCursor 0.6s 2.4s forwards, blockTop 1s cubic-bezier(0.1, 0.33, 0.34, 2.54); }
     }
     &.step-2-3 { left:67%; top: 58.3%;height: 22.4%; width: 33.7%;animation: step-2-3 2s forwards, reduceCursor 0.5s forwards; }
@@ -296,6 +296,10 @@
     }
 }
 @keyframes reduceCursor {
+  0% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
+  100% { height: 4.2%; width: 6.3%; background-color: #fff; }
+}
+@keyframes reduceCursor2 {
   0% { height: 22.4%; width: 33.7%;background-color: #f2c84c; }
   100% { height: 4.2%; width: 6.3%; background-color: #fff; }
 }
