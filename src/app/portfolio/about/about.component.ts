@@ -50,6 +50,12 @@ export class AboutComponent implements AfterViewInit
     	}
     }
 
+    cloneCursor() {
+		const newone = this.cursor.cloneNode(true);
+		this.cursor.parentNode.replaceChild(newone, this.cursor);
+		this.cursor = newone;
+    }
+
 	ngAfterViewInit() {
         // this.test
         // // .debounceTime(1000)
@@ -95,14 +101,17 @@ export class AboutComponent implements AfterViewInit
     	else {
     		this.delayWheel = 1200;
     	}
+    		    	//Supprime les classes lorsqu'on n'est plus au premier passage
+	   //  	if(this.currentStep != 0) {
+				// const newone = this.cursor.cloneNode(true);
+				// this.cursor.parentNode.replaceChild(newone, this.cursor);
+				// this.cursor = newone;
+	   //  	}
     	if(idStep > 0 && idStep <= this.maxStep) {
-
 	    	//Supprime les classes lorsqu'on n'est plus au premier passage
 	    	if(this.currentStep != 0) {
-	    		this.renderer.setAttribute(this.cursor, 'class', '')
-			    // this.cursor.classList = "";
-				//Permet de trigger un changement sur mon élement pour que la prochaine animation soit prise en compte
-				this.cursor.offsetWidth;
+	    		this.renderer.setAttribute(this.cursor, 'class', '');
+	    		this.cloneCursor();
 	    	}
 
 	    	this.renderer.addClass(this.cursor, 'step-'+this.currentStep+'-'+idStep);
@@ -137,12 +146,12 @@ export class AboutComponent implements AfterViewInit
     		this.delayWheel = 1000;
 	    	if (idStep <= 0) {
 		    	this.renderer.removeClass(this.cursor, 'block-top');
-				this.cursor.offsetWidth;
+	    		this.cloneCursor();
 		    	this.renderer.addClass(this.cursor, 'block-top');
 	    	}
 	    	else if (idStep > this.maxStep) {
 	    		this.renderer.removeClass(this.cursor, 'block-bottom');
-				this.cursor.offsetWidth;
+				this.cloneCursor();
 		    	this.renderer.addClass(this.cursor, 'block-bottom');
 	    	}
     	}
