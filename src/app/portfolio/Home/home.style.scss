@@ -68,7 +68,7 @@
 	            right: 0;
 	            bottom: 0;	            
 
-	            > video {
+	            > video, #gif-smoke {
 	                display: none;
 	                height: 120%;
 	                position: absolute;
@@ -76,6 +76,7 @@
 	                top: 50%;
 	                transform: translate(-50%, -50%);
 	            }
+                #gif-smoke { display: none; }
 	        }
 		}
         .home-video-mask {
@@ -299,5 +300,12 @@
 
         height: 120vw;
         width: 88%;
+
+        video { display: none!important; }
+
+        #gif-smoke {
+            display: block!important;
+            max-width: none;
+        }
     }
 }
