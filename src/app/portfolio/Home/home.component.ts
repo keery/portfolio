@@ -22,7 +22,10 @@ export class HomeComponent implements OnInit
 			//Si le loader etait affiché et qu'on lui dit de le cacher ou si il etait cache et qu'on ne veut pas l'afficher
             if((this.objLoaderStatus && !val) || (!this.objLoaderStatus && !val)) {
             	this.renderer.addClass(this.elRef.nativeElement, "enter");
-            	if(!this.isMobile) this.video.nativeElement.play();
+            	if(!this.isMobile) {
+                document.getElementById('home').click();
+                this.video.nativeElement.play();
+              }
             }
             this.objLoaderStatus = val;
         }); 
