@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit
             if((this.objLoaderStatus && !val) || (!this.objLoaderStatus && !val)) {
             	this.renderer.addClass(this.elRef.nativeElement, "enter");
             	if(!this.isMobile) {
-                document.getElementById('home').click();
-                this.video.nativeElement.play();
-              }
+					const wrapper = document.getElementById('video-wrapper');
+					wrapper.innerHTML = '<video src="../assets/blackfluid.mp4" muted="muted" loop #videoSmoke autoplay style="height: 120%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);"></video>';
+				}
             }
             this.objLoaderStatus = val;
         }); 
