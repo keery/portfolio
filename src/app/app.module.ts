@@ -1,16 +1,15 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule, Title } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { PortfolioModule } from './portfolio/portfolio.module';
-import { PageNotFoundComponent } from './page-not-found.component';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { BurgerComponent } from './burger/burger.component';
-import { LoaderComponent } from './loader/loader.component';
-import { LoaderService } from './loader/loader.service';
-
+import { AppComponent } from "./app.component";
+import { PortfolioModule } from "./portfolio/portfolio.module";
+import { PageNotFoundComponent } from "./page-not-found.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MainMenuComponent } from "./main-menu/main-menu.component";
+import { BurgerComponent } from "./burger/burger.component";
+import { LoaderComponent } from "./loader/loader.component";
+import { LoaderService } from "./loader/loader.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +17,7 @@ import { LoaderService } from './loader/loader.service';
     PageNotFoundComponent,
     MainMenuComponent,
     BurgerComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,10 +26,7 @@ import { LoaderService } from './loader/loader.service';
     BrowserAnimationsModule,
   ],
   entryComponents: [LoaderComponent],
-  providers: [
-    Title,
-    LoaderService
-  ],
-  bootstrap: [AppComponent]
+  providers: [Title, LoaderService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
