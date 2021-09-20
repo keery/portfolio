@@ -3,14 +3,8 @@ import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SlideLink from "~components/SlideLink";
-import {
-  ROUTE_ABOUT,
-  ROUTE_PROJECTS,
-  EMAIL,
-  GITHUB,
-  INSTAGRAM,
-  LINKEDIN,
-} from "~constants";
+import VerticalText from "~components/VerticalText";
+import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 
 const Home: NextPage = () => {
   const blackfluidRef = useRef();
@@ -40,10 +34,10 @@ const Home: NextPage = () => {
                 Fullstack developer from <i className="eiffel">Paris</i>.
               </div>
               If you want to know more{" "}
-              <SlideLink href={ROUTE_ABOUT} text="about me" />,{" "}
-              <SlideLink href={ROUTE_PROJECTS} text="my projects" />, feel free
-              to contact me at{" "}
-              <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} />.
+              <SlideLink href={ROUTE_ABOUT} text="about me" withOpacity />,{" "}
+              <SlideLink href={ROUTE_PROJECTS} text="my projects" withOpacity />
+              , feel free to contact me at{" "}
+              <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} withOpacity />.
             </div>
           </div>
           <div className="home-video">
@@ -65,15 +59,7 @@ const Home: NextPage = () => {
             </div>
             <div className="home-video-mask"></div>
           </div>
-          <div className="vertical-text">
-            <div>
-              <SlideLink href={GITHUB} text="GITHUB" isExternal />
-              <b></b>
-              <SlideLink href={LINKEDIN} text="LINKEDIN" isExternal />
-              <b></b>
-              <SlideLink href={INSTAGRAM} text="INSTAGRAM" isExternal />
-            </div>
-          </div>
+          <VerticalText />
         </div>
       </section>
     </div>

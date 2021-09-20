@@ -15,7 +15,7 @@
   opacity: 1;
   transform: translateY(0);
 }
-.enter #home .vertical-text b {
+.enter #home .vertical-text .circle {
   opacity: 1;
   transform: scale(1);
 }
@@ -23,6 +23,7 @@
   font-size: 100px;
   transform: translateY(0);
   opacity: 1;
+  line-height: 1.2;
 }
 .enter .home-presentation .home-description {
   font-size: 17px;
@@ -106,24 +107,12 @@
   background-size: auto 100%;
   background-position: 50%;
 }
+
 #home .vertical-text {
-  font-size: 11px;
-  line-height: 11px;
-  font-weight: 400;
-  letter-spacing: 0.19em;
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 5%;
   transform: translateY(-50%) translateX(calc(-50% + 5px)) rotate(-90deg);
   transition: transform ease 0.7s 2.701s, opacity ease 0.7s 2.701s;
 }
-#home .vertical-text a {
-  color: white;
-  text-decoration: none;
-  transform: translateY(-20px);
-  opacity: 0;
-}
+
 #home .vertical-text a:nth-of-type(3) {
   transition: transform ease 0.7s 3.001s, opacity ease 0.7s 3.001s;
 }
@@ -133,18 +122,11 @@
 #home .vertical-text a:nth-of-type(1) {
   transition: transform ease 0.7s 3.201s, opacity ease 0.7s 3.201s;
 }
-#home .vertical-text b {
-  margin: 0 15px;
-  display: inline-block;
-  border-radius: 100%;
-  background-color: #f2c84c;
-  width: 8px;
-  height: 8px;
-  opacity: 0;
-  transform: scale(0);
+#home .vertical-text .circle {
   transition: transform cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s 3.501s,
     opacity cubic-bezier(0, 0.84, 0.05, 1.95) 0.7s 3.501s;
 }
+
 #home #home-container {
   text-align: center;
   position: absolute;
@@ -236,6 +218,7 @@
   letter-spacing: initial;
   display: inline-block;
   font-family: Cormorant Garamond;
+  font-weight: 600;
   color: #fff;
   transition: width 1.5s 1.8s cubic-bezier(0.19, 1, 0.22, 1),
     font-size 0.001s 2.7s ease-in-out, transform ease 0.7s 2.901s,
