@@ -1,0 +1,27 @@
+::-moz-selection {
+  background: #b6b3ec;
+}
+::selection {
+  background: #b6b3ec;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
