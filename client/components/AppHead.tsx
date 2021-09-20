@@ -1,13 +1,13 @@
-import React from 'react'
-import NextHead from 'next/head'
-import { useTranslation } from 'next-i18next'
-import { DefaultSeo } from 'next-seo'
+import React from "react";
+import NextHead from "next/head";
+import { useTranslation } from "next-i18next";
+import { DefaultSeo } from "next-seo";
 
 const AppHead = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <>
-      <NextHead>
+      {/* <NextHead>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -56,9 +56,9 @@ const AppHead = () => {
           site: process.env.NEXT_PUBLIC_URL,
           cardType: 'summary_large_image',
         }}
-      />
+      /> */}
     </>
-  )
-}
+  );
+};
 
-export default AppHead
+export default AppHead;
