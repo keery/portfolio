@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Burger from "~components/Burger";
+import SlideLink from "~components/SlideLink";
+import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 
 const Nav = () => {
   const date = new Date();
@@ -24,14 +26,14 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <a href="/projets">
+              <a href={ROUTE_PROJECTS}>
                 <span>
                   <div className="text-link">Projects</div>
                 </span>
               </a>
             </li>
             <li>
-              <a href="/a-propos">
+              <a href={ROUTE_ABOUT}>
                 <span>
                   <div className="text-link">About</div>
                 </span>
@@ -43,10 +45,7 @@ const Nav = () => {
         <div className="menu-contact">
           <div className="menu-email">
             <div className="menu-email-label">Email me at</div>
-            <a href="mailto:contact@guillaumeesnault.fr" className="slide-link">
-              <div className="default">contact@guillaumeesnault.fr</div>
-              <div>contact@guillaumeesnault.fr</div>
-            </a>
+            <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} />
           </div>
           <div className="menu-sub-infos">
             <span>© {date.getFullYear()} - Guillaume Esnault</span>

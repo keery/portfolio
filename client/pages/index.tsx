@@ -2,12 +2,21 @@ import React, { useRef, useEffect } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import SlideLink from "~components/SlideLink";
+import {
+  ROUTE_ABOUT,
+  ROUTE_PROJECTS,
+  EMAIL,
+  GITHUB,
+  INSTAGRAM,
+  LINKEDIN,
+} from "~constants";
 
 const Home: NextPage = () => {
   const blackfluidRef = useRef();
 
   useEffect(() => {
-    if (typeof blackfluidRef) {
+    if (typeof blackfluidRef?.current !== "undefined") {
       blackfluidRef.current.play();
     }
   }, [blackfluidRef]);
@@ -31,24 +40,10 @@ const Home: NextPage = () => {
                 Fullstack developer from <i className="eiffel">Paris</i>.
               </div>
               If you want to know more{" "}
-              <a href="/a-propos" className="slide-link">
-                <div className="default">about me</div>
-                <div>about me</div>
-              </a>
-              ,{" "}
-              <a href="/projets" className="slide-link">
-                <div className="default">my projects</div>
-                <div>my projects</div>
-              </a>
-              , feel free to contact me at{" "}
-              <a
-                href="mailto:contact@guillaumeesnault.fr"
-                className="slide-link"
-              >
-                <div className="default">contact@guillaumeesnault.fr</div>
-                <div>contact@guillaumeesnault.fr</div>
-              </a>
-              .
+              <SlideLink href={ROUTE_ABOUT} text="about me" />,{" "}
+              <SlideLink href={ROUTE_PROJECTS} text="my projects" />, feel free
+              to contact me at{" "}
+              <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} />.
             </div>
           </div>
           <div className="home-video">
@@ -72,32 +67,11 @@ const Home: NextPage = () => {
           </div>
           <div className="vertical-text">
             <div>
-              <a
-                href="https://github.com/keery"
-                target="_blank"
-                className="slide-link"
-              >
-                <div className="default">GITHUB</div>
-                <div>GITHUB</div>
-              </a>
+              <SlideLink href={GITHUB} text="GITHUB" isExternal />
               <b></b>
-              <a
-                href="https://www.linkedin.com/in/guillaume-esnault-9387a2139/"
-                target="_blank"
-                className="slide-link"
-              >
-                <div className="default">LINKEDIN</div>
-                <div>LINKEDIN</div>
-              </a>
+              <SlideLink href={LINKEDIN} text="LINKEDIN" isExternal />
               <b></b>
-              <a
-                href="https://www.instagram.com/esnault_guillaume/"
-                target="_blank"
-                className="slide-link"
-              >
-                <div className="default">INSTAGRAM</div>
-                <div>INSTAGRAM</div>
-              </a>
+              <SlideLink href={INSTAGRAM} text="INSTAGRAM" isExternal />
             </div>
           </div>
         </div>
