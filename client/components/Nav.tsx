@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Burger from "~components/Burger";
 
 const Nav = () => {
+  const date = new Date();
+  const [isOpen, setOpen] = useState(false);
+
+  const toggle = useCallback(() => {
+    setOpen(!isOpen);
+  }, [isOpen, setOpen]);
+
   return (
-    <>
-      <Burger />
+    <div className={isOpen ? "open" : "close"}>
+      <Burger onClick={toggle} />
       <div id="menu">
         <div className="wrapper">
           <span className="label-menu">MENU</span>
@@ -42,7 +49,7 @@ const Nav = () => {
             </a>
           </div>
           <div className="menu-sub-infos">
-            <span>© 2021 - Guillaume Esnault</span>
+            <span>© {date.getFullYear()} - Guillaume Esnault</span>
             <ul className="menu-social">
               <li>
                 <a
@@ -69,7 +76,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
