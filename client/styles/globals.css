@@ -40,7 +40,7 @@ body {
   height: 100%;
   font-family: Lato;
   font-weight: 600;
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: #12121c;
 }
 ul {

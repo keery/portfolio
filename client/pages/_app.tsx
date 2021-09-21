@@ -7,9 +7,11 @@ import AppHead from "~components/AppHead";
 import { appWithTranslation } from "next-i18next";
 import Header from "~components/Header";
 
+import "swiper/swiper-bundle.min.css";
 import "../styles/Nav.css";
 import "../styles/Burger.css";
 import "../styles/Home.css";
+import "../styles/Project.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   console.log(

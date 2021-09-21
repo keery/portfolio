@@ -50,7 +50,7 @@ const Home: NextPage = () => {
                   ref={blackfluidRef}
                   id="blackfluid"
                   src="/assets/blackfluid.mp4"
-                  muted="muted"
+                  muted
                   loop
                   autoplay
                 />
