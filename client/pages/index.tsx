@@ -57,7 +57,7 @@ const Home: NextPage = () => {
                 <img src="/assets/gif-blackfluid.gif" alt="" id="gif-smoke" />
               </div>
             </div>
-            <div className="home-video-mask"></div>
+            <div className="home-video-mask" />
           </div>
           <VerticalText />
         </div>

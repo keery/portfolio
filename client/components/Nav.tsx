@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Burger from "~components/Burger";
 import SlideLink from "~components/SlideLink";
+import Link from "~components/Link";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 
 const Nav = () => {
@@ -19,25 +20,25 @@ const Nav = () => {
           <span className="label-menu">MENU</span>
           <ul>
             <li>
-              <a href="/">
+              <Link href="/" onClick={() => setOpen(false)}>
                 <span>
                   <div className="text-link">Home</div>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={ROUTE_PROJECTS}>
+              <Link href={ROUTE_PROJECTS} onClick={() => setOpen(false)}>
                 <span>
                   <div className="text-link">Projects</div>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={ROUTE_ABOUT}>
+              <Link href={ROUTE_ABOUT} onClick={() => setOpen(false)}>
                 <span>
                   <div className="text-link">About</div>
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

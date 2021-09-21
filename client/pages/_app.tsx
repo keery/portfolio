@@ -5,7 +5,7 @@ import "../styles/globals.css";
 import theme from "../theme";
 import AppHead from "~components/AppHead";
 import { appWithTranslation } from "next-i18next";
-import Header from "~components/Header";
+import Layout from "~components/Layout";
 
 import "swiper/swiper-bundle.min.css";
 import "../styles/Nav.css";
@@ -27,8 +27,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <AppHead />
       <ChakraProvider theme={theme}>
-        <Header />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </>
   );
