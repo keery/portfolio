@@ -1,5 +1,35 @@
 export const projects = [
   {
+    logo: "/assets/projets/studiod-visuel.png",
+    bg: "/assets/projets/studiod-fond.jpg",
+    title: "Studio D",
+    description: `Studio D est une plateforme collaborative solidaire destinée à mettre en relation des troupes de danseurs et des propriétaires de studio de danse.`,
+    role: "Fullstack",
+    context: "Freelance",
+    stack: "React, NextJS, Strapi",
+    link: "https://www.studiod-danse.fr/",
+  },
+  {
+    logo: "/assets/projets/digestclub-visuel.svg",
+    bg: "/assets/projets/digestclub-fond.jpg",
+    title: "Digest.Club",
+    description: `Digest.Club est une plateforme sur laquelle il est possible de centraliser votre veille technologique provenant de sources multiples (Github, Twitter, Slack) afin de la partager à d'autres développeurs ou au sein d'une équipe.`,
+    role: "Fullstack",
+    context: "Professional",
+    stack: "React, NextJS, NestJS",
+    link: "https://digest.club/",
+  },
+  {
+    logo: "/assets/projets/jikiki-logo.svg",
+    bg: "/assets/projets/jikiki-fond.jpg",
+    title: "Jikiki",
+    description: `Jikiki va vous aider à trouver votre prochain logement au Canada. Il rassemble toutes les annonces immobilières provenant du site Kijiji au sein d'un outil facilitant vos recherches.`,
+    role: "Fullstack",
+    context: "Freelance",
+    stack: "React, NextJS, Strapi",
+    link: "https://jikiki.vercel.app/",
+  },
+  {
     logo: "/assets/projets/materalia-visuel.png",
     bg: "/assets/projets/materalia-fond.jpg",
     title: "Materalia",
@@ -9,7 +39,6 @@ export const projects = [
     role: "Fullstack",
     context: "Professional",
     stack: "PHP/jQuery",
-    year: "2017",
     link: "https://www.materalia.fr/",
   },
   {
@@ -22,7 +51,6 @@ export const projects = [
     role: "Fullstack",
     context: "Professional",
     stack: "PHP/jQuery",
-    year: "2017",
     link: "https://www.creutzwald.fr/",
   },
   {
@@ -35,32 +63,29 @@ export const projects = [
     role: "Fullstack",
     context: "Freelance",
     stack: "Symfony",
-    year: "2017",
     link: "http://ysheza.fr/",
   },
-  {
-    logo: "/assets/projets/creative-drawer-visuel.png",
-    bg: "/assets/projets/creative-drawer-fond.jpg",
-    title: "Créative Drawer",
-    description: `Creative Drawer is an open source CMS targeting designers with
-    no computer skills, so that they can easily share their
-    creations on a dedicated personal space.`,
-    role: "Fullstack",
-    context: "w/ friends",
-    stack: "PHP/jQuery",
-    year: "2017",
-    link: "http://www.creative-drawer.ovh/landing",
-  },
-  {
-    logo: "/assets/projets/premium-decorations-visuel.png",
-    bg: "/assets/projets/premium-decorations-fond.jpg",
-    title: "Premium Décorations",
-    description: `Contemporary interior design company specializing in
-    decoration advice, virtual interior design and home staging.`,
-    role: "Fullstack",
-    context: "Professional",
-    stack: "PHP/jQuery",
-    year: "2016",
-    link: "http://www.premium-decorations.com/",
-  },
+  // {
+  //   logo: "/assets/projets/creative-drawer-visuel.png",
+  //   bg: "/assets/projets/creative-drawer-fond.jpg",
+  //   title: "Créative Drawer",
+  //   description: `Creative Drawer is an open source CMS targeting designers with
+  //   no computer skills, so that they can easily share their
+  //   creations on a dedicated personal space.`,
+  //   role: "Fullstack",
+  //   context: "w/ friends",
+  //   stack: "PHP/jQuery",
+  //   link: "http://www.creative-drawer.ovh/landing",
+  // },
+  // {
+  //   logo: "/assets/projets/premium-decorations-visuel.png",
+  //   bg: "/assets/projets/premium-decorations-fond.jpg",
+  //   title: "Premium Décorations",
+  //   description: `Contemporary interior design company specializing in
+  //   decoration advice, virtual interior design and home staging.`,
+  //   role: "Fullstack",
+  //   context: "Professional",
+  //   stack: "PHP/jQuery",
+  //   link: "http://www.premium-decorations.com/",
+  // },
 ];

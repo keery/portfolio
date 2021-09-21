@@ -36,10 +36,6 @@ const ProjectSlide = ({ project }: Props) => {
               <div className="subtitle">Stack</div>
               <i>{project.stack}</i>
             </div>
-            <div>
-              <div className="subtitle">Year</div>
-              <i>{project.year}</i>
-            </div>
           </div>
         </div>
       </div>
