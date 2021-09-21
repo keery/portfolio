@@ -37,8 +37,15 @@ const Projects: NextPage = () => {
         effect="fade"
         mousewheel
         keyboard
+        speed={1000}
+        shortSwipes={false}
         onInit={(swiper) => getProgress(swiper.activeIndex)}
         onSlideChange={(swiper) => getProgress(swiper.activeIndex)}
+        onBeforeTransitionStart={(swiper) => {
+          if (!!swiper.slides[swiper.previousIndex]) {
+            swiper.slides[swiper.previousIndex].classList.add("leave");
+          }
+        }}
         preventInteractionOnTransition
         navigation={{
           nextEl: ".arrow-next-project",
@@ -61,7 +68,7 @@ const Projects: NextPage = () => {
         className="swiper-project"
       >
         {projects.map((project) => (
-          <SwiperSlide>
+          <SwiperSlide key={project.link}>
             <ProjectSlide project={project} />
           </SwiperSlide>
         ))}

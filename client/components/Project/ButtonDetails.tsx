@@ -76,7 +76,7 @@ const ButtonDetails = ({ href }) => {
             cy="49"
             r="47"
             stroke="#fff"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
           />
         </svg>

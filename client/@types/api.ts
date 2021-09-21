@@ -6,6 +6,5 @@ export interface Project {
   role: string;
   context: string;
   stack: string;
-  year: string;
   link: string;
 }

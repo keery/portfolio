@@ -5,7 +5,6 @@ interface Props {
 }
 
 const CircleProgress = ({ progress }: Props) => {
-  console.log(progress);
   return (
     <svg id="circle-bar" width="464" height="464" viewBox="0 0 464 464">
       <circle

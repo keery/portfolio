@@ -9,7 +9,7 @@ interface Props {
 
 const ProjectSlide = ({ project }: Props) => {
   return (
-    <Box bgImage={project.bg} className="project-slide">
+    <Box bgImage={project.bg} className={`project-slide ${project.title}`}>
       <div className="overlay"></div>
       <div className="img-circle-container">
         <div className="img-circle-container-border">

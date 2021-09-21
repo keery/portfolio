@@ -1,8 +1,10 @@
 ::-moz-selection {
-  background: #b6b3ec;
+  background: #eeb611;
+  color: white;
 }
 ::selection {
-  background: #b6b3ec;
+  color: white;
+  background: #eeb611;
 }
 
 html,
