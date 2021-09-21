@@ -27,7 +27,6 @@
   stroke-dasharray: 518 1960;
 }
 #circle-bar .c2 {
-  stroke-dasharray: 0 1570;
   transition: all ease-in-out 0.3s;
 }
 
@@ -421,7 +420,7 @@
     left: 50%;
   }
   .details-projects {
-    right: 3%;
+    right: 5vw;
     bottom: 15px;
     width: 77px;
     height: 77px;
@@ -479,8 +478,8 @@
   .scroll-btn {
     border: none;
     background-color: transparent;
-    transform: translateX(0%);
-    left: 0;
+    transform: translateX(0%) !important;
+    left: 5vw !important;
   }
   .scroll-btn:before {
     display: none;

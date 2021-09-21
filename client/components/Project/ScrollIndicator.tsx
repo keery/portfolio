@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, Box } from "@chakra-ui/react";
 
 const ScrollIndicator = () => {
   return (
@@ -35,15 +35,28 @@ const ScrollIndicator = () => {
         animation: "squareFade 0.7s infinite",
       }}
     >
-      <Image
-        src="/assets/scroll.svg"
-        alt="mouse icon"
-        w="22px"
-        mb="8px"
-        mx="auto"
-        animation="bound 1.4s infinite"
-      />
-      <Text className="scrollText">scroll</Text>
+      <Box display={{ base: "none", md: "block" }}>
+        <Image
+          src="/assets/scroll.svg"
+          alt="Hand icon"
+          w="22px"
+          mb="8px"
+          mx="auto"
+          animation="bound 1.4s infinite"
+        />
+        <Text className="scrollText">scroll</Text>
+      </Box>
+      <Box display={{ base: "block", md: "none" }}>
+        <Image
+          src="/assets/swipe.svg"
+          alt="mouse icon"
+          w="42px"
+          mb="8px"
+          mx="auto"
+          animation="bound 1.4s infinite"
+        />
+        <Text className="scrollText">swipe</Text>
+      </Box>
     </Flex>
   );
 };

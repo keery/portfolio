@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import ReactDom from "react-dom/server";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
@@ -21,6 +21,13 @@ import SwiperBullet from "~components/Project/SwiperBullet";
 SwiperCore.use([Pagination, EffectFade, Navigation, Mousewheel, Keyboard]);
 
 const Projects: NextPage = () => {
+  const [percent, setPercent] = useState<number>(0);
+
+  const getProgress = useCallback((activeIndex) => {
+    const progress = (((activeIndex + 1) * 100) / projects.length) * 0.01;
+    setPercent(520 * progress);
+  }, []);
+
   return (
     <section id="projects">
       <ScrollIndicator />
@@ -30,6 +37,8 @@ const Projects: NextPage = () => {
         effect="fade"
         mousewheel
         keyboard
+        onInit={(swiper) => getProgress(swiper.activeIndex)}
+        onSlideChange={(swiper) => getProgress(swiper.activeIndex)}
         preventInteractionOnTransition
         navigation={{
           nextEl: ".arrow-next-project",
@@ -57,7 +66,7 @@ const Projects: NextPage = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <CircleProgress />
+      <CircleProgress progress={percent} />
       <div id="swiper-pagination" />
     </section>
   );
