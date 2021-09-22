@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import ReactDom from "react-dom/server";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
@@ -17,6 +17,7 @@ import NextProject from "~components/Project/NextProject";
 import ScrollIndicator from "~components/Project/ScrollIndicator";
 import CircleProgress from "~components/Project/CircleProgress";
 import SwiperBullet from "~components/Project/SwiperBullet";
+import { useMotionValue } from "framer-motion";
 
 SwiperCore.use([Pagination, EffectFade, Navigation, Mousewheel, Keyboard]);
 
@@ -28,8 +29,25 @@ const Projects: NextPage = () => {
     setPercent(520 * progress);
   }, []);
 
+  const containerRef = useRef();
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+
+  const mouseHover = (event) => {
+    if (typeof containerRef.current !== "undefined") {
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+
+      const x = (event.clientX - width / 2) * 0.01 * 1;
+      const y = (event.clientY - height / 2) * 0.01 * 1;
+
+      rotateX.set(y > 0 ? -Math.abs(y) : Math.abs(y));
+      rotateY.set(x);
+    }
+  };
+
   return (
-    <section id="projects">
+    <section id="projects" onMouseMove={mouseHover} ref={containerRef}>
       <ScrollIndicator />
       <NextProject />
       <Swiper
@@ -69,7 +87,11 @@ const Projects: NextPage = () => {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.link}>
-            <ProjectSlide project={project} />
+            <ProjectSlide
+              project={project}
+              rotateX={rotateX}
+              rotateY={rotateY}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

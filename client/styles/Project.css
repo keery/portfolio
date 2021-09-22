@@ -160,6 +160,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  perspective: 500px;
 }
 .swiper-slide:nth-child(even) .project-slide .img-circle {
   transform: translate3d(-10%, 10%, 0);

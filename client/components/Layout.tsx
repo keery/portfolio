@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "~components/Header";
-import { motion } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 
 const variants = {

@@ -2,12 +2,15 @@ import React from "react";
 import { Box, Image } from "@chakra-ui/react";
 import ButtonDetails from "~components/Project/ButtonDetails";
 import { Project } from "~@types/api";
+import { motion, MotionValue } from "framer-motion";
 
 interface Props {
   project: Project;
+  rotateX: MotionValue<number>;
+  rotateY: MotionValue<number>;
 }
 
-const ProjectSlide = ({ project }: Props) => {
+const ProjectSlide = ({ project, rotateX, rotateY }: Props) => {
   return (
     <Box bgImage={project.bg} className={`project-slide`}>
       <div className="overlay"></div>
@@ -16,7 +19,13 @@ const ProjectSlide = ({ project }: Props) => {
           <Box className="img-circle" bgImage={project.bg} />
         </div>
       </div>
-      <div className="perspective-container">
+      <motion.div
+        className="perspective-container"
+        style={{
+          rotateX,
+          rotateY,
+        }}
+      >
         <div className="pic-project">
           <Image src={project.logo} />
         </div>
@@ -38,7 +47,7 @@ const ProjectSlide = ({ project }: Props) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <ButtonDetails href={project.link} />
     </Box>
   );
