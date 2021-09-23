@@ -1,3 +1,4 @@
+.next/
 node_modules/
-ftp.txt
-dist/
+.env
+.DS_Store
