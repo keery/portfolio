@@ -131,13 +131,12 @@
     }
   }
 
-  $dist: -14px;
   @keyframes squareFade {
     to {
-      left: $dist;
-      right: $dist;
-      top: $dist;
-      bottom: $dist;
+      left: -14px;
+      right: -14px;
+      top: -14px;
+      bottom: -14px;
       opacity: 0;
     }
   }

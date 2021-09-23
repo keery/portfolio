@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
 import { Flex } from "@chakra-ui/react";
+import SwiperCore from "swiper";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import ScrollIndicator from "~components/Project/ScrollIndicator";
 import Experiences from "~components/About/Experiences";
@@ -9,6 +10,7 @@ import CVButton from "~components/About/CVButton";
 import GraphExperiences from "~components/About/GraphExperiences";
 
 const About: NextPage = () => {
+  const [swiper, setSwiper] = useState<SwiperCore>(null);
   const [indexes, setIndex] = useState<[number | "start", number]>([
     "start",
     0,
@@ -20,8 +22,12 @@ const About: NextPage = () => {
       <ScrollIndicator />
       <div id="about-container">
         <Flex alignItems="center" h="100%">
-          <Experiences setIndex={setIndex} />
-          <GraphExperiences prevIndex={indexes[0]} activeIndex={indexes[1]} />
+          <Experiences setIndex={setIndex} setSwiper={setSwiper} />
+          <GraphExperiences
+            prevIndex={indexes[0]}
+            activeIndex={indexes[1]}
+            textSwiper={swiper}
+          />
         </Flex>
         {/* <div id="slider-schema">
           <ul className="slides">

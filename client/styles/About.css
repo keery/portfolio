@@ -325,6 +325,9 @@
     opacity: 0;
   }
 }
+.svg-segment {
+  position: relative;
+}
 #graph-experiences .swiper-wrapper {
   position: relative;
   z-index: 90;
@@ -335,9 +338,14 @@
   transform-box: fill-box;
   transform: rotate(0deg);
 }
-/* .graph-segment .circle {
-  stroke-dashoffset: 4;
-} */
+.graph-segment .circle {
+  fill: transparent;
+  cursor: pointer;
+  transition: stroke ease-in-out 0.1s;
+}
+.graph-segment .circle:hover {
+  stroke: #fff !important;
+}
 .graph-segment .line,
 /* .graph-segment .circle, */
 .graph-segment .arc {
@@ -619,22 +627,6 @@
 .graph-segment img {
   opacity: 0;
   animation: appendImg 1s forwards;
-}
-.about-img image#about-img1 {
-  animation-delay: 1s;
-}
-.about-img image#about-img2 {
-  animation-delay: 2.8s;
-}
-.invisble-shape {
-  fill: transparent;
-  cursor: pointer;
-  stroke-width: 2px;
-  stroke: transparent;
-  transition: stroke 0.2s ease-in-out;
-}
-.invisble-shape:hover {
-  stroke: white;
 }
 @keyframes appendImg {
   0% {

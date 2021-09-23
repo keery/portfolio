@@ -10,25 +10,28 @@ SwiperCore.use([Keyboard, EffectFade]);
 interface Props {
   activeIndex: number;
   prevIndex: number | "start";
+  textSwiper: SwiperCore;
 }
 
-const GraphExperiences = ({ activeIndex, prevIndex }: Props) => {
+const GraphExperiences = ({ activeIndex, prevIndex, textSwiper }: Props) => {
   const [swiper, setSwiper] = useState<SwiperCore>(null);
 
   const groupedExperiences = useMemo(
     () =>
-      experiences.reduce((total, current, index, array) => {
-        if (index % 2 === 0) {
-          const val = [current];
+      experiences
+        .map((experience, index) => ({ ...experience, index }))
+        .reduce((total, current, index, array) => {
+          if (index % 2 === 0) {
+            const val = [current];
 
-          if (index + 1 in array) {
-            val.push(array[index + 1]);
+            if (index + 1 in array) {
+              val.push(array[index + 1]);
+            }
+            total.push(val);
           }
-          total.push(val);
-        }
 
-        return total;
-      }, []),
+          return total;
+        }, []),
     []
   );
 
@@ -69,7 +72,7 @@ const GraphExperiences = ({ activeIndex, prevIndex }: Props) => {
       <GraphCursor />
       {groupedExperiences.map((group) => (
         <SwiperSlide key={group[0].title} style={{ height: "100%" }}>
-          <GraphSegment experiences={group} />
+          <GraphSegment experiences={group} textSwiper={textSwiper} />
         </SwiperSlide>
       ))}
     </Swiper>

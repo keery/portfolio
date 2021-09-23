@@ -6,7 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Keyboard, EffectFade]);
 
-const Experiences = ({ setIndex }) => {
+interface Props {
+  setIndex: (indexes: [number | "start", number]) => void;
+  setSwiper: (swiper: SwiperCore) => void;
+}
+
+const Experiences = ({ setIndex, setSwiper }: Props) => {
   return (
     <Swiper
       id="experiences"
@@ -14,6 +19,7 @@ const Experiences = ({ setIndex }) => {
       effect="fade"
       keyboard
       speed={1000}
+      onSwiper={setSwiper}
       preventInteractionOnTransition
       className="swiper-project"
       onBeforeTransitionStart={(swiper) => {

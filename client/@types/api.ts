@@ -11,6 +11,7 @@ export interface Project {
 }
 
 export interface Experience {
+  index?: number;
   title: string;
   when: string;
   website: string;
