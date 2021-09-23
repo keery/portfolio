@@ -3,9 +3,11 @@ import Burger from "~components/Burger";
 import SlideLink from "~components/SlideLink";
 import Link from "~components/Link";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
+import { useRouter } from "next/router";
 
 const Nav = () => {
   const date = new Date();
+  const router = useRouter();
   const [isOpen, setOpen] = useState(false);
 
   const toggle = useCallback(() => {
@@ -20,21 +22,33 @@ const Nav = () => {
           <span className="label-menu">MENU</span>
           <ul>
             <li>
-              <Link href="/" onClick={() => setOpen(false)}>
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className={router.route === "/" && "active"}
+              >
                 <span>
                   <div className="text-link">Home</div>
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={ROUTE_PROJECTS} onClick={() => setOpen(false)}>
+              <Link
+                href={ROUTE_PROJECTS}
+                onClick={() => setOpen(false)}
+                className={router.route === ROUTE_PROJECTS && "active"}
+              >
                 <span>
                   <div className="text-link">Projects</div>
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={ROUTE_ABOUT} onClick={() => setOpen(false)}>
+              <Link
+                href={ROUTE_ABOUT}
+                onClick={() => setOpen(false)}
+                className={router.route === ROUTE_ABOUT && "active"}
+              >
                 <span>
                   <div className="text-link">About</div>
                 </span>
