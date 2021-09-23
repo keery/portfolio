@@ -1,0 +1,36 @@
+.burger {
+  cursor: pointer;
+  z-index: 1300;
+  position: absolute;
+  top: 35px;
+  right: 5vw;
+  width: 38px;
+  height: 26px;
+}
+.burger .line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  transition: 0.3s all ease-in-out;
+  top: 0;
+}
+.burger .line.l2 {
+  top: 8px;
+}
+.burger .line.l3 {
+  left: unset;
+  right: 0;
+  top: 16px;
+  width: 55%;
+}
+.burger:hover .line.l1,
+.burger:hover .line.l3 {
+  transform: translateX(-8px);
+  width: 100%;
+}
+.burger:hover .line.l2 {
+  transform: translateX(25px);
+  width: 50%;
+}
