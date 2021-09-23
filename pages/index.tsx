@@ -11,16 +11,14 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (typeof blackfluidRef?.current !== "undefined") {
+      // @ts-ignore
       blackfluidRef.current.play();
     }
   }, [blackfluidRef]);
 
   return (
     <div className="enter">
-      <section
-        id="home"
-        // TODO: geparallax
-      >
+      <section id="home">
         <div id="home-container">
           <div className="home-presentation">
             <h1 className="home-name">

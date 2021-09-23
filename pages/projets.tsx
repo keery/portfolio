@@ -32,7 +32,7 @@ const Projects: NextPage = () => {
     setPercent(520 * progress);
   }, []);
 
-  const containerRef = useRef();
+  const containerRef = useRef(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
 
