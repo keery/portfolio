@@ -55,34 +55,6 @@ p {
   margin: 0;
 }
 
-/* .overlayContainer {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  .overlay {
-    width: 60%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    background-color: rgb(255, 255, 255);
-
-    &.oLeft {
-      left: -100%;
-      transform: skew(-7deg, 0deg);
-    }
-
-    &.oRight {
-      right: -100%;
-      transform: skew(-7deg, 0deg);
-    }
-  }
-} */
 .overlayContainer {
   overflow: hidden;
   height: 100vh;
@@ -112,15 +84,6 @@ p {
   transform: skew(-7deg, 0deg);
 }
 
-/* .perspective-container {
-  height: 100%;
-  width: 100%;
-  transform-style: preserve-3d;
-  perspective: 500px;
-  &.leave {
-    animation: leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1);
-  }
-} */
 .perspective-container {
   height: 100%;
   width: 100%;
@@ -141,73 +104,6 @@ p {
     transform: rotateX(0deg) rotateY(0deg);
   }
 }
-
-/* .slide-link {
-  vertical-align: bottom;
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.58);
-  text-decoration: none;
-  overflow: hidden;
-  position: relative;
-
-  .default {
-    transform: translateY(0);
-    transition: transform ease-in-out 0.2s;
-    + div {
-      color: #f2c84c;
-      position: absolute;
-      top: 110%;
-      left: 0;
-      transition: top ease-in-out 0.2s;
-    }
-  }
-
-  &:hover {
-    .default {
-      transform: translateY(-110%);
-      + div {
-        top: 0;
-      }
-    }
-  }
-} */
-
-/* .logo {
-  position: absolute;
-  z-index: 55;
-  width: 64px;
-  background-color: #29293a;
-  left: 5vw;
-  > a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    padding: 12px 20px;
-    border-bottom: 5px solid #f2c84c;
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    .u-line,
-    .g-line {
-      fill: none;
-      stroke: #fff;
-      stroke-miterlimit: 10;
-      stroke-width: 1.9px;
-    }
-  }
-
-  &:hover {
-    > a {
-      .g-line {
-        animation: drawLine 0.8s linear;
-      }
-      .u-line {
-        animation: drawLine 0.8s linear;
-      }
-    }
-  }
-} */
 
 .logo {
   position: absolute;
@@ -276,73 +172,12 @@ p {
   z-index: 9999999999;
   background-color: #12121c;
 }
-/* .loading {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  // border: 2px solid white;
-  // border-right: none; 
-  height: 40px;
 
-  > .bar {
-    width: 400px;
-    height: 100%;
-    display: inline-block;
-    position: relative;
-
-    .percent {
-      background: #195190;
-      background: -moz-linear-gradient(left, #195190 0%, #ecc92a 100%);
-      background: -webkit-linear-gradient(left, #195190 0%, #ecc92a 100%);
-      background: linear-gradient(to right, #195190 0%, #ecc92a 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#195190',endColorstr='#ecc92a',GradientType=1);
-      height: 100%;
-      width: 0%;
-      transition: width linear 1s;
-      position: relative;
-      padding-left: 40px;
-      border: 2px solid white;
-      border-right: none;
-
-      &:before {
-        content: "LOADING";
-        position: absolute;
-        font-size: 45px;
-        color: white;
-        left: 35px;
-        top: -60px;
-        font-weight: bold;
-      }
-    }
-    &:after {
-      content: "";
-      display: block;
-      height: 1px;
-      position: absolute;
-      top: 50%;
-      width: calc(100% - 20px);
-      background-color: white;
-      left: 40px;
-    }
-    .number {
-      position: absolute;
-      left: calc(100% + 35px);
-      color: white;
-      bottom: 0;
-      font-size: 33px;
-      line-height: 1;
-      font-family: Lato;
-    }
-  }
-} */
 .loading {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
-  /* // border: 2px solid white;
-  // border-right: none; */
   height: 40px;
 }
 
@@ -398,31 +233,6 @@ p {
   line-height: 1;
   font-family: Lato;
 }
-
-/* .logo-loader {
-  width: 37px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  padding: 7px;
-  z-index: 5;
-  svg {
-    width: 100%;
-    height: 100%;
-    .u-line,
-    .g-line {
-      fill: none;
-      stroke: #fff;
-      stroke-miterlimit: 10;
-      stroke-width: 1.9px;
-    }
-  }
-  .g-line,
-  .u-line {
-    animation: drawLine 1.2s linear infinite alternate-reverse;
-  }
-} */
 
 .logo-loader {
   width: 37px;
@@ -501,28 +311,6 @@ p {
 }
 
 @media screen and (max-width: 767px) {
-  /* .loading {
-    width: 90%;
-    > .bar {
-      width: 90%;
-
-      .percent:before {
-        left: 0;
-        width: 100%;
-        text-align: center;
-        position: fixed;
-      }
-
-      .number {
-        right: 0;
-        left: 0;
-        bottom: -45px;
-        width: calc(100% + 20px);
-        text-align: center;
-      }
-    }
-  } */
-
   .loading {
     width: 90%;
   }

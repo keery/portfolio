@@ -12,6 +12,7 @@ import "../styles/Nav.css";
 import "../styles/Burger.css";
 import "../styles/Home.css";
 import "../styles/Project.css";
+import "../styles/About.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   console.log(

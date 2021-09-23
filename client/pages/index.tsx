@@ -20,8 +20,6 @@ const Home: NextPage = () => {
       <section
         id="home"
         // TODO: geparallax
-        degreeX="24"
-        degreeY="15"
       >
         <div id="home-container">
           <div className="home-presentation">
@@ -52,7 +50,6 @@ const Home: NextPage = () => {
                   src="/assets/blackfluid.mp4"
                   muted
                   loop
-                  autoplay
                 />
                 <img src="/assets/gif-blackfluid.gif" alt="" id="gif-smoke" />
               </div>

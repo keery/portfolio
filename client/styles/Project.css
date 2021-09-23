@@ -517,7 +517,7 @@
   }
 }
 
-.swiper-project {
+#projects .swiper-project {
   width: 100%;
   height: 100%;
 }
