@@ -44,7 +44,7 @@ const AppHead = () => {
           site_name: "Guillaume Esnault | Portfolio",
           images: [
             {
-              url: process.env.NEXT_PUBLIC_URL + "/assets/img/og-cover.png",
+              url: process.env.NEXT_PUBLIC_URL + "/assets/og-cover.png",
               width: 300,
               height: 169,
               alt: "Guillaume Esnault logo",
