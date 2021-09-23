@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "Titre app",
-    "description": "Description app"
-  },
-  "hello": "Bonjour"
+    "title": "Guillaume Esnault | Portfolio",
+    "description": "Je m'appelle Guillaume Esnault, développeur Javascript originaire de Paris avec un attrait particulier pour l'UX / UI design. Passionné par le web je fais de la création d'applications web et mobile, vous trouverez sur mon portfolio mes créations ainsi que mon parcours. Mes spécialités sont React Js, Next Js, Node Js, Strapi, Typescript."
+  }
 }

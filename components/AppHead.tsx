@@ -34,29 +34,29 @@ const AppHead = () => {
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
       </NextHead>
-      {/*<DefaultSeo
-        titleTemplate="%s | Jikiki"
-        defaultTitle={t('seo.title')}
-        description={t('seo.description')}
+      <DefaultSeo
+        titleTemplate="%s | Guillaume Esnault"
+        defaultTitle={t("seo.title")}
+        description={t("seo.description")}
         openGraph={{
-          type: 'website',
+          type: "website",
           url: process.env.NEXT_PUBLIC_URL,
-          site_name: 'Jikiki',
+          site_name: "Guillaume Esnault | Portfolio",
           images: [
             {
-              url: process.env.NEXT_PUBLIC_URL + '/assets/img/og-cover.png',
+              url: process.env.NEXT_PUBLIC_URL + "/assets/img/og-cover.png",
               width: 300,
               height: 169,
-              alt: 'Jikiki logo',
+              alt: "Guillaume Esnault logo",
             },
           ],
         }}
         twitter={{
-          handle: 'jikiki',
+          handle: "gesnault",
           site: process.env.NEXT_PUBLIC_URL,
-          cardType: 'summary_large_image',
+          cardType: "summary_large_image",
         }}
-      /> */}
+      />
     </>
   );
 };

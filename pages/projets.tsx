@@ -18,10 +18,13 @@ import ScrollIndicator from "~components/Project/ScrollIndicator";
 import CircleProgress from "~components/Project/CircleProgress";
 import SwiperBullet from "~components/Project/SwiperBullet";
 import { useMotionValue } from "framer-motion";
+import { NextSeo } from "next-seo";
+import { useTranslation } from "next-i18next";
 
 SwiperCore.use([Pagination, EffectFade, Navigation, Mousewheel, Keyboard]);
 
 const Projects: NextPage = () => {
+  const { t } = useTranslation("project");
   const [percent, setPercent] = useState<number>(0);
 
   const getProgress = useCallback((activeIndex) => {
@@ -48,6 +51,7 @@ const Projects: NextPage = () => {
 
   return (
     <section id="projects" onMouseMove={mouseHover} ref={containerRef}>
+      <NextSeo title={t("seo.title")} description={t("seo.description")} />
       <ScrollIndicator />
       <NextProject />
       <Swiper
@@ -106,7 +110,7 @@ export const getServerSideProps: GetServerSideProps<SSRConfig> = async ({
 }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["project"])),
     },
   };
 };
