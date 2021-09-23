@@ -3,7 +3,7 @@ import { Experience } from "~@types/api";
 export const experiences: Experience[] = [
   {
     title: "Levio",
-    when: "2020 - Today",
+    when: "2020 - today",
     website: "https://levio.ca/",
     websiteDisplay: "levio.ca",
     role: "Full stack JS",
@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     title: "Neftis",
     when: "2017 - 2018",
     website: "http://www.neftis.fr",
-    websiteDisplay: "gencontact.fr",
+    websiteDisplay: "neftis.fr",
     role: "Full stack",
     description:
       "Neftis is a web agency who developed a home made CMS named FLEXIT, my main activity was to develop new features on it. Mainly back oriented, but I developed also websites for customers.",

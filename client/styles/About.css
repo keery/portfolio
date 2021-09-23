@@ -12,32 +12,7 @@
   height: 100%;
   overflow: hidden;
 }
-#about .dl-cv {
-  font-size: 11px;
-  line-height: 11px;
-  font-weight: 400;
-  letter-spacing: 0.19em;
-  white-space: nowrap;
-  position: absolute;
-  bottom: 35px;
-  z-index: 55;
-  left: 5%;
-}
-#about .dl-cv a {
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  vertical-align: middle;
-}
-#about .dl-cv svg {
-  margin-right: 10px;
-  width: 28px;
-  background-color: #29293a;
-  border-radius: 100%;
-  padding: 5px 5px;
-  display: inline-block;
-  vertical-align: middle;
-}
+
 #about .scroll-btn {
   border: 1px solid white;
   border-radius: 100%;
@@ -110,7 +85,7 @@
   height: 100%;
 }
 #about #experiences {
-  font-size: 15px;
+  font-size: 18px;
   display: inline-block;
   vertical-align: top;
   width: 40%;
@@ -183,13 +158,9 @@
   display: inline-block;
   vertical-align: top;
 }
-#about #experiences .sub-info > div + div {
-  margin-left: 25px;
-}
 #about #experiences .sub-info > div > i {
-  font-size: 18px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.58);
+  font-size: 21px;
+  color: #fff;
 }
 #about #experiences .sub-info .subtitle {
   color: #f2c84c;

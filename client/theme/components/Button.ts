@@ -1,42 +1,42 @@
 const Button = {
   baseStyle: {
-    fontWeight: '500',
-    borderRadius: 'xl',
+    fontWeight: "500",
+    borderRadius: "xl",
     lineHeight: 1,
     _hover: {
-      textDecoration: 'none',
+      textDecoration: "none",
     },
     _focus: {
-      boxShadow: 'none',
+      boxShadow: "none",
     },
   },
   defaultProps: {
-    colorScheme: 'white',
+    colorScheme: "white",
   },
   variants: {
     solid: {
       _hover: {
         opacity: 0.8,
       },
-      bg: 'linear-gradient(to right, #373373, #554fa9)',
+      bg: "#29293a",
     },
   },
   sizes: {
     md: {
-      fontSize: '14px',
-      letterSpacing: '.5px',
+      fontSize: "14px",
+      letterSpacing: ".5px",
     },
     sm: {
-      fontWeight: '400',
-      borderRadius: 'sm',
-      fontSize: '12px',
-      px: '16px',
-      letterSpacing: '.4px',
+      fontWeight: "400",
+      borderRadius: "sm",
+      fontSize: "12px",
+      px: "16px",
+      letterSpacing: ".4px",
     },
     lg: {
-      height: '52px',
+      height: "52px",
     },
   },
-}
+};
 
-export default Button
+export default Button;

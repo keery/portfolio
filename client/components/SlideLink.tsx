@@ -1,14 +1,15 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import { Text, TextProps } from "@chakra-ui/react";
 import Link, { Props as LinkProps } from "~components/Link";
 
 interface Props extends LinkProps {
   href: string;
   text: string;
   withOpacity?: boolean;
+  textProps?: TextProps;
 }
 
-const SlideLink = ({ href, text, withOpacity, ...rest }: Props) => {
+const SlideLink = ({ href, text, withOpacity, textProps, ...rest }: Props) => {
   return (
     <Link
       role="group"
@@ -21,6 +22,7 @@ const SlideLink = ({ href, text, withOpacity, ...rest }: Props) => {
       position="relative"
     >
       <Text
+        {...textProps}
         opacity={withOpacity ? 0.6 : 1}
         transform="translateY(0)"
         transition="transform ease-in-out 0.2s"
@@ -31,6 +33,7 @@ const SlideLink = ({ href, text, withOpacity, ...rest }: Props) => {
         {text}
       </Text>
       <Text
+        {...textProps}
         color="yellow.500"
         pos="absolute"
         top="110%"

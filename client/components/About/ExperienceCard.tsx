@@ -1,7 +1,7 @@
 import React from "react";
 import { Experience } from "~@types/api";
 import SlideLink from "~components/SlideLink";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 
 interface Props {
   experience: Experience;
@@ -11,22 +11,11 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <Box className="item">
       <h2>{experience.title}</h2>
-      <div className="sub-info">
+      <HStack className="sub-info" spacing={10}>
         <div>
           <div className="subtitle">When</div>
           <i>
             <div>{experience.when}</div>
-          </i>
-        </div>
-        <div>
-          <div className="subtitle">Website</div>
-          <i>
-            <div>
-              <SlideLink
-                href={experience.website}
-                text={experience.websiteDisplay}
-              />
-            </div>
           </i>
         </div>
         <div>
@@ -35,7 +24,21 @@ const ExperienceCard = ({ experience }: Props) => {
             <div>{experience.role}</div>
           </i>
         </div>
-      </div>
+        <div>
+          <div className="subtitle">Website</div>
+          <i>
+            <div>
+              <SlideLink
+                textProps={{
+                  textDecoration: "underline",
+                }}
+                href={experience.website}
+                text={experience.websiteDisplay}
+              />
+            </div>
+          </i>
+        </div>
+      </HStack>
       <p className="about-text">{experience.description}</p>
     </Box>
   );
