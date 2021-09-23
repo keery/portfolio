@@ -68,6 +68,7 @@ const GraphExperiences = ({ activeIndex, prevIndex, textSwiper }: Props) => {
       }}
       className={`step-${prevIndex}-${activeIndex}`}
       onSwiper={setSwiper}
+      allowTouchMove={false}
     >
       <GraphCursor />
       {groupedExperiences.map((group) => (
