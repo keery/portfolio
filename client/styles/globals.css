@@ -1,0 +1,345 @@
+::-moz-selection {
+  background: #eeb611;
+  color: white;
+}
+::selection {
+  color: white;
+  background: #eeb611;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #12121c !important;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Lato;
+  font-weight: 600;
+  overflow: hidden;
+  background-color: #12121c;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+.overlayContainer {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.overlayContainer .overlay {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgb(255, 255, 255);
+}
+
+.overlayContainer .overlay.oLeft {
+  left: -100%;
+  transform: skew(-7deg, 0deg);
+}
+.overlayContainer .overlay.oLeft {
+  right: -100%;
+  transform: skew(-7deg, 0deg);
+}
+
+.perspective-container {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+.perspective-container.leave {
+  animation: leave-animation 0.5s forwards cubic-bezier(0.18, 2.07, 1, 1);
+}
+
+.perspective-area {
+  perspective: 500px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+@keyframes leave-animation {
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+.logo {
+  position: absolute;
+  z-index: 55;
+  width: 64px;
+  background-color: #29293a;
+  left: 5vw;
+  border-bottom: 5px solid #f2c84c;
+}
+
+.logo > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px 8px 20px;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo svg .u-line,
+.logo svg .g-line {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 1.9px;
+}
+
+.logo:hover > a .g-line {
+  animation: drawLine 0.8s linear;
+}
+
+.logo:hover > a .u-line {
+  animation: drawLine 0.8s linear;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 54;
+    stroke-dashoffset: 54;
+  }
+  100% {
+    stroke-dasharray: 54;
+    stroke-dashoffset: 112;
+  }
+}
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 54;
+    stroke-dashoffset: 54;
+  }
+  100% {
+    stroke-dasharray: 54;
+    stroke-dashoffset: 112;
+  }
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999999;
+  background-color: #12121c;
+}
+
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  height: 40px;
+}
+
+.loading > .bar {
+  width: 400px;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.loading > .bar .percent {
+  background: #195190;
+  background: -moz-linear-gradient(left, #195190 0%, #ecc92a 100%);
+  background: -webkit-linear-gradient(left, #195190 0%, #ecc92a 100%);
+  background: linear-gradient(to right, #195190 0%, #ecc92a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#195190',endColorstr='#ecc92a',GradientType=1);
+  height: 100%;
+  width: 0%;
+  transition: width linear 1s;
+  position: relative;
+  padding-left: 40px;
+  border: 2px solid white;
+  border-right: none;
+}
+
+.loading > .bar .percent:before {
+  content: "LOADING";
+  position: absolute;
+  font-size: 45px;
+  color: white;
+  left: 35px;
+  top: -60px;
+  font-weight: bold;
+}
+
+.loading > .bar:after {
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: calc(100% - 20px);
+  background-color: white;
+  left: 40px;
+}
+
+.loading > .bar .number {
+  position: absolute;
+  left: calc(100% + 35px);
+  color: white;
+  bottom: 0;
+  font-size: 33px;
+  line-height: 1;
+  font-family: Lato;
+}
+
+.logo-loader {
+  width: 37px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  padding: 7px;
+  z-index: 5;
+}
+
+.logo-loader svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-loader svg .u-line,
+.logo-loader svg .g-line {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 1.9px;
+}
+
+.logo-loader .g-line,
+.logo-loader .c-line {
+  animation: drawLine 1.2s linear infinite alternate-reverse;
+}
+
+.loader-ball {
+  border-radius: 100%;
+  background-color: black;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 2px 8px;
+}
+.loader-ball.even {
+  animation: ball-zoom 1300ms infinite;
+  background-color: #fff;
+}
+.loader-ball.odd {
+  animation: ball-zoom 1300ms 650ms infinite;
+  background-color: #fff;
+}
+
+.loader-ball.first {
+  margin-bottom: -2px;
+}
+.loader-ball.last {
+  margin-top: -2px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes ball-zoom {
+  0% {
+    width: 8px;
+    height: 8px;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .loading {
+    width: 90%;
+  }
+
+  .loading > .bar {
+    width: 90%;
+  }
+
+  .loading > .bar .percent:before {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+  }
+
+  .loading > .bar .number {
+    right: 0;
+    left: 0;
+    bottom: -45px;
+    width: calc(100% + 20px);
+    text-align: center;
+  }
+}
+
+#blackfluid {
+  max-width: none;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

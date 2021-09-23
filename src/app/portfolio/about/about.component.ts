@@ -4,16 +4,12 @@ import {
   Renderer2,
   ElementRef,
   ViewChild,
-  Input,
   Output,
   EventEmitter,
-  HostListener,
 } from "@angular/core";
 import { GESliderDirective } from "../geslider/geslider.directive";
 import { Step } from "./steps.interface";
 import { STEPS } from "./mock-steps";
-import { ObjLoop } from "../../loop/object-loop.pipe";
-import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/fromEvent";
 
 @Component({
@@ -41,7 +37,6 @@ export class AboutComponent implements AfterViewInit {
   sliderText: GESliderDirective;
   @ViewChild("sliderSchema", { read: GESliderDirective })
   sliderSchema: GESliderDirective;
-  // test = Observable.fromEvent(document, 'changeStep');
 
   stepChanging(id: number) {
     if (this.stateChange) {
