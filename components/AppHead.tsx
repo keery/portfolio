@@ -7,7 +7,7 @@ const AppHead = () => {
   const { t } = useTranslation();
   return (
     <>
-      {/* <NextHead>
+      <NextHead>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -29,12 +29,12 @@ const AppHead = () => {
         <link
           rel="mask-icon"
           href="/assets/favicon/safari-pinned-tab.svg"
-          color="#373373"
+          color="#3e555b"
         />
-        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
       </NextHead>
-      <DefaultSeo
+      {/*<DefaultSeo
         titleTemplate="%s | Jikiki"
         defaultTitle={t('seo.title')}
         description={t('seo.description')}
