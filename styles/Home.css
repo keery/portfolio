@@ -217,7 +217,6 @@
   overflow: hidden;
   letter-spacing: initial;
   display: inline-block;
-  font-family: Cormorant Garamond;
   font-weight: 600;
   color: #fff;
   transition: width 1.5s 1.8s cubic-bezier(0.19, 1, 0.22, 1),
@@ -226,6 +225,7 @@
 }
 .home-presentation .home-description .eiffel {
   cursor: url(/assets/picto-eiffel-tower.png), auto;
+  text-decoration: underline;
 }
 @media screen and (max-width: 1000px) {
   .home-presentation {

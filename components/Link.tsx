@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as ChakraLink, LinkProps } from "@chakra-ui/react";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
+import { useTranslation } from "next-i18next";
 
 export interface Props
   extends Omit<LinkProps, "href" | "as">,

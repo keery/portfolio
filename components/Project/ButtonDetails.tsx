@@ -1,67 +1,31 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 
 const ButtonDetails = ({ href }) => {
+  const { t } = useTranslation("project");
+
   return (
     <div className="details-projects">
       <a href={href} target="_blank">
         <div className="details-label">
-          <div>
-            <Box as="span" transitionDelay="0s">
-              M
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.02s">
-              O
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.04s">
-              R
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.06s">
-              E
-            </Box>
-          </div>
-          <br />
-          <div>
-            <Box as="span" transitionDelay="0.08s">
-              D
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.1s">
-              E
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.12s">
-              T
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.16s">
-              A
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.18s">
-              I
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.2s">
-              L
-            </Box>
-          </div>
-          <div>
-            <Box as="span" transitionDelay="0.22s">
-              S
-            </Box>
-          </div>
+          {t("more")
+            .split("")
+            .map((char, index) => {
+              if (char === " ") return <br key={`${char}-${index}`} />;
+              return (
+                <div key={`${char}-${index}`}>
+                  <Box
+                    fontFamily="Lato"
+                    as="span"
+                    textTransform="uppercase"
+                    transitionDelay={`${0.02 * index}s`}
+                  >
+                    {char}
+                  </Box>
+                </div>
+              );
+            })}
         </div>
         <div className="details-arrow" />
         <svg

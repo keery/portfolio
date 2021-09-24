@@ -1,10 +1,13 @@
 import React from "react";
 import { Text, Box } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 
 const NextProject = () => {
+  const { t } = useTranslation("project");
   return (
     <Box
       className="arrow-next-project"
+      fontFamily="Lato"
       w="11px"
       fontSize="11px"
       fontWeight="600"
@@ -24,8 +27,12 @@ const NextProject = () => {
       bgPos="center 100%"
       animation="arrowNext forwards infinite 1.2s ease-in-out"
     >
-      <Text transform="rotate(-90deg)" userSelect="none">
-        NEXT PROJECT
+      <Text
+        transform="rotate(-90deg)"
+        userSelect="none"
+        textTransform="uppercase"
+      >
+        {t("nextProject")}
       </Text>
     </Box>
   );

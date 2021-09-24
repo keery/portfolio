@@ -69,6 +69,7 @@
   z-index: 820;
   display: block;
   position: fixed;
+  font-family: "Lato";
 }
 #menu:before,
 #menu:after {

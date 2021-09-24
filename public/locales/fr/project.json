@@ -2,6 +2,28 @@
     "seo": {
       "title": "Projets",
       "description": "Galerie présentant divers projets web ou mobile que j'ai réalisé"
+    },
+    "freelance": "Freelance",
+    "pro": "Professionnel",
+    "nextProject": "Projet suivant",
+    "more": "Voir plus",
+    "studiod": {
+      "description": "Studio D est une plateforme collaborative solidaire open-source destinée à mettre en relation des troupes de danseurs et des propriétaires de studio de danse."
+    },
+    "digestclub": {
+      "description": "Digest.Club est une plateforme sur laquelle il est possible de centraliser votre veille technologique provenant de sources multiples (Github, Twitter, Slack) afin de la partager à d'autres développeurs ou au sein d'une équipe."
+    },
+    "jikiki": {
+      "description": "Jikiki va vous aider à trouver votre prochain logement au Canada. Il rassemble toutes les annonces immobilières provenant du site Kijiji au sein d'un outil facilitant vos recherches."
+    },
+    "materalia": {
+      "description": "Refonte du site Materalia qui est un fournisseur de matériaux dans les domaines du scientifique et de l'industriel, plus précisément dans l'aéronautique, automobile et de la santé."
+    },
+    "creutzwald": {
+      "description": "Site web de la ville de Creutzwald située dans le département de la Moselle. Il offre des renseignements sur la vie municipale, les activités et évènements organisés au sein de la ville."
+    },
+    "ysheza": {
+      "description": "Création d'un site pour une marque indépendante nommée Yshéza, spécialisée dans la fabrication à la main de vêtements et accessoires à l'aide de tissues wax."
     }
   }
   

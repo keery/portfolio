@@ -2,5 +2,19 @@
   "seo": {
     "title": "Guillaume Esnault | Portfolio",
     "description": "Je m'appelle Guillaume Esnault, développeur Javascript originaire de Paris avec un attrait particulier pour l'UX / UI design. Passionné par le web je fais de la création d'applications web et mobile, vous trouverez sur mon portfolio mes créations ainsi que mon parcours. Mes spécialités sont React Js, Next Js, Node Js, Strapi, Typescript."
+  },
+  "home": {
+    "description": "Développeur javascript freelance situé à",
+    "description2": "Passionné par des UI/UX différentes avec des animations et intéractions cool qui sortent de l'ordinaire.",
+    "knowMore": "Si vous voulez en savoir plus",
+    "about": "à propos de moi",
+    "project": "mes projets",
+    "contact": "n'hésitez pas à me contacter à"
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "A propos",
+    "contact": "Contacte moi à"
   }
 }

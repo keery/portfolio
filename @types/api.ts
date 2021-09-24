@@ -18,6 +18,7 @@ export interface Experience {
   websiteDisplay: string;
   role: string;
   description: string;
+  environment: string;
   image: string;
   imageProps?: ImageProps;
 }

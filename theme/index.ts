@@ -8,11 +8,15 @@ import {
   Divider,
   Input,
   Textarea,
+  Heading,
 } from "./components";
 
 const theme = extendTheme({
   styles: {
     global: {
+      body: {
+        color: "white",
+      },
       h1: {
         fontSize: "5xl",
         fontWeight: "900",
@@ -20,15 +24,15 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "Lato, sans-serif",
-    heading: "Lato, serif",
+    body: "Cormorant Garamond, sans-serif",
+    heading: "Fjalla One",
   },
   fontSizes: {
     xs: "12px",
     sm: ".925rem",
     md: "1rem",
     lg: "1.2rem",
-    xl: "1.35rem",
+    xl: "3.2rem",
     "2xl": "1.6rem",
     "3xl": "2.15rem",
   },
@@ -74,6 +78,7 @@ const theme = extendTheme({
     Divider,
     Input,
     Textarea,
+    Heading,
   },
   textStyles: {
     h1: {
@@ -133,36 +138,6 @@ const theme = extendTheme({
     60: "15rem",
     62: "15.5rem",
     64: "16rem",
-  },
-  layerStyles: {
-    full: {
-      pos: "absolute",
-      left: 0,
-      right: 0,
-      top: 0,
-      bottom: 0,
-    },
-    priceInput: {
-      alignItems: "center",
-      border: "1px solid",
-      borderColor: "gray.200",
-      borderRadius: "10px",
-      py: 2,
-      px: 2.5,
-      _hover: {
-        borderColor: "inputHover",
-      },
-    },
-    filter: {
-      height: "52px",
-      borderRadius: "xl",
-      border: { base: "none", lg: "1px solid #E5E5E5" },
-      padding: "5px 25px",
-      cursor: "pointer",
-      _hover: {
-        borderColor: "inputHover",
-      },
-    },
   },
 });
 

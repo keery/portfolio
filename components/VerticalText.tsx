@@ -1,11 +1,12 @@
 import React from "react";
-import { Circle, SquareProps, HStack } from "@chakra-ui/react";
+import { Circle, HStack } from "@chakra-ui/react";
 import { GITHUB, INSTAGRAM, LINKEDIN } from "~constants";
 import SlideLink from "~components/SlideLink";
 
 const VerticalText = () => {
   return (
     <HStack
+      fontFamily="Lato"
       pos="absolute"
       top="50%"
       left="5%"

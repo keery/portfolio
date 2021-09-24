@@ -5,6 +5,7 @@ const ScrollIndicator = () => {
   return (
     <Flex
       className="scroll-btn"
+      fontFamily="Lato"
       border="1px solid white"
       borderRadius="100%"
       textTransform="uppercase"

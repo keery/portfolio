@@ -4,8 +4,10 @@ import SlideLink from "~components/SlideLink";
 import Link from "~components/Link";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 const Nav = () => {
+  const { t } = useTranslation();
   const date = new Date();
   const router = useRouter();
   const [isOpen, setOpen] = useState(false);
@@ -28,7 +30,7 @@ const Nav = () => {
                 className={router.route === "/" && "active"}
               >
                 <span>
-                  <div className="text-link">Home</div>
+                  <div className="text-link">{t("nav.home")}</div>
                 </span>
               </Link>
             </li>
@@ -39,7 +41,7 @@ const Nav = () => {
                 className={router.route === ROUTE_PROJECTS && "active"}
               >
                 <span>
-                  <div className="text-link">Projects</div>
+                  <div className="text-link">{t("nav.projects")}</div>
                 </span>
               </Link>
             </li>
@@ -50,7 +52,7 @@ const Nav = () => {
                 className={router.route === ROUTE_ABOUT && "active"}
               >
                 <span>
-                  <div className="text-link">About</div>
+                  <div className="text-link">{t("nav.about")}</div>
                 </span>
               </Link>
             </li>
@@ -59,7 +61,7 @@ const Nav = () => {
 
         <div className="menu-contact">
           <div className="menu-email">
-            <div className="menu-email-label">Email me at</div>
+            <div className="menu-email-label">{t("nav.contact")}</div>
             <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} />
           </div>
           <div className="menu-sub-infos">

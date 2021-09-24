@@ -1,74 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-
-.about-step .st2 {
-  fill: none;
-  stroke: #f2c84c;
-  stroke-miterlimit: 10;
-  stroke-width: 2;
-}
 #about {
   width: 100%;
-  background-color: #12121c;
   height: 100%;
   overflow: hidden;
 }
 
-#about .scroll-btn {
-  border: 1px solid white;
-  border-radius: 100%;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  font-size: 8px;
-  padding: 5px 10px;
-  display: block;
-  width: 78px;
-  height: 78px;
-  margin: 0 auto;
-  letter-spacing: 1px;
-  position: absolute;
-  z-index: 12;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 15px;
-  background-color: rgba(247, 247, 247, 0.168);
-}
-#about .scroll-btn:before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  right: -1px;
-  top: -1px;
-  bottom: -1px;
-  border: 1px solid white;
-  border-radius: 100%;
-  animation: squareFade 1.1s infinite;
-}
-#about .scroll-btn > img {
-  width: 22px;
-  margin-bottom: 8px;
-  animation: bound 2.2s infinite;
-}
-@keyframes squareFade {
-  to {
-    left: -14px;
-    right: -14px;
-    top: -14px;
-    bottom: -14px;
-    opacity: 0;
-  }
-}
-@keyframes bound {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 #about #about-container {
   max-width: 1600px;
   margin: 0 auto;
@@ -108,9 +43,9 @@
 #about #experiences .swiper-slide-active .item {
   opacity: 1;
 }
+
 #about #experiences .swiper-slide-active .item h2,
-#about #experiences .swiper-slide-active .item .sub-info,
-#about #experiences .swiper-slide-active .item .about-text {
+#about #experiences .swiper-slide-active .item .experience-content > * {
   transform: translateY(0);
   opacity: 1;
 }
@@ -127,48 +62,24 @@
     opacity: 0;
   }
 }
-#about #experiences h2,
-#about #experiences .sub-info,
-#about #experiences .about-text {
+#about #experiences .item h2,
+#about #experiences .item .experience-content > * {
   opacity: 0;
   transform: translateY(30px);
-  transition: transform ease-in-out 0.7s, opacity ease-in-out 0.7s;
+  transition: transform ease-in-out 0.7s 0.5s, opacity ease-in-out 0.7s 0.5s;
 }
 #about #experiences h2 {
-  font-family: "Fjalla One";
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #f2c84c;
-  font-size: 50px;
-  margin: 0;
   transition-delay: 0.5s;
 }
-#about #experiences .sub-info {
-  margin: 30px 0;
-  font-family: Cormorant Garamond;
-  color: #c5cd94;
+#about #experiences .item .experience-content > :nth-child(1) {
   transition-delay: 0.7s;
 }
-#about #experiences .about-text {
-  font-family: Cormorant Garamond;
-  color: #fff;
+#about #experiences .item .experience-content > :nth-child(2) {
   transition-delay: 0.9s;
 }
-#about #experiences .sub-info > div {
-  display: inline-block;
-  vertical-align: top;
+#about #experiences .item .experience-content > :nth-child(3) {
+  transition-delay: 1.1s;
 }
-#about #experiences .sub-info > div > i {
-  font-size: 21px;
-  color: #fff;
-}
-#about #experiences .sub-info .subtitle {
-  color: #f2c84c;
-  text-transform: uppercase;
-  font-family: Fjalla one;
-  margin-bottom: 5px;
-}
-
 #about #slider-schema {
   font-size: 0;
   width: 60%;
@@ -176,44 +87,13 @@
   height: 100%;
   position: relative;
 }
-#about #slider-schema .slides {
-  transition: top 1.2s 2s, left 1.2s 2s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-#about .about-schema {
-  height: 100vh;
-  position: relative;
-}
-#about .about-schema * {
-  user-select: none;
-}
 
-#about .about-schema .about-schema-container > svg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  width: 100%;
-}
-#about .about-schema .about-schema-container > svg.about-step {
-  background-color: #12121c;
-}
-#about .about-schema .about-schema-container > svg.about-img {
-  z-index: 555;
-}
 .cursor-container {
   position: absolute;
   top: 0;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  /* overflow: hidden; */
   z-index: 55;
   text-align: center;
 }
@@ -623,15 +503,6 @@
   #about #experiences {
     font-size: 13px;
     padding-left: 20px;
-  }
-  #about #experiences h2 {
-    font-size: 30px;
-  }
-  #about #experiences .sub-info {
-    margin: 15px 0;
-  }
-  #about #experiences .sub-info > div > i {
-    font-size: 13px;
   }
 }
 @media screen and (max-width: 1300px) {

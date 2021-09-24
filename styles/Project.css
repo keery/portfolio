@@ -67,7 +67,6 @@
   transform: translateX(-25px);
 }
 #swiper-pagination > .bullet b {
-  font-family: Cormorant Garamond;
   font-size: 24px;
   display: block;
   transform: translateY(-3px);
@@ -87,7 +86,6 @@
 #swiper-pagination > .bullet .mask-text {
   overflow: hidden;
   text-transform: uppercase;
-  font-family: Cormorant Garamond;
   padding-right: 15px;
 }
 #swiper-pagination > .bullet .mask-text > div {
@@ -218,7 +216,6 @@
   width: 45%;
   top: 50%;
   transform: translateY(-50%);
-  font-family: Cormorant Garamond;
   color: #fff;
 }
 .project-slide .info-projet-container h2,

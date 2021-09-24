@@ -1,3 +1,20 @@
 {
-  "Hello": "Bonjour"
+  "seo": {
+    "title": "Guillaume Esnault | Portfolio",
+    "description": "My name is Guillaume Esnault, javascript developer from Paris who is really interested in cool UX / UI design. Passionated by web I create mobile and web applications, you will find on my portfolio my creations and my career. I am specialized in React Js, Next Js, Node Js, Strapi, Typescript."
+  },
+  "home": {
+    "description": "Freelance javascript developer based in",
+    "description2": "Really passionated in cool UI/UX design with cool animations and interactions.",
+    "knowMore": "If you want to know more",
+    "about": "about me",
+    "project": "my projects",
+    "contact": "feel free to contact me at"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Email me at"
+  }
 }

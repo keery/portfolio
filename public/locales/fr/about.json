@@ -1,7 +1,28 @@
 {
-    "seo": {
-      "title": "A propos",
-      "description": "Développeur Javascript travaillant à l'international, suivez mon parcours professionnel au fil des diverses expériences que j'ai eu au travers de ma carrière."
-    }
+  "seo": {
+    "title": "A propos",
+    "description": "Développeur Javascript travaillant à l'international, suivez mon parcours professionnel au fil des diverses expériences que j'ai eu au travers de ma carrière."
+  },
+  "description": "Description",
+  "environment": "Environnement",
+  "when": "Quand",
+  "role": "Rôle",
+  "website": "Site web",
+  "cv": "Télécharger CV",
+  "levio": {
+    "description": "Levio est une entreprise de consulting situé à Montréal, elle travaille en collaboration avec de nombreux groupes au quatre coins de la planète. La majorité de ses clients sont des institutions banquaires, assurances, sociétes de financement."
+  },
+  "premieroctet": {
+    "description": "Premier octet est une agence web moderne, spécialisée dans le développement d'application web ou mobile en Javascript. Constitué de personnes vraiment sympathiques et passionnés par le développement, ils ont intégré le partage de connaissances dans la routine de travail, aidant tout le monde à s'améliorer de jour en jour."
+  },
+  "sewan": {
+    "description": "Sewan est une entreprise de télécommunication, j'ai principalement travaillé sur des applications internes aidant les employés à gagner du temps sur des problèmes quotidiens. Ma première expérience dans une grosse entreprise, environ 80 développeurs qui travaillent en collaboration partageant chacun leurs connaissances sur leurs domaines de prédilections."
+  },
+  "neftis": {
+    "description": "Neftis est une agence web qui a developpé un CMS en interne nommé Flexit. J'étais en charge de la réalisation d'applications pour de nouveaux client, et d'ajouter de nouvelles fonctionnalités à Flexit."
+  },
+  "gencontact": {
+    "description": "J'ai commencé à apprendre le développement en autodidacte en 2013 dans l'espoir d'avoir une opportunité pro par la suite, Gen Contact m'a créé cette chance. C'est une agence web qui crée des sites web et qui vend des services d'impressions. Cette expérience m'a permis d'apprendre les ficelles du métier, front, back, création de maquettes, base de données."
   }
+}
   

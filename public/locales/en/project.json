@@ -1,0 +1,29 @@
+{
+    "seo": {
+      "title": "Projects",
+      "description": "Gallery presenting various web or mobile projects that I have made"
+    },
+    "freelance": "Freelance",
+    "pro": "Professional",
+    "nextProject": "Next project",
+    "more": "More details",
+    "studiod": {
+      "description": "Studio D is an open-source collaborative plateform based on solidarity designed to bring together dance troupes and dance studio owners."
+    },
+    "digestclub": {
+      "description": "Digest.Club est une plateforme sur laquelle il est possible de centraliser votre veille technologique provenant de sources multiples (Github, Twitter, Slack) afin de la partager à d'autres développeurs ou au sein d'une équipe."
+    },
+    "jikiki": {
+      "description": "Jikiki is gonna help you finding your future accommodation in Canada. It brings together all the real estates ads from Kijiji website in a tool that makes your searches easier."
+    },
+    "materalia": {
+      "description": "Refont of Materalia, who is a supplier of materials in the scientific and industrial fields, more particularly in aeronautics, automotive, energy and health."
+    },
+    "creutzwald": {
+      "description": "Website of the city of Creutzwald, located in the department of Moselle eastern France. Inform about municipal life, activities and events organized"
+    },
+    "ysheza": {
+      "description": "Catalog website for an independent brand named Yshéza, specializing in creating handmade clothes and accessories with wax tissues."
+    }
+  }
+  
