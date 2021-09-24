@@ -16,5 +16,13 @@
     "projects": "Projects",
     "about": "About",
     "contact": "Email me at"
+  },
+  "en": {
+    "/projets": "/projects",
+    "/a-propos": "/about"
+  },
+  "fr": {
+    "/projets": "/projets",
+    "/a-propos": "/a-propos"
   }
 }

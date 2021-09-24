@@ -16,5 +16,13 @@
     "projects": "Projets",
     "about": "A propos",
     "contact": "Contacte moi à"
+  },
+  "en": {
+    "/projets": "/projects",
+    "/a-propos": "/about"
+  },
+  "fr": {
+    "/projets": "/projets",
+    "/a-propos": "/a-propos"
   }
 }
