@@ -1,40 +1,48 @@
-import { Center, Text, Spinner, Flex, BoxProps } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useRef } from "react";
 
-interface Props extends BoxProps {
-  text?: string
-  isCentered?: boolean
-  size?: string
-}
+const Loader = ({ setShow }) => {
+  const animateValue = (id, start, end, duration) => {
+    if (start === end) return;
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function () {
+      current += increment;
+      obj.innerHTML = current;
+      if (current == end) {
+        clearInterval(timer);
+        setShow(false);
+      }
+    }, stepTime);
+  };
 
-const Loader = ({ text, isCentered, size = 'xl', ...rest }: Props) => {
+  useEffect(() => {
+    animateValue("value", 0, 100, 3000);
+  }, []);
+
   return (
-    <Center
-      height={isCentered && '100%'}
-      justifyContent="center"
-      alignItems="center"
-      w="100%"
-      position={isCentered ? 'absolute' : 'initial'}
-      left="0"
-      top="0"
-      {...rest}
-    >
-      <Flex direction="column" alignItems="center">
-        {text && (
-          <Text p={4} color="gray.700">
-            {text}
-          </Text>
-        )}
-        <Spinner
-          thickness="3px"
-          speed="0.65s"
-          emptyColor="kijiji.red"
-          color="kijiji.main"
-          size={size}
-        />
-      </Flex>
-    </Center>
-  )
-}
+    <div className="loader-container">
+      <div className="loading">
+        <div className="logo-loader">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.02 14.88">
+            <line className="u-line" y1="13.93" x2="11.02" y2="13.93" />
+            <polyline
+              className="g-line"
+              points="11 0.95 0.96 0.95 0.96 10.68 10.06 10.68 10.06 4.17 4.21 4.18 4.21 7.44 7.78 7.44"
+            />
+          </svg>
+        </div>
+        <div className="bar">
+          <div className="percent" />
+          <div className="number">
+            <span id="value">0</span>%
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Loader
+export default Loader;

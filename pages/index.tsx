@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -9,6 +9,7 @@ import { useTranslation } from "next-i18next";
 import { useBreakpointValue } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
+  const [showAnimation, setShowAnimation] = useState(false);
   const blackfluidRef = useRef(null);
   const { t } = useTranslation();
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -19,8 +20,14 @@ const Home: NextPage = () => {
     }
   }, [blackfluidRef]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAnimation(true);
+    }, 400);
+  }, []);
+
   return (
-    <div className="enter">
+    <div className={showAnimation && "enter"}>
       <section id="home">
         <div id="home-container">
           <div className="home-presentation">

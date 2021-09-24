@@ -180,6 +180,7 @@ p {
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
   height: 40px;
+  font-family: Lato;
 }
 
 .loading > .bar {
@@ -202,6 +203,16 @@ p {
   padding-left: 40px;
   border: 2px solid white;
   border-right: none;
+  animation: progressBar 3s forwards linear;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .loading > .bar .percent:before {
