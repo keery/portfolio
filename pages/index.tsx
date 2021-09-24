@@ -6,14 +6,15 @@ import SlideLink from "~components/SlideLink";
 import VerticalText from "~components/VerticalText";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 import { useTranslation } from "next-i18next";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
-  const blackfluidRef = useRef();
+  const blackfluidRef = useRef(null);
   const { t } = useTranslation();
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   useEffect(() => {
     if (typeof blackfluidRef?.current !== "undefined") {
-      // @ts-ignore
       blackfluidRef.current.play();
     }
   }, [blackfluidRef]);
@@ -56,14 +57,17 @@ const Home: NextPage = () => {
                 className="home-video-bg geparallax-container"
                 id="video-wrapper"
               >
-                <video
-                  ref={blackfluidRef}
-                  id="blackfluid"
-                  src="/assets/blackfluid.mp4"
-                  muted
-                  loop
-                />
-                <img src="/assets/gif-blackfluid.gif" alt="" id="gif-smoke" />
+                {isMobile ? (
+                  <img src="/assets/gif-blackfluid.gif" alt="" id="gif-smoke" />
+                ) : (
+                  <video
+                    ref={blackfluidRef}
+                    id="blackfluid"
+                    src="/assets/blackfluid.mp4"
+                    muted
+                    loop
+                  />
+                )}
               </div>
             </div>
             <div className="home-video-mask" />
