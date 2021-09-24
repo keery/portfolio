@@ -13,7 +13,7 @@ const LanguageSelector = () => {
   );
 
   return (
-    <Link href={t(`${nextLanguage}.${router.pathname}`)} locale={nextLanguage}>
+    <Link href={"/"} locale={nextLanguage}>
       <Button w="40px" p={1} mb={2} className="language-selector">
         <Image src={`assets/languages/${nextLanguage}.png`} />
       </Button>
