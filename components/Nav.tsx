@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import Burger from "~components/Burger";
 import SlideLink from "~components/SlideLink";
 import Link from "~components/Link";
+import LanguageSelector from "~components/LanguageSelector";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -60,6 +61,7 @@ const Nav = () => {
         </div>
 
         <div className="menu-contact">
+          <LanguageSelector />
           <div className="menu-email">
             <div className="menu-email-label">{t("nav.contact")}</div>
             <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} />

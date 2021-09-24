@@ -16,7 +16,7 @@ const Button = {
   variants: {
     solid: {
       _hover: {
-        opacity: 0.8,
+        transform: "scale(1.05)",
       },
       bg: "#29293a",
     },

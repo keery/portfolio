@@ -40,6 +40,7 @@
   transform: translateY(0);
 }
 .open #menu .menu-contact .menu-email,
+.open #menu .menu-contact .language-selector,
 .open #menu .menu-contact > .menu-sub-infos {
   opacity: 1;
   transform: translateY(0);
@@ -173,6 +174,11 @@
   transition: all cubic-bezier(0.12, 1.11, 0.58, 1) 0.3s;
   opacity: 0;
   transform: translateY(30px);
+}
+#menu .menu-contact .language-selector {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all cubic-bezier(0.12, 1.11, 0.58, 1) 0.3s;
 }
 #menu .menu-contact .menu-email .menu-email-label {
   font-size: 23px;
