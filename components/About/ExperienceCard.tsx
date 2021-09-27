@@ -2,7 +2,15 @@ import React from "react";
 import { Experience } from "~@types/api";
 import SlideLink from "~components/SlideLink";
 import Subtitle from "~components/Subtitle";
-import { Box, HStack, Text, Flex, VStack, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Text,
+  Flex,
+  VStack,
+  Heading,
+  Image,
+} from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 
 interface Props {
@@ -13,9 +21,22 @@ const ExperienceCard = ({ experience }: Props) => {
   const { t } = useTranslation("about");
   return (
     <Box className="item">
-      <Heading as="h2" color="yellow.500" pb={6}>
-        {experience.title}
-      </Heading>
+      <Flex alignItems="center" pb={6} className="experience-title">
+        <Flex
+          boxSize={20}
+          mr={4}
+          alignItems="center"
+          justifyContent="center"
+          bgColor="#29293a"
+          borderRadius="100%"
+          p={2}
+        >
+          <Image src={`assets/${experience.image}`} maxH="70%" />
+        </Flex>
+        <Heading as="h2" color="yellow.500">
+          {experience.title}
+        </Heading>
+      </Flex>
       <VStack
         alignItems="flex-start"
         spacing={6}

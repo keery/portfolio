@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import { SSRConfig } from "next-i18next";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import SwiperCore from "swiper";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import ScrollIndicator from "~components/Project/ScrollIndicator";

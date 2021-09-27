@@ -3,6 +3,7 @@ import GraphSegment from "~components/About/GraphSegment";
 import GraphCursor from "~components/About/GraphCursor";
 import { experiences } from "~experiences";
 import SwiperCore, { Keyboard, EffectFade } from "swiper";
+import { useBreakpointValue } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Keyboard, EffectFade]);
@@ -15,6 +16,7 @@ interface Props {
 
 const GraphExperiences = ({ activeIndex, prevIndex, textSwiper }: Props) => {
   const [swiper, setSwiper] = useState<SwiperCore>(null);
+  const display = useBreakpointValue({ base: "none", md: "block" });
 
   const groupedExperiences = useMemo(
     () =>
@@ -59,6 +61,7 @@ const GraphExperiences = ({ activeIndex, prevIndex, textSwiper }: Props) => {
       style={{
         height: "100%",
         padding: "0 5%",
+        display,
       }}
       preventInteractionOnTransition
       onBeforeTransitionStart={(swiper) => {

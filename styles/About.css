@@ -5,7 +5,7 @@
 }
 
 #about #about-container {
-  max-width: 1600px;
+  max-width: 1150px;
   margin: 0 auto;
   height: 100%;
   position: relative;
@@ -21,11 +21,11 @@
 }
 #about #experiences {
   font-size: 18px;
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
+  flex: 1;
   padding-top: 25vh;
   height: 100%;
+  margin-left: 0;
+  margin-right: 5vw;
 }
 #about #experiences ul {
   position: relative;
@@ -44,7 +44,7 @@
   opacity: 1;
 }
 
-#about #experiences .swiper-slide-active .item h2,
+#about #experiences .swiper-slide-active .item .experience-title,
 #about #experiences .swiper-slide-active .item .experience-content > * {
   transform: translateY(0);
   opacity: 1;
@@ -62,7 +62,7 @@
     opacity: 0;
   }
 }
-#about #experiences .item h2,
+#about #experiences .item .experience-title,
 #about #experiences .item .experience-content > * {
   opacity: 0;
   transform: translateY(30px);
@@ -488,6 +488,12 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  #about #experiences {
+    margin-right: 0;
+  }
+}
+
 @media screen and (min-device-width: 700px) and (max-device-width: 1000px) {
   #about .about-schema .about-schema-container > svg {
     width: auto;
@@ -504,26 +510,6 @@
     font-size: 13px;
     padding-left: 20px;
   }
-}
-@media screen and (max-width: 1300px) {
-  #about #slider-schema,
-  .cursor-container {
-    width: 65%;
-  }
-  #about #experiences {
-    width: 35%;
-  }
-}
-@media screen and (max-width: 1250px) {
-  #about #slider-schema,
-  .cursor-container {
-    width: 70%;
-  }
-  #about #experiences {
-    width: 30%;
-  }
-}
-@media screen and (min-device-width: 700px) and (max-device-width: 1000px) {
   #about .about-schema .about-schema-container > svg {
     width: auto;
     left: 50%;
@@ -550,12 +536,12 @@
   }
 }
 @media screen and (max-width: 700px) {
-  #about .scroll-btn {
-    border: none;
-    background-color: transparent;
+  #about-container .swiper-slide {
+    display: flex;
+    align-items: center;
   }
-  #about .scroll-btn:before {
-    display: none;
+  #about #experiences .item {
+    position: static;
   }
   #about .dl-cv {
     position: static;
