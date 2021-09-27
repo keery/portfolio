@@ -1,7 +1,7 @@
 import React from "react";
-import { Flex, Image, Text, Box } from "@chakra-ui/react";
+import { Flex, Image, Text, Box, FlexProps } from "@chakra-ui/react";
 
-const ScrollIndicator = () => {
+const ScrollIndicator = (props: FlexProps) => {
   return (
     <Flex
       className="scroll-btn"
@@ -35,6 +35,7 @@ const ScrollIndicator = () => {
         borderRadius: "100%",
         animation: "squareFade 0.7s infinite",
       }}
+      {...props}
     >
       <Box display={{ base: "none", md: "block" }}>
         <Image

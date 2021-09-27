@@ -7,14 +7,7 @@ const CVButton = () => {
   const { t } = useTranslation("about");
   return (
     <Link download isExternal href="/assets/pdf/cv-esnault-guillaume.pdf">
-      <Button
-        pos="absolute"
-        left={{ base: "auto", md: "5vw" }}
-        right={{ base: "5vw", md: "auto" }}
-        zIndex="55"
-        leftIcon={<Download />}
-        bottom={{ base: "2%", md: "5%" }}
-      >
+      <Button zIndex="55" leftIcon={<Download />}>
         <Text pl={2} textTransform="uppercase" fontFamily="Lato">
           {t("cv")}
         </Text>

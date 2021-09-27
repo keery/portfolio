@@ -10,6 +10,7 @@ import CVButton from "~components/About/CVButton";
 import GraphExperiences from "~components/About/GraphExperiences";
 import { NextSeo } from "next-seo";
 import { useTranslation } from "next-i18next";
+import SwiperNumber from "~components/About/SwiperNumber";
 
 const About: NextPage = () => {
   const { t } = useTranslation("about");
@@ -22,8 +23,6 @@ const About: NextPage = () => {
   return (
     <div id="about">
       <NextSeo title={t("seo.title")} description={t("seo.description")} />
-      <CVButton />
-      <ScrollIndicator />
       <div id="about-container">
         <Flex alignItems="center" h="100%">
           <Experiences setIndex={setIndex} setSwiper={setSwiper} />
@@ -34,6 +33,19 @@ const About: NextPage = () => {
           />
         </Flex>
       </div>
+      <Flex
+        px={4}
+        justifyContent="space-between"
+        alignItems="center"
+        pos="absolute"
+        bottom={0}
+        left={0}
+        right={0}
+      >
+        {/* <CVButton /> */}
+        <ScrollIndicator pos="static" margin={0} transform="none" />
+        <SwiperNumber activeIndex={swiper?.activeIndex} />
+      </Flex>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ExperienceCard from "~components/About/ExperienceCard";
-import SwiperNumber from "~components/About/SwiperNumber";
 import { experiences } from "~experiences";
 import SwiperCore, { Keyboard, EffectFade, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +13,6 @@ interface Props {
 
 const Experiences = ({ setIndex, setSwiper }: Props) => {
   const [isEnabled, setEnabled] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
@@ -47,7 +45,6 @@ const Experiences = ({ setIndex, setSwiper }: Props) => {
             }
             swiper.slides[swiper.previousIndex].classList.add("leave");
           }
-          setActiveIndex(active);
         }}
       >
         {experiences.map((experience) => (
@@ -56,7 +53,6 @@ const Experiences = ({ setIndex, setSwiper }: Props) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <SwiperNumber activeIndex={activeIndex} />
     </>
   );
 };

@@ -10,10 +10,10 @@ const variants = {
 };
 
 interface Props {
-  activeIndex: number;
+  activeIndex?: number;
 }
 
-const SwiperNumber = ({ activeIndex }: Props) => {
+const SwiperNumber = ({ activeIndex = 0 }: Props) => {
   return (
     <Flex
       pr={4}

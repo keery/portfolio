@@ -47,10 +47,10 @@ const ExperienceCard = ({ experience }: Props) => {
             <Subtitle>{t("when")}</Subtitle>
             <div>{experience.when}</div>
           </div>
-          <div>
+          <Box display={{ base: "none", sm: "block" }}>
             <Subtitle>{t("role")}</Subtitle>
             <div>{experience.role}</div>
-          </div>
+          </Box>
           <div>
             <Subtitle>{t("website")}</Subtitle>
             <div>
