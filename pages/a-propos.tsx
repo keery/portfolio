@@ -38,18 +38,18 @@ const About: NextPage = () => {
         justifyContent="space-between"
         alignItems="center"
         pos="absolute"
-        bottom={0}
-        left={0}
+        bottom={{ base: 0, md: 4 }}
+        left={{ base: 0, md: "3vw" }}
         right={0}
       >
-        {/* <CVButton /> */}
         <ScrollIndicator
           pos={{ base: "relative", md: "absolute" }}
-          left={{ base: 0, md: "50%" }}
+          left={{ base: "0!important", md: "50%!important" }}
           margin={0}
           bottom={{ base: 0, md: "15px" }}
           transform={{ base: "none", md: "translateX(-50%)" }}
         />
+        <CVButton />
         <SwiperNumber activeIndex={swiper?.activeIndex} />
       </Flex>
     </div>
