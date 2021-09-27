@@ -22,17 +22,6 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <Box className="item">
       <Flex alignItems="center" pb={6} className="experience-title">
-        <Flex
-          boxSize={20}
-          mr={4}
-          alignItems="center"
-          justifyContent="center"
-          bgColor="#29293a"
-          borderRadius="100%"
-          p={2}
-        >
-          <Image src={`assets/${experience.image}`} maxH="70%" />
-        </Flex>
         <Heading as="h2" color="yellow.500">
           {experience.title}
         </Heading>
@@ -41,6 +30,7 @@ const ExperienceCard = ({ experience }: Props) => {
         alignItems="flex-start"
         spacing={6}
         className="experience-content"
+        fontSize={{ base: "md", sm: "unset" }}
       >
         <HStack spacing={10}>
           <div>

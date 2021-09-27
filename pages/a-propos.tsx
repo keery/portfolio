@@ -43,7 +43,13 @@ const About: NextPage = () => {
         right={0}
       >
         {/* <CVButton /> */}
-        <ScrollIndicator pos="static" margin={0} transform="none" />
+        <ScrollIndicator
+          pos={{ base: "relative", md: "absolute" }}
+          left={{ base: 0, md: "50%" }}
+          margin={0}
+          bottom={{ base: 0, md: "15px" }}
+          transform={{ base: "none", md: "translateX(-50%)" }}
+        />
         <SwiperNumber activeIndex={swiper?.activeIndex} />
       </Flex>
     </div>
