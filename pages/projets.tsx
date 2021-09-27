@@ -65,6 +65,7 @@ const Projects: NextPage = () => {
         onInit={(swiper) => getProgress(swiper.activeIndex)}
         onSlideChange={(swiper) => getProgress(swiper.activeIndex)}
         onBeforeTransitionStart={(swiper) => {
+          console.log("ddd");
           if (!!swiper.slides[swiper.previousIndex]) {
             swiper.slides[swiper.previousIndex].classList.add("leave");
           }
@@ -99,8 +100,8 @@ const Projects: NextPage = () => {
             />
           </SwiperSlide>
         ))}
+        <CircleProgress progress={percent} />
       </Swiper>
-      <CircleProgress progress={percent} />
       <div id="swiper-pagination" />
     </section>
   );

@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className={showAnimation && "enter"}>
+    <div className={showAnimation ? "enter" : ""}>
       <section id="home">
         <div id="home-container">
           <div className="home-presentation">

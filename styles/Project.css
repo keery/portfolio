@@ -466,6 +466,7 @@
   }
   .project-slide .img-circle-container .img-circle-container-border {
     background-color: rgba(0, 0, 0, 0.75);
+    transform: translateZ(0);
   }
   .recent-projects
     .slides
