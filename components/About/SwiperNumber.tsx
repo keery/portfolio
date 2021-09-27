@@ -40,7 +40,7 @@ const SwiperNumber = ({ activeIndex = 0 }: Props) => {
         </Box>
       </AnimatePresence>
       <Divider transform="rotate(-45deg)" width="30px" />
-      <Text transform="translateY(-22px) translateX(10px)">
+      <Text transform="translateY(-20px) translateX(10px)">
         {experiences.length}
       </Text>
     </Flex>
