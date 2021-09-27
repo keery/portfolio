@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Link, Text } from "@chakra-ui/react";
-import Download from "public/assets/download.svg";
 import { useTranslation } from "next-i18next";
 
 const CVButton = () => {
