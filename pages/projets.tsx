@@ -20,10 +20,12 @@ import SwiperBullet from "~components/Project/SwiperBullet";
 import { useMotionValue } from "framer-motion";
 import { NextSeo } from "next-seo";
 import { useTranslation } from "next-i18next";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 SwiperCore.use([Pagination, EffectFade, Navigation, Mousewheel, Keyboard]);
 
 const Projects: NextPage = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
   const { t } = useTranslation("project");
   const [percent, setPercent] = useState<number>(0);
 
@@ -37,7 +39,7 @@ const Projects: NextPage = () => {
   const rotateY = useMotionValue(0);
 
   const mouseHover = (event) => {
-    if (typeof containerRef.current !== "undefined") {
+    if (typeof containerRef.current !== "undefined" && !isMobile) {
       const width = containerRef.current.clientWidth;
       const height = containerRef.current.clientHeight;
 
@@ -60,7 +62,6 @@ const Projects: NextPage = () => {
         mousewheel
         keyboard
         speed={1000}
-        shortSwipes={false}
         onInit={(swiper) => getProgress(swiper.activeIndex)}
         onSlideChange={(swiper) => getProgress(swiper.activeIndex)}
         onBeforeTransitionStart={(swiper) => {

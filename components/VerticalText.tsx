@@ -26,9 +26,27 @@ const VerticalText = () => {
         />
       }
     >
-      <SlideLink href={GITHUB} text="GITHUB" isExternal />
-      <SlideLink href={LINKEDIN} text="LINKEDIN" isExternal />
-      <SlideLink href={INSTAGRAM} text="INSTAGRAM" isExternal />
+      <SlideLink
+        href={GITHUB}
+        text="GITHUB"
+        isExternal
+        opacity="0"
+        transform="translateY(-20px)"
+      />
+      <SlideLink
+        href={LINKEDIN}
+        text="LINKEDIN"
+        isExternal
+        opacity="0"
+        transform="translateY(-20px)"
+      />
+      <SlideLink
+        href={INSTAGRAM}
+        text="INSTAGRAM"
+        isExternal
+        opacity="0"
+        transform="translateY(-20px)"
+      />
     </HStack>
   );
 };
