@@ -39,7 +39,6 @@ const GraphSegment = ({ experiences, textSwiper }: Props) => {
             height="14.7%"
             mt={index === 0 && "80.5%"}
             mb={index === 1 && "80.5%"}
-            onClick={() => console.log("jfkdls")}
           >
             <Image
               src={`/assets/${image}`}

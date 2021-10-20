@@ -31,11 +31,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       <AppHead />
       <ChakraProvider theme={theme}>
         <Layout>
-          {/* {showLoader ? (
+          {showLoader ? (
             <Loader setShow={setShowLoader} />
-          ) : ( */}
-          <Component {...pageProps} />
-          {/* )} */}
+          ) : (
+            <Component {...pageProps} />
+          )}
         </Layout>
       </ChakraProvider>
     </>
