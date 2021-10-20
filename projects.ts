@@ -1,5 +1,25 @@
 export const projects = [
   {
+    logo: "/assets/projets/pokemon-visuel.png",
+    bg: "/assets/projets/pokemon-fond.png",
+    title: "Pokemon card generator",
+    description: `pokemon.description`,
+    role: "Fullstack JS",
+    context: "Solo",
+    stack: "React, NextJS, NestJS, Uppy",
+    link: "https://card-pokemon.com/",
+  },
+  {
+    logo: "/assets/projets/jikiki-logo.svg",
+    bg: "/assets/projets/jikiki-fond.jpg",
+    title: "Jikiki",
+    description: `jikiki.description`,
+    role: "Fullstack JS",
+    context: "Solo",
+    stack: "React, NextJS, Strapi",
+    link: "https://jikiki.vercel.app/",
+  },
+  {
     logo: "/assets/projets/studiod-visuel.png",
     bg: "/assets/projets/studiod-fond.jpg",
     title: "Studio D",
@@ -18,16 +38,6 @@ export const projects = [
     context: "pro",
     stack: "React, NextJS, NestJS",
     link: "https://digest.club/",
-  },
-  {
-    logo: "/assets/projets/jikiki-logo.svg",
-    bg: "/assets/projets/jikiki-fond.jpg",
-    title: "Jikiki",
-    description: `jikiki.description`,
-    role: "Fullstack JS",
-    context: "freelance",
-    stack: "React, NextJS, Strapi",
-    link: "https://jikiki.vercel.app/",
   },
   {
     logo: "/assets/projets/materalia-visuel.png",

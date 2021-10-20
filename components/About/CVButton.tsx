@@ -12,7 +12,7 @@ const CVButton = () => {
           <svg
             stroke="#fff"
             fill="none"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 24 24"
             height="18px"
             width="18px"

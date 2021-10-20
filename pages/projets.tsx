@@ -65,7 +65,6 @@ const Projects: NextPage = () => {
         onInit={(swiper) => getProgress(swiper.activeIndex)}
         onSlideChange={(swiper) => getProgress(swiper.activeIndex)}
         onBeforeTransitionStart={(swiper) => {
-          console.log("ddd");
           if (!!swiper.slides[swiper.previousIndex]) {
             swiper.slides[swiper.previousIndex].classList.add("leave");
           }

@@ -24,6 +24,9 @@
     },
     "ysheza": {
       "description": "Création d'un site pour une marque indépendante nommée Yshéza, spécialisée dans la fabrication à la main de vêtements et accessoires à l'aide de tissues wax."
+    },
+    "pokemon": {
+      "description": "Pokemon Card Generator est un outil qui permet de créer la carte pokémon de tes rêves dans le but de l'imprimer, la partager à tes amis ou la présenter à la communauté."
     }
   }
   
