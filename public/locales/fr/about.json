@@ -23,6 +23,9 @@
   },
   "gencontact": {
     "description": "J'ai commencé à apprendre le développement en autodidacte en 2013 dans l'espoir d'avoir une opportunité pro par la suite, Gen Contact m'a créé cette chance. C'est une agence web qui crée des sites web et qui vend des services d'impressions. Cette expérience m'a permis d'apprendre les ficelles du métier, front, back, création de maquettes, base de données."
+  },
+  "dashlane": {
+    "description": "Dashlane est un service qui permet de stocker l'ensemble de vos mots de passe de manière sécurisée. Nous avons collaboré en équipe pour migrer l'ancienne version du site vers du react. En raison du fort traffic sur le site j'ai été confronté à des problématiques nouvelles telles que l'accessibilité, le référencement, la mise en place d'A/B tests."
   }
 }
   

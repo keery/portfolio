@@ -23,6 +23,9 @@
     },
     "gencontact": {
       "description": "I started to learn development by myself in 2013 until my first experience. It was in GEN Contact a web agency selling websites and print services. My first job as developer I discovered a lot of aspects about this profession, back, front, how to manage a database, how to create a graphic model. My main tasks was to integrate websites and module development in PHP/jQuery."
+    },
+    "dashlane": {
+      "description": "Dashlane is a password manager that allows you to stock all your passwords safely. We worked as a team to migrate the whole website from vanilla js to React. Being a high traffic website I got involved into some news web problematics such as accessibility, SEO or even A/B tests."
     }
   }
     

@@ -2,8 +2,18 @@ import { Experience } from "~@types/api";
 
 export const experiences: Experience[] = [
   {
+    title: "Dashlane",
+    when: "2021 - 2022",
+    website: "https://www.dashlane.com/",
+    websiteDisplay: "dashlane.com",
+    role: "Fullstack JS",
+    description: "dashlane.description",
+    environment: "React, Typescript, GraphQL, GraphCMS, Kanban, A/B tests",
+    image: "logo-dashlane.png",
+  },
+  {
     title: "Levio",
-    when: "2021 - today",
+    when: "2021 (4 months)",
     website: "https://levio.ca/",
     websiteDisplay: "levio.ca",
     role: "Fullstack JS",
