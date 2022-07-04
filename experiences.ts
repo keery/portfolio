@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
     role: "Fullstack JS",
     description: "dashlane.description",
     environment: "React, Typescript, GraphQL, GraphCMS, Kanban, A/B tests",
-    image: "logo-dashlane.png",
+    image: "logo-dashlane.webp",
   },
   {
     title: "Levio",
@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     role: "Fullstack JS",
     description: "levio.description",
     environment: "React, Typescript, SCRUM",
-    image: "logo-levio.png",
+    image: "logo-levio.webp",
   },
   {
     title: "Premier Octet",
@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
     role: "Fullstack JS",
     description: "premieroctet.description",
     environment: "React, NextJS, NestJS, React Native, PostgreSQL, Typescript",
-    image: "logo-premieroctet.png",
+    image: "logo-premieroctet.webp",
   },
   {
     title: "Sewan",
@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
     role: "Fullstack JS",
     description: "sewan.description",
     environment: "React, MongoDB, NodeJS, GraphQL, Scrum",
-    image: "logo-sewan.png",
+    image: "logo-sewan.webp",
   },
   {
     title: "Neftis",
@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     role: "Fullstack",
     description: "neftis.description",
     environment: "PHP, jQuery, MySQL, Flexit",
-    image: "logo-neftis.png",
+    image: "logo-neftis.webp",
     imageProps: {
       width: "130px",
     },
@@ -62,6 +62,6 @@ export const experiences: Experience[] = [
     role: "Fullstack",
     description: "gencontact.description",
     environment: "PHP, jQuery, MySQL, Photoshop",
-    image: "logo-gen-contact.png",
+    image: "logo-gen-contact.webp",
   },
 ];
