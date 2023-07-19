@@ -4,12 +4,12 @@ import Document, {
   Main,
   NextScript,
   Head,
-} from 'next/document'
+} from "next/document";
 
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
@@ -22,12 +22,23 @@ export default class CustomDocument extends Document {
             as="font"
             crossOrigin="anonymous"
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              
+                gtag('config', 'G-4LCVW859H3');
+            `,
+            }}
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
