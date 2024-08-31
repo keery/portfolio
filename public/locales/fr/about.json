@@ -26,6 +26,9 @@
   },
   "dashlane": {
     "description": "Dashlane est un service qui permet de stocker l'ensemble de vos mots de passe de manière sécurisée. Nous avons collaboré en équipe pour migrer l'ancienne version du site vers du react. En raison du fort traffic sur le site j'ai été confronté à des problématiques nouvelles telles que l'accessibilité, le référencement, la mise en place d'A/B tests."
+  },
+  "oes": {
+    "description": "OES (Online Education System) est une entreprise qui fournit une plateforme en ligne pour les universités au sein du Common Wealth. Cette plateforme permet aux étudiants de consulter leurs notes, emploie du temps, accéder à des cours particulier ou chatter avec des professeurs. Un ensemble de fonctionnalités qui permet de faciliter la vie des ses étudiants."
   }
 }
   

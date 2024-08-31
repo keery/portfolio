@@ -1,7 +1,7 @@
 {
     "seo": {
       "title": "About",
-      "description": "Javascript developer working internationally, follow my career through years and experiences I had."
+      "description": "Javascript developer working internationally, follow my career through the years and the experiences I've made."
     },
     "description": "Description",
     "environment": "Environment",
@@ -10,22 +10,25 @@
     "website": "Website",
     "cv": "Download CV",
     "levio": {
-      "description": "Levio is a consulting company based in Montréal, they have many contracts with famous customers all around the world. Majority of them are banks, insurances, financial institution."
+      "description": "Levio is a Montréal-based consulting company that has contracts with many well-known companies around the world. Majority of them are banks, insurance companies and financial institutions."
     },
     "premieroctet": {
-      "description": "Premier octet is a modern web agency, specialized in Javascript application development more specifically in React or mobile apps with React native. Small and really friendly agency with passionated developers who they used to share each new cool stuffs they discover to everyone, making all team members improving their skills constantly."
+      "description": "Premier octet is a modern web agency, specialized in Javascript application development, more specifically in React or mobile apps with React native. It's a small and intimate agency with passionate developers who share all their discoveries with the team, to constantly improve every team members' knowledge and skills."
     },
     "sewan": {
-      "description": "Sewan is a telecommunication company where I worked on many projects in order to make life easier for employees. My first experience in a big company with more than 80 developers, that offers me the possibility to share about a lot of different subjects. I worked on projects using React, Node, GraphQL, MongoDB, with a SCRUM organization."
+      "description": "Sewan is a telecommunication company where I worked on many projects to make life easier for the other employees. This was my first experience in a big company with more than 80 developers, which provided me the opportunity to learn about plenty of different subjects. The technical stack there included React, Node, GraphQL and MongoDB with a SCRUM organization."
     },
     "neftis": {
-      "description": "Neftis is a web agency who developed a home made CMS named FLEXIT, my main activity was to develop new features on it. Mainly back oriented, but I developed also websites for customers."
+      "description": "Neftis is a web agency which developed a home made CMS named FLEXIT with PHP. My main task there was to develop new features for this CMS and to develop several websites for customers."
     },
     "gencontact": {
-      "description": "I started to learn development by myself in 2013 until my first experience. It was in GEN Contact a web agency selling websites and print services. My first job as developer I discovered a lot of aspects about this profession, back, front, how to manage a database, how to create a graphic model. My main tasks was to integrate websites and module development in PHP/jQuery."
+      "description": "I started learning web development on my own in 2013. My first professional experience as a web developer was in GEN Contact, a web agency making websites and selling print services. In first job as developer I discovered a lot of aspects about this profession including backend and frontend development, how to manage a database and how to create a UI. My main tasks were integrating websites and developing features in PHP/jQuery."
     },
     "dashlane": {
-      "description": "Dashlane is a password manager that allows you to stock all your passwords safely. We worked as a team to migrate the whole website from vanilla js to React. Being a high traffic website I got involved into some news web problematics such as accessibility, SEO or even A/B tests."
+      "description": "Dashlane is a password manager that allows you to store all your passwords safely throughout the internet. We worked as a team to migrate the whole website from vanilla js to React. With this being a high traffic website I got involved with new web problematics such as accessibility, SEO and A/B testing."
+    },
+    "oes": {
+      "description": "OES (Online Education System) is a company that provides an online platform for universities in the Common Wealth to help students during their studies. Students have access for example to their grades, their schedule and private classes with teachers when they need specific help"
     }
   }
     

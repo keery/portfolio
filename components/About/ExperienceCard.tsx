@@ -50,6 +50,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 }}
                 href={experience.website}
                 text={experience.websiteDisplay}
+                target="_blank"
               />
             </div>
           </div>
