@@ -31,22 +31,26 @@ const GraphSegment = ({ experiences, textSwiper }: Props) => {
         alignItems="center"
         px="15%"
       >
-        {experiences.map(({ image, imageProps, title }, index) => (
-          <Flex
-            key={`segment-${title}`}
-            justifyContent="center"
-            w="100%"
-            height="14.7%"
-            mt={index === 0 && "80.5%"}
-            mb={index === 1 && "80.5%"}
-          >
-            <Image
-              src={`/assets/${image}`}
-              {...imageProps}
-              alignSelf="center"
-            />
-          </Flex>
-        ))}
+        {experiences.map(({ image, imageProps, title }, index) => {
+          console.log(textSwiper?.activeIndex, index);
+          return (
+            <Flex
+              key={`segment-${title}`}
+              justifyContent="center"
+              w="100%"
+              height="14.7%"
+              mt={index === 0 && "80.5%"}
+              mb={index === 1 && "80.5%"}
+            >
+              <Image
+                src={`/assets/${image}`}
+                {...imageProps}
+                alignSelf="center"
+                w={"100%"}
+              />
+            </Flex>
+          );
+        })}
       </Flex>
       {experiences.length === 2 ? (
         <svg

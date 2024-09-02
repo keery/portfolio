@@ -2,6 +2,16 @@ import { Experience } from "~@types/api";
 
 export const experiences: Experience[] = [
   {
+    title: "Think HQ",
+    when: "2024 (6 months contract)",
+    website: "https://think-hq.com.au/",
+    websiteDisplay: "think-hq.com.au",
+    role: "Fullstack",
+    description: "thinkhq.description",
+    environment: "React, Next, Cesium, Adobe Animate, Strapi",
+    image: "logo-thinkhq.svg",
+  },
+  {
     title: "OES",
     when: "2023 (6 months contract)",
     website: "https://www.oes.edu.au/",
@@ -19,7 +29,7 @@ export const experiences: Experience[] = [
     role: "Fullstack JS",
     description: "dashlane.description",
     environment: "React, Typescript, GraphQL, GraphCMS, Kanban, A/B tests",
-    image: "logo-dashlane.webp",
+    image: "logo-dashlane.svg",
   },
   {
     title: "Levio",

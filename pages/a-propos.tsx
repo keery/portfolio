@@ -49,7 +49,7 @@ const About: NextPage = () => {
           bottom={{ base: 0, md: "15px" }}
           transform={{ base: "none", md: "translateX(-50%)" }}
         />
-        <CVButton />
+        {/* <CVButton /> */}
         <SwiperNumber activeIndex={swiper?.activeIndex} />
       </Flex>
     </div>
