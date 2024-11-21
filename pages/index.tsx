@@ -7,12 +7,14 @@ import VerticalText from "~components/VerticalText";
 import { ROUTE_ABOUT, ROUTE_PROJECTS, EMAIL } from "~constants";
 import { useTranslation } from "next-i18next";
 import { useBreakpointValue } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const blackfluidRef = useRef(null);
   const { t } = useTranslation();
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof blackfluidRef?.current !== "undefined") {
@@ -54,7 +56,18 @@ const Home: NextPage = () => {
               />
               <div>
                 {t("home.contact")}{" "}
-                <SlideLink href={`mailto:${EMAIL}`} text={EMAIL} withOpacity />.
+                <SlideLink
+                  href={EMAIL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  text={EMAIL}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    window.open(`mailto:${EMAIL}`, "_blank");
+                  }}
+                  withOpacity
+                />
+                .
               </div>
             </div>
           </div>
